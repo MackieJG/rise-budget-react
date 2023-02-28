@@ -1,13 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import UserDetail from './UserDetail';
 
-interface User {
-    name: string;
-    budget: BigInt;
-    expenses: [];
-    pots: [];
-}
-
-interface Expense {
+interface ExpenseProps {
     title: string;
     amount: BigInt;
     provider: any;
@@ -16,7 +10,14 @@ interface Expense {
     timeStamp: string;
 }
 
-interface Pot {
+interface UserProps {
+    name: string;
+    budget: BigInt;
+    expenses: ExpenseProps[];
+    pots: PotProps[];
+}
+
+interface PotProps {
     title: string;
     amount: BigInt;
     user: any;
@@ -24,18 +25,19 @@ interface Pot {
 }
 
 interface UserListProps {
-    users: User[];
+    users: UserProps[];
 }
-const UserList: React.FC<UserListProps> = ({users}) => {
+
+const UserList = ({users}: UserListProps) => {
     if( users.length === 0 ) {
         return (<p>loading...</p>)
     }
     const userElements = users.map((user, index) => {
         return (
             <li key={index} className="component-item">
-            <div className="component">
-                <User user={user}/>
-            </div>
+                <div className="component">
+                    <UserDetail user={user}/>
+                </div>
             </li>
         )
     })
