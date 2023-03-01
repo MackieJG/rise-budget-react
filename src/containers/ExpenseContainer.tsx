@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ApiRequest from "../helpers/request";
 import ExpenseList from "../components/expenses/ExpenseList";
-
+import ExpenseForm from "../components/expenses/ExpenseForm";
 
 enum CategoryType {
     Grocieries,
@@ -29,10 +29,6 @@ interface UserProps {
     budget: BigInt;
     expenses: ExpenseProps[];
     pots: PotProps[];
-}
-
-interface UserListProps {
-    users: UserProps[];
 }
 
 interface PotProps {
@@ -65,16 +61,23 @@ const ExpenseContainer = () => {
     const handleEdit = (expense: any) => {
         const request = new ApiRequest();
         const url = '/api/expenses' + expense.id;
-        request.post(url).then(() => {
+        request.put(url, expense).then(() => {
             window.location.href = '/api/expenses'
         })
     }
 
+    const handlePost = (expense: any) => {
+        const request = new ApiRequest();
+    
+        request.post('/api/expenses', expense).then(() => {
+          window.location.href = '/pirates'
+        })
     return (
         <>
-        <ExpenseList  expenses={expenses} handleDelete={handleDelete} />
-
+        <ExpenseForm expenses={expenses} OnCreate={onCreate}/>
+        <ExpenseList  expenses={expenses} handleDelete={handleDelete}  />
         </>
     )
+}
 }
 export default ExpenseContainer; 
