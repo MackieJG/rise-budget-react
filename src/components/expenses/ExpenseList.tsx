@@ -1,5 +1,5 @@
 import React from "react";
-import ExpenseProps from "../containers/ExpenseContainer";
+import ExpenseDetail from "./ExpenseDetail";
 
 interface ExpenseListProps {
     expenses: ExpenseProps[];

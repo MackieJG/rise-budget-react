@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ApiRequest from "../helpers/request";
-import ExpenseList from "../components/ExpenseList";
+import ExpenseList from "../components/expenses/ExpenseList";
 
 
 enum CategoryType {
