@@ -21,7 +21,6 @@ const UserDetail = ({user}: any) => {
     return (
         <div className="component">
         <p>{user.name}</p>           
-
         </div>
     )
 }

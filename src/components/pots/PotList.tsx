@@ -22,7 +22,7 @@ const PotList = ({pots, onDelete}: PotListProps) => {
         return (
             <li key={index} className="pot-item">
                 <div className ="pots">
-                    <PotDetail pot={pot} />
+                    <PotDetail pot={pot} onDelete={onDelete} />
                 </div>
             </li>
         )

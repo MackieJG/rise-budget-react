@@ -48,6 +48,7 @@ const PotDetail = ({pot}: any) => {
             <p>{pot.title}</p>
             <p>{pot.amount}</p>
             <p>That's yer Jam son.</p>
+            <button></button>
         </div>
     )
 }
