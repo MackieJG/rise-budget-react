@@ -24,7 +24,6 @@ interface PotProps {
     title: string;
     amount: BigInt;
     user: any;
-
 }
 
 const ExpenseList = ({expenses}: ExpenseListProps ) => {
