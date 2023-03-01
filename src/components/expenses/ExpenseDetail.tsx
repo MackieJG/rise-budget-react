@@ -25,7 +25,19 @@ const ExpenseDetail = ({expense}: any) => {
 
     if(!expense) {
         return (
-            <div className ="expense-detail"></div>
+            <p>
+                loading...
+            </p>
         )
     }
+    return (
+        <div className="expense-detail">
+            <p>{expense.title}</p>
+            <p>{expense.amount}</p>
+            <p>{expense.provider.name}</p>
+            <p>{expense.category}</p>
+            <p>{expense.date}</p>
+        </div>
+    )
 }
+export default ExpenseDetail;

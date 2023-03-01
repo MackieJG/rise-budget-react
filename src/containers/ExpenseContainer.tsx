@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ApiRequest from "../helpers/request";
-import ExpenseList from "../components/ExpenseList";
+import ExpenseList from "../components/expenses/ExpenseList";
 
 
 enum CategoryType {
@@ -48,7 +48,8 @@ const ExpenseContainer = () => {
 
     useEffect(() => {
         const request = new ApiRequest();
-        const expensePromise = request.get('api/expenses')
+        const expensePromise = request.get('/api/expenses')
+        
         expensePromise
         .then((data: any) => setExpenses(data))
     }, [])
