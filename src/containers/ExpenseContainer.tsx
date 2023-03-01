@@ -48,7 +48,8 @@ const ExpenseContainer = () => {
 
     useEffect(() => {
         const request = new ApiRequest();
-        const expensePromise = request.get('api/expenses')
+        const expensePromise = request.get('/api/expenses')
+        
         expensePromise
         .then((data: any) => setExpenses(data))
     }, [])

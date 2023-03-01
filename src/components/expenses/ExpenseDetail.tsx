@@ -34,9 +34,9 @@ const ExpenseDetail = ({expense}: any) => {
         <div className="expense-detail">
             <p>{expense.title}</p>
             <p>{expense.amount}</p>
-            <p>{expense.provider}</p>
-            <p>{expense.categoryType}</p>
-            <p>{expense.string}</p>
+            <p>{expense.provider.name}</p>
+            <p>{expense.category}</p>
+            <p>{expense.date}</p>
         </div>
     )
 }

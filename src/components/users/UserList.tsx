@@ -7,7 +7,7 @@ interface ExpenseProps {
     provider: any;
     categoryType: any;
     user: any;
-    timeStamp: string;
+    time: string;
 }
 
 interface UserProps {
