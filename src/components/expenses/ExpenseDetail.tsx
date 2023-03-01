@@ -1,16 +1,17 @@
 import React from 'react'
 
 enum CategoryType {
-    Grocieries,
-    Utilities,
-    Rent,
-    Mortgage,
-    Subscriptions,
-    Entertainment,
-    Eatingout,
-    Transport,
-    Health,
-}
+    GROCERIES = "GROCERIES",
+    UTILITIES = "UTILITIES",
+    RENT = "RENT",
+    MORTAGE = "MORTAGE",
+    SUBSCRIPTIONS = "SUBSCRIPTIONS",
+    ENTERTAINMENT = "ENTERTAINMENT",
+    EATINGOUT = "EATINGOUT",
+    TRANSPORT = "TRANSPORT",
+    HEALTH = "HEALTH",
+  }
+  
 interface ExpenseProps {
     id: number;
     title: string;
