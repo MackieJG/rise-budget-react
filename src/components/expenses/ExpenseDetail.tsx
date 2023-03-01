@@ -9,20 +9,28 @@ enum CategoryType {
     Entertainment,
     Eatingout,
     Transport,
-    Health,  
+    Health,
 }
-
 interface ExpenseProps {
+    id: number;
     title: string;
-    amount: BigInt;
+    amount: number;
     provider: any;
-    categoryType: CategoryType;
+    category: CategoryType;
     user: any;
-    timeStamp: string;
+    date: string;
 }
-
-const ExpenseDetail = ({expense}: any) => {
-
+interface ExpenseDetailProps {
+    expense: ExpenseProps;
+    handleDelete: (expense: ExpenseProps) => void;
+}
+const ExpenseDetail = ({expense, handleDelete}: ExpenseDetailProps) => {
+    const onDelete = () => {
+        handleDelete(expense)
+    }
+    const onEdit = ({navigate}: any) => {
+        navigate(`/expenses/${expense.id}/edit`)
+    }
     if(!expense) {
         return (
             <p>
@@ -31,6 +39,7 @@ const ExpenseDetail = ({expense}: any) => {
         )
     }
     return (
+        <>
         <div className="expense-detail">
             <p>{expense.title}</p>
             <p>{expense.amount}</p>
@@ -38,6 +47,11 @@ const ExpenseDetail = ({expense}: any) => {
             <p>{expense.category}</p>
             <p>{expense.date}</p>
         </div>
+        <div className="buttons">
+            <button onClick={onDelete}>Delete</button>
+            <button onClick={onEdit}>Edit</button>
+        </div>
+        </>
     )
 }
 export default ExpenseDetail;

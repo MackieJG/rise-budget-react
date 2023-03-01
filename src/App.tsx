@@ -6,10 +6,9 @@ import PotContainer from './containers/PotContainer';
 function App() {
   return (
     <div className="App">
-     
-      <PotContainer />
+      {/* <UserContainer/> */}
+      <ExpenseContainer />
     </div>
   );
 }
-
 export default App;

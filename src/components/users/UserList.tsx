@@ -26,9 +26,10 @@ interface PotProps {
 
 interface UserListProps {
     users: UserProps[];
+    handleDelete: (id: number) => void;
 }
 
-const UserList = ({users}: UserListProps) => {
+const UserList = ({users}: UserListProps, {handleDelete}:any) => {
     if( users.length === 0 ) {
         return (<p>loading...</p>)
     }
@@ -36,7 +37,7 @@ const UserList = ({users}: UserListProps) => {
         return (
             <li key={index} className="component-item">
                 <div className="component">
-                    <UserDetail user={user}/>
+                    <UserDetail user={user} handleDelete={handleDelete}/>
                 </div>
             </li>
         )
