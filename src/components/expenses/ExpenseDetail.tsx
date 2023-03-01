@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 enum CategoryType {
     Grocieries,
     Utilities,
@@ -21,7 +22,15 @@ interface ExpenseProps {
     timeStamp: string;
 }
 
-const ExpenseDetail = ({expense}: any) => {
+const ExpenseDetail = ({expense}: any, {handleDelete}: any) => {
+
+    const onDelete = () => {
+        handleDelete(expense.id)
+    }
+
+    const onEdit = ({navigate}: any) => {
+        navigate(`/expenses/${expense.id}/edit`)
+    }
 
     if(!expense) {
         return (
@@ -31,6 +40,7 @@ const ExpenseDetail = ({expense}: any) => {
         )
     }
     return (
+        <>
         <div className="expense-detail">
             <p>{expense.title}</p>
             <p>{expense.amount}</p>
@@ -38,6 +48,11 @@ const ExpenseDetail = ({expense}: any) => {
             <p>{expense.category}</p>
             <p>{expense.date}</p>
         </div>
+        <div className="buttons">
+            <button onClick={onDelete}>Delete</button>
+            <button onClick={onEdit}>Edit</button>
+        </div>
+        </>
     )
 }
 export default ExpenseDetail;

@@ -43,15 +43,16 @@ const UserContainer = () => {
 
     const handleDelete = (id: number) => {
         const request = new ApiRequest();
-        const url = '/api/users' + id;
+        const url = '/api/users/' + id;
         request.delete(url).then(() => {
            window.location.href = '/users';
         })
-    }
+    };
+
 
     return (
         <>
-        <UserList users={users} />
+        <UserList users={users} handleDelete={handleDelete}/>
         </>
     )
 }

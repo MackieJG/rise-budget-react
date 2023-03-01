@@ -54,6 +54,22 @@ const ExpenseContainer = () => {
         .then((data: any) => setExpenses(data))
     }, [])
 
+    const handleDelete = (id: number) => {
+        const request = new ApiRequest();
+        const url = '/api/expenses/' + id;
+        request.delete(url).then(() => {
+            window.location.href = '/expenses';
+        })
+    }
+
+    // const handleEdit = (id: number) => {
+    //     const request = new ApiRequest();
+    //     const url = '/api/expenses' + id;
+    //     request.post(url).then(() => {
+    //         window.location.href = 
+    //     })
+    // }
+
     return (
         <>
         <ExpenseList  expenses={expenses} />
