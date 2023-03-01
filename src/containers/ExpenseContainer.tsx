@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ApiRequest from "../helpers/request";
 import ExpenseList from "../components/ExpenseList";
+
+
 enum CategoryType {
     Grocieries,
     Utilities,
@@ -10,9 +12,9 @@ enum CategoryType {
     Entertainment,
     Eatingout,
     Transport,
-    Health,
-    
+    Health,  
 }
+
 interface ExpenseProps {
     title: string;
     amount: BigInt;
@@ -58,4 +60,4 @@ const ExpenseContainer = () => {
         </>
     )
 }
-export default ExpenseContainer;
+export default ExpenseContainer; 
