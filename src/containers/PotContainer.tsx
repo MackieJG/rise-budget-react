@@ -42,9 +42,18 @@ const PotContainer = () => {
         .then((data: any) => setPots(data))
     }, [])
 
+    const handleDelete = (id: any) => {
+        const request = new ApiRequest();
+        const url = '/api/pots/' + id;
+    
+        request.delete(url).then(() => {
+          window.location.href = '/pots';
+        })
+      }
+
     return (
         <>
-        <PotList pots={pots} />
+        <PotList pots={pots} onDelete={handleDelete} />
         </>
     )
 }

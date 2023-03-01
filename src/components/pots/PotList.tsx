@@ -3,6 +3,7 @@ import PotDetail from "./PotDetail";
 
 interface PotListProps {
     pots: PotProps[];
+    onDelete: (id: any) => void;
 }
 
 interface PotProps {
@@ -11,7 +12,8 @@ interface PotProps {
     user: any;
 }
 
-const PotList = ({pots}: PotListProps ) => {
+const PotList = ({pots, onDelete}: PotListProps) => {
+    console.log(pots)
     if(pots.length === 0 ) {
         return(<p>You have no pots! Lets get you started!</p>)
     }
@@ -20,7 +22,7 @@ const PotList = ({pots}: PotListProps ) => {
         return (
             <li key={index} className="pot-item">
                 <div className ="pots">
-                    <PotDetail pots={pots} />
+                    <PotDetail pot={pot} />
                 </div>
             </li>
         )

@@ -39,7 +39,7 @@ const PotDetail = ({pot}: any) => {
     if(!pot) {
         return (
             <p>
-                loading...
+                Hummer
             </p>
         )
     }
