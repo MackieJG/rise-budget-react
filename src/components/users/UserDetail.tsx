@@ -9,7 +9,11 @@ interface UserProps {
     pots: [];
 }
 
-const UserDetail = ({user}: any) => {
+const UserDetail = ({user}: any, {handleDelete}: any) => {
+
+    const onDelete = () => {
+        handleDelete(user.id)
+    }
 
     if(!user) {
         return(
@@ -21,7 +25,8 @@ const UserDetail = ({user}: any) => {
     return (
         <div className="component">
         <p>{user.name}</p>           
-
+        <p>{user.budget}</p>
+        <button onClick={onDelete}>Delete</button>
         </div>
     )
 }
