@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ApiRequest from "../helpers/request";
 import ExpenseList from "../components/expenses/ExpenseList";
+import NavBarTop from "../components/navigation/NavBarTop";
 
 
 enum CategoryType {
@@ -62,16 +63,17 @@ const ExpenseContainer = () => {
         })
     }
 
-    const handleEdit = (expense: any) => {
-        const request = new ApiRequest();
-        const url = '/api/expenses' + expense.id;
-        request.post(url).then(() => {
-            window.location.href = '/api/expenses'
-        })
-    }
+    // const handleEdit = (expense: any) => {
+    //     const request = new ApiRequest();
+    //     const url = '/api/expenses' + expense.id;
+    //     request.post(url).then(() => {
+    //         window.location.href = '/api/expenses'
+    //     })
+    // }
 
     return (
         <>
+        <NavBarTop/>
         <ExpenseList  expenses={expenses} handleDelete={handleDelete} />
 
         </>
