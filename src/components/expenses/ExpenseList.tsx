@@ -1,33 +1,23 @@
-import React from "react";
+import React from 'react';
 import ExpenseDetail from "./ExpenseDetail";
+
+interface ExpenseProps {
+    id: number;
+    title: string;
+    amount: number;
+    provider: any;
+    category: any;
+    user: any;
+    date: string;
+}
 
 interface ExpenseListProps {
     expenses: ExpenseProps[];
+    handleDelete: (expense: ExpenseProps) => void;
 }
 
-interface ExpenseProps {
-    title: string;
-    amount: BigInt;
-    provider: any;
-    categoryType: any;
-    user: any;
-    timeStamp: string;
-}
-interface UserProps {
-    name: string;
-    budget: BigInt;
-    expenses: ExpenseProps[];
-    pots: PotProps[];
-}
 
-interface PotProps {
-    title: string;
-    amount: BigInt;
-    user: any;
-
-}
-
-const ExpenseList = ({expenses}: ExpenseListProps ) => {
+const ExpenseList = ({expenses, handleDelete}: ExpenseListProps ) => {
     if(expenses.length === 0 ) {
         return(<p>loading...</p>)
     }
@@ -36,7 +26,7 @@ const ExpenseList = ({expenses}: ExpenseListProps ) => {
         return (
             <li key={index} className="expense-item">
                 <div className="expenses">
-                    <ExpenseDetail expense={expense} />
+                    <ExpenseDetail expense={expense} handleDelete={handleDelete} />
                 </div>
                 </li>
         )

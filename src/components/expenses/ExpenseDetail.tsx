@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 enum CategoryType {
     Grocieries,
     Utilities,
@@ -10,28 +9,28 @@ enum CategoryType {
     Entertainment,
     Eatingout,
     Transport,
-    Health,  
+    Health,
 }
-
 interface ExpenseProps {
+    id: number;
     title: string;
-    amount: BigInt;
+    amount: number;
     provider: any;
-    categoryType: CategoryType;
+    category: CategoryType;
     user: any;
-    timeStamp: string;
+    date: string;
 }
-
-const ExpenseDetail = ({expense}: any, {handleDelete}: any) => {
-
+interface ExpenseDetailProps {
+    expense: ExpenseProps;
+    handleDelete: (expense: ExpenseProps) => void;
+}
+const ExpenseDetail = ({expense, handleDelete}: ExpenseDetailProps) => {
     const onDelete = () => {
-        handleDelete(expense.id)
+        handleDelete(expense)
     }
-
     const onEdit = ({navigate}: any) => {
         navigate(`/expenses/${expense.id}/edit`)
     }
-
     if(!expense) {
         return (
             <p>
