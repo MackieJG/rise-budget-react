@@ -15,11 +15,12 @@ interface ExpenseProps{
     id: number
     title: string;
     amount: number;
-    provider: any;
+    provider: { id: number, name: string }
     category: CategoryType; 
     user: object | null;
     date: string;
 }
+
 
 
 interface ExpenseFormEditProps {
@@ -54,14 +55,14 @@ const [stateExpense, setStateExpense] = useState<ExpenseProps>(
       };
 
     const handleProvider = function (event: any) {
-        const selectedProvider= providers.find(provider  => provider.id === event.target.value);
+        const selectedProvider= providers.find((provider: any) => provider.id === event.target.value);
         let copiedExpense = {...stateExpense };
         copiedExpense['provider'] = selectedProvider;
         setStateExpense(copiedExpense)
     }
 
     const handleCategory = function (event: any) {
-        const selectedCategory= categories.find(category => category.id === event.target.value);
+        const selectedCategory= categories.find((category: any) => category.id === event.target.value);
         let copiedExpense = {...stateExpense };
         copiedExpense['category'] = selectedCategory;
         setStateExpense(copiedExpense)
