@@ -48,7 +48,7 @@ enum CategoryType {
       const { name, value } = event.target;
       setStateExpense(prevExpense => ({
         ...prevExpense,
-        [name]: value,
+        [name]: name === 'date' ? new Date(value).toISOString() : value,
       }));
     };
   
@@ -81,12 +81,13 @@ enum CategoryType {
       );
     });
   
-    const categoryOptions = Object.keys(CategoryType).map((key: string, index: number) => (
-        <option key={index} value={key}>
-          {CategoryType[key as keyof typeof CategoryType]}
-        </option>
-      ));
-      
+    const categoryOptions = categories.map((category: any, index: number) => {
+        return (
+          <option key={index} value={index}>
+            {category}
+          </option>
+        );
+      });
   
     return (
       <div>

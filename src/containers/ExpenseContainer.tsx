@@ -15,14 +15,6 @@ enum CategoryType {
     HEALTH = "HEALTH",
   }
 
-interface ExpenseProps {
-    title: string;
-    amount: BigInt;
-    provider: any;
-    categoryType: CategoryType;
-    user: any;
-    timeStamp: string;
-}
 
 interface PotProps {
     title: string;
@@ -47,7 +39,6 @@ const ExpenseContainer = () => {
 
         Promise.all([expensePromise, providerPromise])
         .then((data) => { 
-            console.log(data)
             setExpenses(data[0]);
             setProviders(data[1]);
         })
