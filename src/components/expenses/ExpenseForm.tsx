@@ -4,7 +4,7 @@ enum CategoryType {
     GROCERIES = "GROCERIES",
     UTILITIES = "UTILITIES",
     RENT = "RENT",
-    MORTAGE = "MORTAGE",
+    MORGTAGE = "MORTGAGE",
     SUBSCRIPTIONS = "SUBSCRIPTIONS",
     ENTERTAINMENT = "ENTERTAINMENT",
     EATINGOUT = "EATINGOUT",
@@ -22,7 +22,7 @@ enum CategoryType {
     date: string;
   }
   
-  interface Category {
+  interface CategoryProps {
     id: number;
     name: CategoryType;
   }
@@ -30,7 +30,7 @@ enum CategoryType {
   interface ExpenseFormProps {
     onCreate: (expense: any) => void;
     providers: any;
-    categories: CategoryType[];
+    categories: any;
   }
   
   const ExpenseForm = ({ providers, categories, onCreate }: ExpenseFormProps) => {
@@ -87,8 +87,8 @@ enum CategoryType {
             {category}
         </option>
         )
-    })
-      ;
+    });
+      
       
   
     return (
