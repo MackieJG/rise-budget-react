@@ -37,15 +37,23 @@
   }
 }
 
+/* TOP NAV BAR */
+
 .navbar-container {
   display: flex;
   justify-content: space-around;
-  padding-top: 2rem;
+  padding-top: 1rem;
   padding-bottom: 2rem;
+
 }
 
 .left-container {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  gap: 3rem;
   padding-top: 1rem;
+  size: 30%;
 }
 
 .right-container {
@@ -53,16 +61,21 @@
   justify-content: space-between;
   align-content:space-between;
   gap: 3rem;
-  padding-left: 8rem;
+  size: 30%;
 }
 
 .logo {
-  padding-left: 15rem;
-  /* align-self: center; */
+
+  size: 40%;
+  align-content: center;
+  align-self: center;
+  align-items: center;
+  padding-left: 5rem;
 }
 
 
 
+/* BOTTOM NAV BAR */
 
 .info-details {
   margin-bottom: 5rem;
@@ -85,3 +98,7 @@
   padding-left: 5rem;
   padding-right: 5rem;
 }
+
+
+/* FOOTER */
+
