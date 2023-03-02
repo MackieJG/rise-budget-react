@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import {Routes, Route} from 'react-router-dom';
 import ApiRequest from "../helpers/request";
 import ExpenseList from "../components/expenses/ExpenseList";
 import NavBarTop from "../components/navigation/NavBarTop";
@@ -106,8 +107,10 @@ const ExpenseContainer = ({user}: any) => {
     return (
         <>
         <NavBarTop/>
-        <ExpenseList expenses={expenses} handleDelete={handleDelete} />
-        <ExpenseForm providers={providers} categories={categories} onCreate={handlePost}/>
+        <Routes>
+            <Route path="/" element={<ExpenseList expenses={expenses} handleDelete={handleDelete} handlePost={handlePost} />} />
+            <Route path="/add" element={<ExpenseForm providers={providers} categories={categories} onCreate={handlePost} />} />
+        </Routes>
         </>
     )
 }
