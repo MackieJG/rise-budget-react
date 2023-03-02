@@ -8,6 +8,7 @@ import AnalyticsContainer from './AnalyticsContainer';
 import AdviceContainer from './AdviceContainer';
 import ApiRequest from "../helpers/request";
 
+
 const MainContainer = () => {
 
     const [user, setUser] = useState(null);
@@ -28,7 +29,7 @@ const MainContainer = () => {
             <Route path='/' element={ <HomePage /> } />
             <Route path='/users' element={ <UserContainer /> } />
             <Route path='/pots' element={ <PotContainer /> } />
-            <Route path='/expenses' element={ <ExpenseContainer user={user}/> } />
+            <Route path='/expenses/*' element={ <ExpenseContainer user={user}/> } />
             <Route path='/analytics' element={ <AnalyticsContainer /> } />
             <Route path='/advice' element={ <AdviceContainer /> } />
             </Routes>
