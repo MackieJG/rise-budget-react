@@ -6,7 +6,7 @@ import ExpenseList from "../components/expenses/ExpenseList";
 import NavBarTop from "../components/navigation/NavBarTop";
 import ExpenseForm from "../components/expenses/ExpenseForm";
 import Footer from "../components/footer/Footer";
-// import ExpenseFormEdit from "../components/expenses/ExpenseFormEdit"
+import ExpenseFormEdit from "../components/expenses/ExpenseFormEdit"
 
 
 enum CategoryType {
