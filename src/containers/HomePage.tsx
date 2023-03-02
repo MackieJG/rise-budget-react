@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBarBottom from '../components/navigation/NavBarBottom';
 import NavBarTop from '../components/navigation/NavBarTop';
+import Footer from '../components/footer/Footer';
 
 
 const HomePage = () => {
@@ -19,6 +20,7 @@ const HomePage = () => {
                 </div>
             </div>
             <NavBarBottom/>
+            <Footer/>
         </div>
     )
 }

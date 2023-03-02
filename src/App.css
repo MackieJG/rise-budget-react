@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -102,3 +103,22 @@
 
 /* FOOTER */
 
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  position:sticky;
+  margin-bottom: 0;
+  padding-top: 3rem;
+}
+
+/* .footer-left-container {
+  display: flex;
+  flex-direction: column;
+} */
+
+.footer-right-container {
+  display: flex;
+  justify-content: space-between;
+  align-content: end;
+  gap: 1rem;
+}

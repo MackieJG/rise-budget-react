@@ -5,7 +5,8 @@ import ApiRequest from "../helpers/request";
 import ExpenseList from "../components/expenses/ExpenseList";
 import NavBarTop from "../components/navigation/NavBarTop";
 import ExpenseForm from "../components/expenses/ExpenseForm";
-import ExpenseFormEdit from "../components/expenses/ExpenseFormEdit"
+import Footer from "../components/footer/Footer";
+// import ExpenseFormEdit from "../components/expenses/ExpenseFormEdit"
 
 
 enum CategoryType {
@@ -91,8 +92,6 @@ const ExpenseContainer = ({ user }: any) => {
         })
     }
 
-
-
     const handlePost = (expense: any) => {
         const request = new ApiRequest();
         expense["user"] = user
@@ -128,6 +127,7 @@ const ExpenseContainer = ({ user }: any) => {
                 <Route path="/add" element={<ExpenseForm providers={providers} categories={categories} onCreate={handlePost} onCreateProvider={handlePostNoProvider} />} />
                 <Route path="/edit"element={<ExpenseFormEditWrapper  />}/>
             </Routes>
+            <Footer/>
         </>
     )
 
