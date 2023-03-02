@@ -145,7 +145,12 @@ enum CategoryType {
           <input type="date" name="date" placeholder="date" onChange={handleChange} value={stateExpense.date} />
           <button type="submit">Save</button>
         </form>
+        {isNewProvider ?  <div>
+            <p>Add new a provider here.</p>
+          </div> :null}
+       
       </div>
+      
     );
   };
   
