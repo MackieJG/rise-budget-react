@@ -5,7 +5,8 @@ import ApiRequest from "../helpers/request";
 import ExpenseList from "../components/expenses/ExpenseList";
 import NavBarTop from "../components/navigation/NavBarTop";
 import ExpenseForm from "../components/expenses/ExpenseForm";
-import ExpenseFormEdit from "../components/expenses/ExpenseFormEdit"
+import Footer from "../components/footer/Footer";
+// import ExpenseFormEdit from "../components/expenses/ExpenseFormEdit"
 
 
 enum CategoryType {
@@ -69,7 +70,7 @@ const ExpenseContainer = ({user}: any) => {
         if (!foundExpense) {
           return <div>Loading...</div>;
         }
-        return <ExpenseFormEdit providers={providers} categories={categories} user={user} expense={foundExpense} onEdit={handleEdit} />;
+        // return <ExpenseFormEdit providers={providers} categories={categories} user={user} expense={foundExpense} onEdit={handleEdit} />;
       }
       
 
@@ -93,12 +94,9 @@ const ExpenseContainer = ({user}: any) => {
 
   
 
-    const handlePost = (expense: any, provider: any) => {
+    const handlePost = (expense: any) => {
         const request = new ApiRequest();
         expense["user"] = user
-        request.post('/api/providers', provider).then(() => {
-            window.location.href = '/expense'
-        })
         request.post('/api/expenses', expense).then(() => {
           window.location.href = '/expenses'
         })
@@ -111,6 +109,7 @@ const ExpenseContainer = ({user}: any) => {
             <Route path="/" element={<ExpenseList expenses={expenses} handleDelete={handleDelete} handlePost={handlePost} />} />
             <Route path="/add" element={<ExpenseForm providers={providers} categories={categories} onCreate={handlePost} />} />
         </Routes>
+        <Footer/>
         </>
     )
 }
