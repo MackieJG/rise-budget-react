@@ -16,7 +16,7 @@ enum CategoryType {
     id: number;
     title: string;
     amount: number;
-    provider: object | null;
+    providerId: number | null;    
     category: CategoryType | null;
     user: any;
     date: string;
@@ -26,24 +26,33 @@ enum CategoryType {
     id: number;
     name: CategoryType;
   }
+  interface ProviderProps {
+    id: number;
+    name: string;
+
+  }
   
   interface ExpenseFormProps {
     onCreate: (expense: any) => void;
+    onCreateProvider: (expense: any, provider: any) => void;
     providers: any;
     categories: any;
   }
   
-  const ExpenseForm = ({ providers, categories, onCreate }: ExpenseFormProps) => {
+  const ExpenseForm = ({ providers, categories, onCreate, onCreateProvider }: ExpenseFormProps) => {
     const [stateExpense, setStateExpense] = useState<ExpenseProps>({
       id: 0,
       title: '',
       amount: 0,
-      provider: null,
+      providerId: null,
       category: null,
       user: null,
       date: '',
     });
-  
+
+   
+    const [isNewProvider, setIsNewProvider] = useState(false);
+
     const handleChange = function (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
       const { name, value } = event.target;
       setStateExpense(prevExpense => ({
@@ -54,10 +63,15 @@ enum CategoryType {
   
     const handleProvider = function (event: any) {
       const index = parseInt(event?.target.value);
-      const selectedProvider = providers[index];
-      let copiedExpense = { ...stateExpense };
-      copiedExpense['provider'] = selectedProvider;
-      setStateExpense(copiedExpense);
+      if (index === -1) {
+        setIsNewProvider(true);
+      } else {
+        setIsNewProvider(false);
+        const selectedProvider = providers[index];
+        let copiedExpense = { ...stateExpense };
+        copiedExpense['providerId'] = selectedProvider;
+        setStateExpense(copiedExpense);
+      }
     };
   
    const handleCategory = function (event: any) {
@@ -70,16 +84,24 @@ enum CategoryType {
   
     const handleSubmit = function (event: any) {
       event.preventDefault();
-      onCreate(stateExpense);
+      if (isNewProvider) {
+        onCreateProvider(stateExpense, stateExpense.providerId);
+      } else {
+        onCreate(stateExpense);
+      }
     };
   
-    const providerOptions = providers.map((provider: any, index: number) => {
-      return (
+    const providerOptions = [
+      <option key={-1} value={-1}>
+        Create a new provider
+      </option>,
+      ...providers.map((provider: ProviderProps, index: number) => (
         <option key={index} value={index}>
           {provider.name}
         </option>
-      );
-    });
+      )),
+    ];
+    
   
     const categoryOptions = categories.map((category: any, index: number) => {
         return (

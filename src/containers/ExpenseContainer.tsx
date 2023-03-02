@@ -93,26 +93,42 @@ const ExpenseContainer = ({user}: any) => {
 
   
 
-    const handlePost = (expense: any, provider: any) => {
+    const handlePost = (expense: any) => {
         const request = new ApiRequest();
         expense["user"] = user
-        request.post('/api/providers', provider).then(() => {
-            window.location.href = '/expense'
-        })
         request.post('/api/expenses', expense).then(() => {
           window.location.href = '/expenses'
         })
+    }
+    const handlePostNoProvider = (expense: any, provider: any) => {
+        if(!provider){
+            const request = new ApiRequest();
+            expense["user"] = user
+            request.post('/api/expenses', expense).then(() => {
+                window.location.href = '/expenses'
+            })
+            request.post('/api/providers', provider).then(() => {
+                window.location.href = '/expenses'
+            })
+        } else {
+            const request = new ApiRequest();
+            expense["user"] = user
+            request.post('/api/expenses', expense).then(() => {
+                window.location.href = '/expenses'
+        })
+       
+
     }
     
     return (
         <>
         <NavBarTop/>
         <Routes>
-            <Route path="/" element={<ExpenseList expenses={expenses} handleDelete={handleDelete} handlePost={handlePost} />} />
-            <Route path="/add" element={<ExpenseForm providers={providers} categories={categories} onCreate={handlePost} />} />
+            <Route path="/" element={<ExpenseList expenses={expenses} handleDelete={handleDelete} />} />
+            <Route path="/add" element={<ExpenseForm providers={providers} categories={categories} onCreate={handlePost} onCreateProvider={handlePostNoProvider}/>} />
         </Routes>
         </>
     )
 }
-
-export default ExpenseContainer; 
+}
+export default ExpenseContainer;

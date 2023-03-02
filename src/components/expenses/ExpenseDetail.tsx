@@ -24,10 +24,10 @@ interface ExpenseProps {
 interface ExpenseDetailProps {
     expense: ExpenseProps;
     handleDelete: (expense: ExpenseProps) => void;
-    handlePost: (expense: ExpenseProps) => void;
+
 }
 
-const ExpenseDetail = ({expense, handleDelete, handlePost}: ExpenseDetailProps) => {
+const ExpenseDetail = ({expense, handleDelete}: ExpenseDetailProps) => {
     const onDelete = () => {
         handleDelete(expense)
     }
