@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import ApiRequest from "../helpers/request";
 import ExpenseList from "../components/expenses/ExpenseList";
 import NavBarTop from "../components/navigation/NavBarTop";
 import ExpenseForm from "../components/expenses/ExpenseForm";
+import ExpenseFormEdit from "../components/expenses/ExpenseFormEdit"
 
 
 enum CategoryType {
     GROCERIES = "GROCERIES",
     UTILITIES = "UTILITIES",
     RENT = "RENT",
-    MORTAGE = "MORTAGE",
+    MORTGAGE = "MORTGAGE",
     SUBSCRIPTIONS = "SUBSCRIPTIONS",
     ENTERTAINMENT = "ENTERTAINMENT",
     EATINGOUT = "EATINGOUT",
@@ -23,6 +25,15 @@ interface PotProps {
     amount: BigInt;
     user: any;
 
+}
+interface ExpenseProps {
+    id: any
+    title: string;
+    amount: number;
+    provider: any;
+    category: CategoryType;
+    user: object | null;
+    date: string
 }
 
 const ExpenseContainer = ({user}: any) => {
@@ -46,6 +57,21 @@ const ExpenseContainer = ({user}: any) => {
         })
     }, [])
 
+    const findExpenseById = (id: any) => {
+        return expenses.find((expense: ExpenseProps) => {
+          return expense.id === parseInt(id);
+        })
+      }
+      const ExpenseFormEditWrapper = () => {
+        const { id } = useParams();
+        let foundExpense = findExpenseById(id);
+        if (!foundExpense) {
+          return <div>Loading...</div>;
+        }
+        return <ExpenseFormEdit providers={providers} categories={categories} user={user} expense={foundExpense} onEdit={handleEdit} />;
+      }
+      
+
     const handleDelete = (expense: any) => {
         const request = new ApiRequest();
         const url = '/api/expenses/' + expense.id;
@@ -55,13 +81,14 @@ const ExpenseContainer = ({user}: any) => {
     }
 
 
-    // const handleEdit = (expense: any) => {
-    //     const request = new ApiRequest();
-    //     const url = '/api/expenses' + expense.id;
-    //     request.post(url).then(() => {
-    //         window.location.href = '/api/expenses'
-    //     })
-    // }
+    const handleEdit = (expense: any) => {
+        const request = new ApiRequest();
+        const url = '/api/expenses' + expense.id;
+        expense["user"] = user
+        request.put(url, expense).then(() => {
+            window.location.href = '/expenses'
+        })
+    }
 
   
 
