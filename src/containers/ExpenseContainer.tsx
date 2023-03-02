@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import ApiRequest from "../helpers/request";
 import ExpenseList from "../components/expenses/ExpenseList";
+import NavBarTop from "../components/navigation/NavBarTop";
 import ExpenseForm from "../components/expenses/ExpenseForm";
+
 
 enum CategoryType {
     GROCERIES = "GROCERIES",
@@ -23,7 +25,7 @@ interface PotProps {
 
 }
 
-const ExpenseContainer = () => {
+const ExpenseContainer = ({user}: any) => {
 
     const [expenses, setExpenses] = useState([]);
     const [providers, setProviders] = useState([]);
@@ -52,26 +54,31 @@ const ExpenseContainer = () => {
         })
     }
 
-    const handleEdit = (expense: any) => {
-        const request = new ApiRequest();
-        const url = '/api/expenses' + expense.id;
-        request.put(url, expense).then(() => {
-            window.location.href = '/api/expenses'
-        })
-    }
+
+    // const handleEdit = (expense: any) => {
+    //     const request = new ApiRequest();
+    //     const url = '/api/expenses' + expense.id;
+    //     request.post(url).then(() => {
+    //         window.location.href = '/api/expenses'
+    //     })
+    // }
+
+  
 
     const handlePost = (expense: any) => {
         const request = new ApiRequest();
-    
+        expense["user"] = user
         request.post('/api/expenses', expense).then(() => {
-          window.location.href = '/api/expenses'
+          window.location.href = '/expenses'
         })
     }
 
     
     return (
         <>
-                <ExpenseList  expenses={expenses} handleDelete={handleDelete}/>
+
+        <NavBarTop/>
+        <ExpenseList  expenses={expenses} handleDelete={handleDelete} />
         <ExpenseForm providers={providers} categories={categories} onCreate={handlePost}/>
 
         </>

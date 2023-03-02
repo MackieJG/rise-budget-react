@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import NavBarTop from "../components/navigation/NavBarTop";
 import UserList from "../components/users/UserList";
 import ApiRequest from '../helpers/request';
 
@@ -52,6 +53,7 @@ const UserContainer = () => {
 
     return (
         <>
+        <NavBarTop/>
         <UserList users={users} handleDelete={handleDelete}/>
         </>
     )

@@ -48,7 +48,7 @@ enum CategoryType {
       const { name, value } = event.target;
       setStateExpense(prevExpense => ({
         ...prevExpense,
-        [name]: name === 'date' ? new Date(value).toISOString() : value,
+        [name]: value,
       }));
     };
   
@@ -83,11 +83,13 @@ enum CategoryType {
   
     const categoryOptions = categories.map((category: any, index: number) => {
         return (
-          <option key={index} value={index}>
+        <option key={index} value={index}>
             {category}
-          </option>
-        );
-      });
+        </option>
+        )
+    })
+      ;
+      
   
     return (
       <div>
@@ -118,7 +120,7 @@ enum CategoryType {
             </option>
             {categoryOptions}
           </select>
-          <input type="date" placeholder="date" onChange={handleChange} value={stateExpense.date} />
+          <input type="date" name="date" placeholder="date" onChange={handleChange} value={stateExpense.date} />
           <button type="submit">Save</button>
         </form>
       </div>

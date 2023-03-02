@@ -36,3 +36,52 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar-container {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.left-container {
+  padding-top: 1rem;
+}
+
+.right-container {
+  display: flex;
+  justify-content: space-between;
+  align-content:space-between;
+  gap: 3rem;
+  padding-left: 8rem;
+}
+
+.logo {
+  padding-left: 15rem;
+  /* align-self: center; */
+}
+
+
+
+
+.info-details {
+  margin-bottom: 5rem;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.info {
+  padding: 5rem;
+  background-color: #FFBE05;
+}
+
+.chart {
+  background-color: lightgray;
+  margin: 5rem;
+  margin-top: 1rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
