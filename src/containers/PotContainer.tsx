@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PotList from "../components/pots/PotList";
 import ApiRequest from "../helpers/request";
+import NavBarTop from "../components/navigation/NavBarTop";
 
 
 interface PotProps {
@@ -53,6 +54,7 @@ const PotContainer = () => {
 
     return (
         <>
+        <NavBarTop/>
         <PotList pots={pots} onDelete={handleDelete} />
         </>
     )
