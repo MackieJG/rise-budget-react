@@ -81,11 +81,14 @@ enum CategoryType {
       );
     });
   
-    const categoryOptions = Object.keys(CategoryType).map((key: string, index: number) => (
-        <option key={index} value={key}>
-          {CategoryType[key as keyof typeof CategoryType]}
+    const categoryOptions = categories.map((category: any, index: number) => {
+        return (
+        <option key={index} value={index}>
+            {category}
         </option>
-      ));
+        )
+    })
+      ;
       
   
     return (
@@ -117,7 +120,7 @@ enum CategoryType {
             </option>
             {categoryOptions}
           </select>
-          <input type="date" placeholder="date" onChange={handleChange} value={stateExpense.date} />
+          <input type="date" name="date" placeholder="date" onChange={handleChange} value={stateExpense.date} />
           <button type="submit">Save</button>
         </form>
       </div>

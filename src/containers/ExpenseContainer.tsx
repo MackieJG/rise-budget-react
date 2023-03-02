@@ -17,14 +17,6 @@ enum CategoryType {
     HEALTH = "HEALTH",
   }
 
-interface ExpenseProps {
-    title: string;
-    amount: BigInt;
-    provider: any;
-    categoryType: CategoryType;
-    user: any;
-    timeStamp: string;
-}
 
 interface PotProps {
     title: string;
@@ -33,7 +25,7 @@ interface PotProps {
 
 }
 
-const ExpenseContainer = () => {
+const ExpenseContainer = ({user}: any) => {
 
     const [expenses, setExpenses] = useState([]);
     const [providers, setProviders] = useState([]);
@@ -49,7 +41,6 @@ const ExpenseContainer = () => {
 
         Promise.all([expensePromise, providerPromise])
         .then((data) => { 
-            console.log(data)
             setExpenses(data[0]);
             setProviders(data[1]);
         })
@@ -76,9 +67,9 @@ const ExpenseContainer = () => {
 
     const handlePost = (expense: any) => {
         const request = new ApiRequest();
-    
+        expense["user"] = user
         request.post('/api/expenses', expense).then(() => {
-          window.location.href = '/api/expenses'
+          window.location.href = '/expenses'
         })
     }
 
