@@ -95,11 +95,16 @@ const ExpenseContainer = ({ user }: any) => {
         if (provider) {
             const request = new ApiRequest();
             expense["user"] = user
-            request.post('/api/expenses', expense).then(() => {
+            const payload: any = {name: provider}
+            request.post('/api/providers', payload).then((res) => res.json())
+            .then((data) => {
+                expense["provider"] = data;
+                return request.post('/api/expenses', expense)
+            }) 
+            .then(() => {
                 window.location.href = '/expenses'
             })
-            request.post('/api/providers', provider).then(() => {
-            })
+            
         } else {
             const request = new ApiRequest();
             expense["user"] = user

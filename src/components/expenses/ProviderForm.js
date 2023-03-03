@@ -2,22 +2,15 @@ import React, { useState } from 'react';
 
 
 
-const ProviderForm = ({ onCreateProvider }) => {
-  const [providerName, setProviderName] = useState('');
-
+const ProviderForm = ({ onChangeProvider, providerName }) => {
   const handleChange = function (event) {
-    setProviderName(event.target.value);
+    onChangeProvider(event.target.value);
   };
 
-  const handleSubmit = function (event) {
-    event.preventDefault();
-    onCreateProvider(providerName);
-    setProviderName('');
-  };
-
+ 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form>
         <input
           type="text"
           placeholder="Provider Name"
@@ -25,7 +18,6 @@ const ProviderForm = ({ onCreateProvider }) => {
           onChange={handleChange}
           value={providerName}
         />
-        <button type="submit">Create</button>
       </form>
     </div>
   );

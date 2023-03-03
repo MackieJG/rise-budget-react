@@ -55,6 +55,7 @@ enum CategoryType {
 
    
     const [isNewProvider, setIsNewProvider] = useState(false);
+    const [newProviderName, setNewProviderName]= useState("");
 
     const handleChange = function (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
       const { name, value } = event.target;
@@ -88,7 +89,7 @@ enum CategoryType {
     const handleSubmit = function (event: any) {
       event.preventDefault();
       if (isNewProvider) {
-        onCreateProvider(stateExpense, stateExpense.provider);
+        onCreateProvider(stateExpense, newProviderName);
       } else {
         onCreate(stateExpense);
       }
@@ -149,7 +150,7 @@ enum CategoryType {
           <button type="submit">Save</button>
         </form>
         {isNewProvider ?  <div>
-            <ProviderForm onCreateProvider={onCreateProvider}/>
+            <ProviderForm onChangeProvider={setNewProviderName} providerName={newProviderName}/>
           </div> :null}
        
       </div>
