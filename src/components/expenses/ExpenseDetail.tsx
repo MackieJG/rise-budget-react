@@ -25,6 +25,7 @@ interface ExpenseProps {
 interface ExpenseDetailProps {
     expense: ExpenseProps;
     handleDelete: (expense: ExpenseProps) => void;
+    handleEdit: (expense: ExpenseProps) => void;
 }
 
 const ExpenseDetail = ({expense, handleDelete}: ExpenseDetailProps) => {
