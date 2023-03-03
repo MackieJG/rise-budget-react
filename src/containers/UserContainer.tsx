@@ -63,7 +63,6 @@ const UserContainer = ({user}: any) => {
     const handleEdit = (user: any) => {
         const request = new ApiRequest();
         const url = '/api/users/' + user.id;
-        user["user"] = user
         request.put(url, user).then(() => {
             window.location.href = '/users';
         })
