@@ -5,21 +5,20 @@ interface PotProps {
     id: number;
     title: string;
     amount: number;
-    goal_date: string;
     user: any;
 }
 
 interface PotFormProps {
     onCreate: (pot: any) => void;
+    user: any;
 }
 
-const PotForm = ({ onCreate }: PotFormProps) => {
+const PotForm = ({ user, onCreate }: PotFormProps) => {
     const [statePot, setStatePot] = useState<PotProps>({
       id: 0,
       title: '',
       amount: 0,
-      goal_date: '',
-      user: null,
+      user: user,
     });
 
    
@@ -55,7 +54,6 @@ const PotForm = ({ onCreate }: PotFormProps) => {
               onChange={handleChange}
               value={statePot.amount}
             />
-            <input type="date" name="goal_date" placeholder="goal_date" onChange={handleChange} value={statePot.goal_date} />
             <button type="submit">Save</button>
           </form>    
         </div>

@@ -22,16 +22,15 @@ interface ExpenseProps{
 }
 
 
-
 interface ExpenseFormEditProps {
     expense: ExpenseProps
-    onEdit: (expense: any) => void;
     user: any;
     providers: any;
     categories: any;
+    onEdit: (expense: any) => void;
   }
 
-const ExpenseFormEdit = ({expense, user, providers, categories, onEdit }: ExpenseFormEditProps) => {
+const ExpenseFormEdit = ({expense, providers, categories, onEdit }: ExpenseFormEditProps) => {
 
 const [stateExpense, setStateExpense] = useState<ExpenseProps>(
     {

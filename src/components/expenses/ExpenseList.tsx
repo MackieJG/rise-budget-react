@@ -20,6 +20,7 @@ interface ExpenseListProps {
 
 
 const ExpenseList = ({expenses, handleDelete, handleEdit}: ExpenseListProps ) => {
+    
     if(expenses.length === 0 ) {
         return(<p>loading...</p>)
     }
@@ -28,7 +29,7 @@ const ExpenseList = ({expenses, handleDelete, handleEdit}: ExpenseListProps ) =>
         return (
             <li key={index} className="expense-item">
                 <div className="expenses">
-                    <ExpenseDetail expense={expense} handleDelete={handleDelete} />
+                    <ExpenseDetail expense={expense} handleDelete={handleDelete} handleEdit={handleEdit} />
                 </div>
             </li>
         )

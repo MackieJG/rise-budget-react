@@ -4,14 +4,14 @@ interface PotProps {
     id: number;
     title: string;
     amount: number;
-    goal_date: string;
+    user: object | null;
 }
 
 interface PotFormEditProps {
     pot: PotProps
-    onEdit: (pot: any) => void;
     amount: number;
-    goal_date: string;
+    user: any;
+    onEdit: (pot: any) => void;
 }
 
 const PotFormEdit = ({pot, onEdit }: PotFormEditProps) => {
@@ -21,7 +21,7 @@ const PotFormEdit = ({pot, onEdit }: PotFormEditProps) => {
             id: pot.id,
             title: pot.title,
             amount: pot.amount,
-            goal_date: pot.goal_date
+            user: pot.user
         }
     );
 
@@ -55,7 +55,6 @@ const PotFormEdit = ({pot, onEdit }: PotFormEditProps) => {
               onChange={handleChange}
               value={statePot.amount}
             />
-            <input type="date" name="goal_date" placeholder="goal_date" onChange={handleChange} value={statePot.goal_date} />
             <button type="submit">Save</button>
           </form>
         </div>

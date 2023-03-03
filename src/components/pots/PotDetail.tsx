@@ -1,10 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 interface PotProps {
+    id: number;
     title: string;
     amount: number;
-    user: UserProps;
+    user: any;
 }
 
 interface UserProps{
@@ -35,28 +36,25 @@ enum CategoryType {
     Health,  
 }
 
-interface PotProps {
-    id: number;
-    title: string;
-    amount: number;
-    goal_date: string;
-}
-
 interface PotDetailProps {
     pot: PotProps;
     handleDelete: (pot: PotProps) => void;
-
+    handleEdit: (pot: PotProps) => void;
 }
 
 const PotDetail = ({pot, handleDelete}: PotDetailProps) => {
+
+    const navigate = useNavigate()
 
     const onDelete = () => {
         handleDelete(pot)
     }
     
-    const onEdit = ({navigate}: any) => {
+    const onEdit = () => {
         navigate(`/pots/${pot.id}/edit`)
     }
+
+
 
     if(!pot) {
         return (
@@ -71,11 +69,10 @@ const PotDetail = ({pot, handleDelete}: PotDetailProps) => {
         <div className="pot-detail">
             <p>{pot.title}</p>
             <p>{pot.amount}</p>
-            <p>{pot.goal_date}</p>
          </div>
         <div className="buttons">
             <button onClick={onDelete}>Delete</button>
-            <button><Link id='pot-form-edit' to="/pots/edit"></Link>Edit Pot</button>
+            <button onClick={onEdit}>Edit Pot</button>
         </div>
         </>
     )
