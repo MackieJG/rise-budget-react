@@ -1,4 +1,5 @@
 import React from 'react'
+import {useNavigate} from 'react-router-dom';
 
 interface PotProps {
     id: number;
@@ -38,17 +39,22 @@ enum CategoryType {
 interface PotDetailProps {
     pot: PotProps;
     handleDelete: (pot: PotProps) => void;
+    handleEdit: (pot: PotProps) => void;
 }
 
 const PotDetail = ({pot, handleDelete}: PotDetailProps) => {
+
+    const navigate = useNavigate()
 
     const onDelete = () => {
         handleDelete(pot)
     }
     
-    const onEdit = ({navigate}: any) => {
+    const onEdit = () => {
         navigate(`/pots/${pot.id}/edit`)
     }
+
+
 
     if(!pot) {
         return (

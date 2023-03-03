@@ -1,5 +1,6 @@
 import React from 'react'
-
+import {useNavigate} from 'react-router-dom';
+ 
 enum CategoryType {
     GROCERIES = "GROCERIES",
     UTILITIES = "UTILITIES",
@@ -28,11 +29,13 @@ interface ExpenseDetailProps {
 
 const ExpenseDetail = ({expense, handleDelete}: ExpenseDetailProps) => {
     
+    const navigate = useNavigate()
+
     const onDelete = () => {
         handleDelete(expense)
     }
     
-    const onEdit = ({navigate}: any) => {
+    const onEdit = () => {
         navigate(`/expenses/${expense.id}/edit`)
     }
     
