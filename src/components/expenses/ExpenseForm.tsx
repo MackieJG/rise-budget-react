@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ProviderForm from "./ProviderForm";
 
 enum CategoryType {
     GROCERIES = "GROCERIES",
@@ -148,7 +149,7 @@ enum CategoryType {
           <button type="submit">Save</button>
         </form>
         {isNewProvider ?  <div>
-            <p>Add new a provider here.</p>
+            <ProviderForm onCreateProvider={onCreateProvider}/>
           </div> :null}
        
       </div>
