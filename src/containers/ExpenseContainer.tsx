@@ -96,12 +96,17 @@ const ExpenseContainer = ({ user }: any) => {
         if (provider) {
             const request = new ApiRequest();
             expense["user"] = user
-            request.post('/api/expenses/', expense).then(() => {
+
+            const payload: any = {name: provider}
+            request.post('/api/providers', payload).then((res) => res.json())
+            .then((data) => {
+                expense["provider"] = data;
+                return request.post('/api/expenses', expense)
+            }) 
+            .then(() => {
                 window.location.href = '/expenses'
             })
-            request.post('/api/providers', provider).then(() => {
-                window.location.href = '/expenses'
-            })
+            
         } else {
             const request = new ApiRequest();
             expense["user"] = user
@@ -116,9 +121,9 @@ const ExpenseContainer = ({ user }: any) => {
         <>
             <NavBarTop />
             <Routes>
-                <Route path="/" element={<ExpenseList expenses={expenses} handleDelete={handleDelete} />} />
+                <Route path="/" element={<ExpenseList expenses={expenses} handleDelete={handleDelete} handleEdit={handleEdit} />} />
                 <Route path="/add" element={<ExpenseForm user={user} providers={providers} categories={categories} onCreate={handlePost} onCreateProvider={handlePostNoProvider} />} />
-                <Route path="/edit"element={<ExpenseFormEditWrapper  />}/>
+                <Route path="/:id/edit"element={<ExpenseFormEditWrapper  />}/>
             </Routes>
             <Footer/>
         </>

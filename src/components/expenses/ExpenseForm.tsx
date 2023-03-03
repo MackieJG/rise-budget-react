@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ProviderForm from "./ProviderForm";
 
 enum CategoryType {
     GROCERIES = "GROCERIES",
@@ -53,6 +54,7 @@ enum CategoryType {
 
    
     const [isNewProvider, setIsNewProvider] = useState(false);
+    const [newProviderName, setNewProviderName]= useState("");
 
     const handleChange = function (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
       const { name, value } = event.target;
@@ -86,7 +88,7 @@ enum CategoryType {
     const handleSubmit = function (event: any) {
       event.preventDefault();
       if (isNewProvider) {
-        onCreateProvider(stateExpense, stateExpense.provider);
+        onCreateProvider(stateExpense, newProviderName);
       } else {
         onCreate(stateExpense);
       }
@@ -147,7 +149,7 @@ enum CategoryType {
           <button type="submit">Save</button>
         </form>
         {isNewProvider ?  <div>
-            <p>Add new a provider here.</p>
+            <ProviderForm onChangeProvider={setNewProviderName} providerName={newProviderName}/>
           </div> :null}
        
       </div>

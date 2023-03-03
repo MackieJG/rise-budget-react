@@ -9,12 +9,12 @@ interface PotProps {
 
 interface PotFormEditProps {
     pot: PotProps
-    onEdit: (pot: any) => void;
     amount: number;
     user: any;
+    onEdit: (pot: any) => void;
 }
 
-const PotFormEdit = ({pot, user, onEdit }: PotFormEditProps) => {
+const PotFormEdit = ({pot, onEdit }: PotFormEditProps) => {
 
     const [statePot, setStatePot] = useState<PotProps>(
         {

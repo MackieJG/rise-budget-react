@@ -11,10 +11,11 @@ interface PotProps {
 interface PotListProps {
     pots: PotProps[];
     handleDelete: (pot: PotProps) => void;
+    handleEdit: (pot: PotProps) => void;
 }
 
 
-const PotList = ({pots, handleDelete}: PotListProps) => {
+const PotList = ({pots, handleDelete, handleEdit}: PotListProps) => {
 
     if(pots.length === 0 ) {
         return(<p>You have no pots! Lets get you started!</p>)
@@ -24,7 +25,7 @@ const PotList = ({pots, handleDelete}: PotListProps) => {
         return (
             <li key={index} className="pot-item">
                 <div className ="pots">
-                    <PotDetail pot={pot} handleDelete={handleDelete} />
+                    <PotDetail pot={pot} handleDelete={handleDelete} handleEdit={handleEdit}/>
                 </div>
             </li>
         )
