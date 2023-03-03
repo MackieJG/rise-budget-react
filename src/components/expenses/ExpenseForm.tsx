@@ -16,7 +16,7 @@ enum CategoryType {
     id: number;
     title: string;
     amount: number;
-    providerId: number | null;    
+    provider: number | null;    
     category: CategoryType | null;
     user: any;
     date: string;
@@ -35,18 +35,20 @@ enum CategoryType {
   interface ExpenseFormProps {
     onCreate: (expense: any) => void;
     onCreateProvider: (expense: any, provider: any) => void;
+    user: any;
     providers: any;
     categories: any;
+    
   }
   
-  const ExpenseForm = ({ providers, categories, onCreate, onCreateProvider }: ExpenseFormProps) => {
+  const ExpenseForm = ({ user, providers, categories, onCreate, onCreateProvider }: ExpenseFormProps) => {
     const [stateExpense, setStateExpense] = useState<ExpenseProps>({
       id: 0,
       title: '',
       amount: 0,
-      providerId: null,
+      provider: null,
       category: null,
-      user: null,
+      user: user,
       date: '',
     });
 
@@ -69,7 +71,7 @@ enum CategoryType {
         setIsNewProvider(false);
         const selectedProvider = providers[index];
         let copiedExpense = { ...stateExpense };
-        copiedExpense['providerId'] = selectedProvider;
+        copiedExpense['provider'] = selectedProvider;
         setStateExpense(copiedExpense);
       }
     };
@@ -85,7 +87,7 @@ enum CategoryType {
     const handleSubmit = function (event: any) {
       event.preventDefault();
       if (isNewProvider) {
-        onCreateProvider(stateExpense, stateExpense.providerId);
+        onCreateProvider(stateExpense, stateExpense.provider);
       } else {
         onCreate(stateExpense);
       }
