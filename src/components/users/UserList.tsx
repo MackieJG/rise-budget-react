@@ -18,10 +18,10 @@ interface UserProps {
 }
 
 interface PotProps {
+    id: number;
     title: string;
-    amount: BigInt;
-    user: any;
-
+    amount: number;
+    goal_date: string;
 }
 
 interface UserListProps {

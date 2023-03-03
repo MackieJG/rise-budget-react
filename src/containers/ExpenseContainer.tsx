@@ -20,14 +20,6 @@ enum CategoryType {
     TRANSPORT = "TRANSPORT",
     HEALTH = "HEALTH",
 }
-
-
-interface PotProps {
-    title: string;
-    amount: BigInt;
-    user: any;
-
-}
 interface ExpenseProps {
     id: any
     title: string;
@@ -123,7 +115,7 @@ const ExpenseContainer = ({ user }: any) => {
         <>
             <NavBarTop />
             <Routes>
-                <Route path="/" element={<ExpenseList expenses={expenses} handleDelete={handleDelete} />} />
+                <Route path="/" element={<ExpenseList expenses={expenses} handleDelete={handleDelete} handleEdit={handleEdit}/>} />
                 <Route path="/add" element={<ExpenseForm providers={providers} categories={categories} onCreate={handlePost} onCreateProvider={handlePostNoProvider} />} />
                 <Route path="/edit"element={<ExpenseFormEditWrapper  />}/>
             </Routes>

@@ -1,19 +1,22 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import PotDetail from "./PotDetail";
 
-interface PotListProps {
-    pots: PotProps[];
-    onDelete: (id: any) => void;
-}
-
 interface PotProps {
+    id: number;
     title: string;
-    amount: BigInt;
+    amount: number;
+    goal_date: string;
     user: any;
 }
+interface PotListProps {
+    pots: PotProps[];
+    handleDelete: (id: any) => void;
+}
 
-const PotList = ({pots, onDelete}: PotListProps) => {
-    console.log(pots)
+
+const PotList = ({pots, handleDelete}: PotListProps) => {
+
     if(pots.length === 0 ) {
         return(<p>You have no pots! Lets get you started!</p>)
     }
@@ -22,7 +25,7 @@ const PotList = ({pots, onDelete}: PotListProps) => {
         return (
             <li key={index} className="pot-item">
                 <div className ="pots">
-                    <PotDetail pot={pot} onDelete={onDelete} />
+                    <PotDetail pot={pot} handleDelete={handleDelete} />
                 </div>
             </li>
         )
@@ -30,6 +33,8 @@ const PotList = ({pots, onDelete}: PotListProps) => {
 
     return (
         <>
+        <p><Link id='pot-form' to="/pots/add">Create New Pot</Link></p>
+
         <ul className = "pot-list">
             {potElements}
         </ul>

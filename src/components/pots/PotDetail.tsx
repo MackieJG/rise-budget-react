@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 interface PotProps {
     title: string;
@@ -34,22 +35,49 @@ enum CategoryType {
     Health,  
 }
 
-const PotDetail = ({pot}: any) => {
+interface PotProps {
+    id: number;
+    title: string;
+    amount: number;
+    goal_date: string;
+}
+
+interface PotDetailProps {
+    pot: PotProps;
+    handleDelete: (pot: PotProps) => void;
+
+}
+
+const PotDetail = ({pot, handleDelete}: PotDetailProps) => {
+
+    const onDelete = () => {
+        handleDelete(pot)
+    }
+    
+    const onEdit = ({navigate}: any) => {
+        navigate(`/pots/${pot.id}/edit`)
+    }
 
     if(!pot) {
         return (
             <p>
-                Hummer
+                loading...
             </p>
         )
     }
+
     return (
+        <>
         <div className="pot-detail">
             <p>{pot.title}</p>
             <p>{pot.amount}</p>
-            <p>That's yer Jam son.</p>
-            <button></button>
+            <p>{pot.goal_date}</p>
+         </div>
+        <div className="buttons">
+            <button onClick={onDelete}>Delete</button>
+            <button><Link id='pot-form-edit' to="/pots/edit"></Link>Edit Pot</button>
         </div>
+        </>
     )
 }
 export default PotDetail;

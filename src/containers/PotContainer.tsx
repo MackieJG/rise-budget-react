@@ -1,47 +1,59 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import PotList from "../components/pots/PotList";
 import ApiRequest from "../helpers/request";
 import NavBarTop from "../components/navigation/NavBarTop";
-
-
-interface PotProps {
-    title: string;
-    amount: BigInt;
-    user: UserProps;
-}
-
-interface UserProps{
-    name: string;
-    budget: BigInt;
-    expenses: ExpenseProps[];
-    pots: PotProps[];
-}
+import PotForm from "../components/pots/PotForm";
+import PotFormEdit from "../components/pots/PotFormEdit";
+import Footer from "../components/footer/Footer";
 
 interface PotProps {
+    id: number;
     title: string;
-    amount: BigInt;
-    user: UserProps;
-}
-
-interface ExpenseProps {
-    title: string;
-    amount: BigInt;
-    provider: any;
-    categoryType: any;
+    amount: number;
+    goal_date: string;
     user: any;
-    timeStamp: string;
 }
 
-const PotContainer = () => {
+const PotContainer = ({user}: any) => {
 
     const [pots, setPots] = useState([]);
 
     useEffect(() => {
         const request = new ApiRequest();
         const potPromise = request.get('/api/pots')
-        potPromise
-        .then((data: any) => setPots(data))
+
+        Promise.all([potPromise])
+            .then((data) => {
+                setPots(data[0]);
+            })
     }, [])
+
+
+    const findPotById = (id: any) => {
+        return pots.find((pot: PotProps) => {
+            return pot.id === parseInt(id);
+        })
+    }
+
+    const handleEdit = (pot: any) => {
+        const request = new ApiRequest();
+        const url = '/api/pots' + pot.id;
+        pot["pot"] = pot
+        request.put(url, pot).then(() => {
+            window.location.href = '/pots'
+        })
+    }
+
+    const PotFormEditWrapper = () => {
+        const { id } = useParams();
+        let foundPot = findPotById(id);
+        if (!foundPot) {
+            return <div>Loading...</div>;
+        }
+        return (<PotFormEdit pot={foundPot} onEdit={handleEdit} amount={0} goal_date={""} />);
+    }
 
     const handleDelete = (id: any) => {
         const request = new ApiRequest();
@@ -50,12 +62,24 @@ const PotContainer = () => {
         request.delete(url).then(() => {
           window.location.href = '/pots';
         })
-      }
+    }
+
+    const handlePost = (pot: any) => {
+        const request = new ApiRequest();
+        pot["user"] = user
+        request.post('/api/pots', pot).then(() => {
+            window.location.href = '/pots'
+        })
+    }
 
     return (
         <>
         <NavBarTop/>
-        <PotList pots={pots} onDelete={handleDelete} />
+        <Routes>
+            <Route path="/" element={<PotList pots={pots} handleDelete={handleDelete} />} />
+            <Route path="/add" element={<PotForm onCreate={handlePost} />} />
+            <Route path="/edit" element={<PotFormEditWrapper /> } />
+        </Routes>
         </>
     )
 }
