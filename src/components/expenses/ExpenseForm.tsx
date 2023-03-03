@@ -54,7 +54,7 @@ enum CategoryType {
 
    
     const [isNewProvider, setIsNewProvider] = useState(false);
-    const [newProviderName, setNewProviderName]= useState("");
+    const [newProviderName, setNewProviderName]= useState();
 
     const handleChange = function (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
       const { name, value } = event.target;

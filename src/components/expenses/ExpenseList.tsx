@@ -1,5 +1,6 @@
 import React from 'react';
 import ExpenseDetail from "./ExpenseDetail";
+import ExpensePieChart from './ExpensePieChart';
 
 interface ExpenseProps {
     id: number;
@@ -39,6 +40,7 @@ const ExpenseList = ({expenses, handleDelete, handleEdit}: ExpenseListProps ) =>
         <ul className = "expense-list">
             {expenseElements}
         </ul>
+        <ExpensePieChart expenses={expenses} />
         </>
     )
 }

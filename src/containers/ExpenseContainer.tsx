@@ -8,7 +8,6 @@ import ExpenseForm from "../components/expenses/ExpenseForm";
 import Footer from "../components/footer/Footer";
 import ExpenseFormEdit from "../components/expenses/ExpenseFormEdit"
 
-
 enum CategoryType {
     GROCERIES = "GROCERIES",
     UTILITIES = "UTILITIES",
