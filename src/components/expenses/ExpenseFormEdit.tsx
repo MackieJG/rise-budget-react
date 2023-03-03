@@ -22,7 +22,6 @@ interface ExpenseProps{
 }
 
 
-
 interface ExpenseFormEditProps {
     expense: ExpenseProps
     onEdit: (expense: any) => void;

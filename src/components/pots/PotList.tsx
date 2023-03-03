@@ -6,12 +6,11 @@ interface PotProps {
     id: number;
     title: string;
     amount: number;
-    goal_date: string;
     user: any;
 }
 interface PotListProps {
     pots: PotProps[];
-    handleDelete: (id: any) => void;
+    handleDelete: (pot: PotProps) => void;
 }
 
 

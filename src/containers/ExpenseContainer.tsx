@@ -20,6 +20,7 @@ enum CategoryType {
     TRANSPORT = "TRANSPORT",
     HEALTH = "HEALTH",
 }
+
 interface ExpenseProps {
     id: any
     title: string;
@@ -77,7 +78,7 @@ const ExpenseContainer = ({ user }: any) => {
 
     const handleEdit = (expense: any) => {
         const request = new ApiRequest();
-        const url = '/api/expenses' + expense.id;
+        const url = '/api/expenses/' + expense.id;
         expense["user"] = user
         request.put(url, expense).then(() => {
             window.location.href = '/expenses'
@@ -87,14 +88,15 @@ const ExpenseContainer = ({ user }: any) => {
     const handlePost = (expense: any) => {
         const request = new ApiRequest();
         expense["user"] = user
-        request.post('/api/expenses', expense).then(() => {
-            // window.location.href = '/expenses'
+        request.post('/api/expenses/', expense).then(() => {
+            window.location.href = '/expenses'
         })
     }
     const handlePostNoProvider = (expense: any, provider: any) => {
         if (provider) {
             const request = new ApiRequest();
             expense["user"] = user
+
             const payload: any = {name: provider}
             request.post('/api/providers', payload).then((res) => res.json())
             .then((data) => {
@@ -108,7 +110,7 @@ const ExpenseContainer = ({ user }: any) => {
         } else {
             const request = new ApiRequest();
             expense["user"] = user
-            request.post('/api/expenses', expense).then(() => {
+            request.post('/api/expenses/', expense).then(() => {
                 window.location.href = '/expenses'
             })
 
@@ -122,7 +124,7 @@ const ExpenseContainer = ({ user }: any) => {
                 <Route path="/" element={<ExpenseList expenses={expenses} handleDelete={handleDelete} handleEdit={handleEdit} />} />
                 <Route path="/add" element={<ExpenseForm user={user} providers={providers} categories={categories} onCreate={handlePost} onCreateProvider={handlePostNoProvider} />} />
                 <Route path="/edit"element={<ExpenseFormEditWrapper  />}/>
-            </Routes> 
+            </Routes>
             <Footer/>
         </>
     )

@@ -30,7 +30,6 @@ enum CategoryType {
   interface ProviderProps {
     id: number;
     name: string;
-
   }
   
   interface ExpenseFormProps {
