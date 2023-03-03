@@ -123,7 +123,7 @@ const ExpenseContainer = ({ user }: any) => {
             <Routes>
                 <Route path="/" element={<ExpenseList expenses={expenses} handleDelete={handleDelete} handleEdit={handleEdit} />} />
                 <Route path="/add" element={<ExpenseForm user={user} providers={providers} categories={categories} onCreate={handlePost} onCreateProvider={handlePostNoProvider} />} />
-                <Route path="/edit"element={<ExpenseFormEditWrapper  />}/>
+                <Route path="/:id/edit"element={<ExpenseFormEditWrapper  />}/>
             </Routes>
             <Footer/>
         </>

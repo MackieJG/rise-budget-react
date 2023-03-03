@@ -67,7 +67,7 @@ const PotContainer = ({user}: any) => {
         if (!foundPot) {
             return <div>Loading...</div>;
         }
-        return (<PotFormEdit pot={foundPot} onEdit={handleEdit} amount={0} user={user}/>);
+        return (<PotFormEdit pot={foundPot} amount={0} user={user} onEdit={handleEdit} />);
     }
 
 
@@ -76,9 +76,9 @@ const PotContainer = ({user}: any) => {
         <>
         <NavBarTop/>
         <Routes>
-            <Route path="/" element={<PotList pots={pots} handleDelete={handleDelete} />} />
+            <Route path="/" element={<PotList pots={pots} handleDelete={handleDelete} handleEdit={handleEdit} />} />
             <Route path="/add" element={<PotForm user={user} onCreate={handlePost} />} />
-            <Route path="/edit" element={<PotFormEditWrapper /> } />
+            <Route path="/:id/edit" element={<PotFormEditWrapper /> } />
         </Routes>
         <Footer/>
         </>
