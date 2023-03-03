@@ -24,16 +24,18 @@ interface ExpenseProps {
 interface ExpenseDetailProps {
     expense: ExpenseProps;
     handleDelete: (expense: ExpenseProps) => void;
-
 }
 
 const ExpenseDetail = ({expense, handleDelete}: ExpenseDetailProps) => {
+    
     const onDelete = () => {
         handleDelete(expense)
     }
+    
     const onEdit = ({navigate}: any) => {
         navigate(`/expenses/${expense.id}/edit`)
     }
+    
     if(!expense) {
         return (
             <p>

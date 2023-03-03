@@ -14,11 +14,11 @@ interface ExpenseProps {
 interface ExpenseListProps {
     expenses: ExpenseProps[];
     handleDelete: (expense: ExpenseProps) => void;
-    handleEdit: (expense: ExpenseProps) => void;
 }
 
 
-const ExpenseList = ({expenses, handleDelete, handleEdit}: ExpenseListProps ) => {
+const ExpenseList = ({expenses, handleDelete}: ExpenseListProps ) => {
+    
     if(expenses.length === 0 ) {
         return(<p>loading...</p>)
     }
