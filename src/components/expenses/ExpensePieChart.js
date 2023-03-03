@@ -1,13 +1,29 @@
-import React from 'react';
 import { Pie } from 'react-chartjs-2';
+import { Chart, registerables } from 'chart.js';
+import React from 'react';
+Chart.register(...registerables);
+
+
 
 const ExpensePieChart = ({ expenses }) => {
+  
+  const expenseByCategory = expenses.reduce((acc, expense) => {
+    const category = expense.category;
+    if (acc[category]) {
+      acc[category] += expense.amount;
+    } else {
+      acc[category] = expense.amount;
+    }
+    return acc;
+  }, {});
+
+  const totalExpenses = expenses.reduce((acc, expense) => acc + expense.amount, 0);
   const expenseData = {
-    labels: expenses.map((expense) => expense.title),
+    labels: Object.keys(expenseByCategory),
     datasets: [
       {
         label: 'Expenses by Category',
-        data: expenses.map((expense) => expense.category),
+        data: Object.values(expenseByCategory).map((amount) => (amount / totalExpenses) * 100),
         backgroundColor: [
           'rgba(255, 99, 132, 0.6)',
           'rgba(54, 162, 235, 0.6)',
@@ -27,7 +43,7 @@ const ExpensePieChart = ({ expenses }) => {
     ],
   };
 
-  return <Pie data={data} />;
+  return <Pie data={expenseData} />;
 };
 
 export default ExpensePieChart;

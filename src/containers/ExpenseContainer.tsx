@@ -8,7 +8,6 @@ import ExpenseForm from "../components/expenses/ExpenseForm";
 import Footer from "../components/footer/Footer";
 import ExpenseFormEdit from "../components/expenses/ExpenseFormEdit"
 
-
 enum CategoryType {
     GROCERIES = "GROCERIES",
     UTILITIES = "UTILITIES",
@@ -88,7 +87,7 @@ const ExpenseContainer = ({ user }: any) => {
         const request = new ApiRequest();
         expense["user"] = user
         request.post('/api/expenses', expense).then(() => {
-            // window.location.href = '/expenses'
+            window.location.href = '/expenses'
         })
     }
     const handlePostNoProvider = (expense: any, provider: any) => {
