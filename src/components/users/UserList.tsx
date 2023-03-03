@@ -3,47 +3,46 @@ import UserDetail from './UserDetail';
 
 interface ExpenseProps {
     title: string;
-    amount: BigInt;
+    amount: number;
     provider: any;
     categoryType: any;
     user: any;
     time: string;
-}
-
-interface UserProps {
-    name: string;
-    budget: BigInt;
-    expenses: ExpenseProps[];
-    pots: PotProps[];
-}
-
+};
 interface PotProps {
     id: number;
     title: string;
     amount: number;
-    goal_date: string;
-}
-
+    user: any;
+};
+interface UserProps {
+    id: number;
+    name: string;
+    budget: number;
+    expenses: ExpenseProps[];
+    pots: PotProps[];
+};
 interface UserListProps {
     users: UserProps[];
-    handleDelete: (id: number) => void;
-}
+    handleDelete: (user: UserProps) => void;
+    handleEdit: (user: UserProps) => void;
+};
 
-const UserList = ({users}: UserListProps, {handleDelete}:any) => {
+const UserList = ({users, handleDelete, handleEdit}: UserListProps) => {
+    
     if( users.length === 0 ) {
         return (<p>loading...</p>)
-    }
+    };
+
     const userElements = users.map((user, index) => {
         return (
-            <li key={index} className="component-item">
-                <div className="component">
-                    <UserDetail user={user} handleDelete={handleDelete}/>
+            <li key={index} className="user-item">
+                <div className="user">
+                    <UserDetail user={user} handleDelete={handleDelete} handleEdit={handleEdit}/>
                 </div>
             </li>
-        )
-    })
-
-   
+        );
+    });
     
     return (
         <>
@@ -51,6 +50,8 @@ const UserList = ({users}: UserListProps, {handleDelete}:any) => {
             {userElements}
         </ul>
         </>
-    )
-}
+    );
+
+};
+
 export default UserList;

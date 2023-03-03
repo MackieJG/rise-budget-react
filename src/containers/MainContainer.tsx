@@ -27,7 +27,7 @@ const MainContainer = () => {
         <Router>
             <Routes>
             <Route path='/' element={ <HomePage /> } />
-            <Route path='/users' element={ <UserContainer /> } />
+            <Route path='/users/*' element={ <UserContainer /> } />
             <Route path='/pots/*' element={ <PotContainer user={user}/> } />
             <Route path='/expenses/*' element={ <ExpenseContainer user={user}/> } />
             <Route path='/analytics' element={ <AnalyticsContainer /> } />

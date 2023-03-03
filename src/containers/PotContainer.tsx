@@ -13,7 +13,7 @@ interface PotProps {
     title: string;
     amount: number;
     user: any;
-}
+};
 
 const PotContainer = ({user}: any) => {
 
@@ -26,23 +26,23 @@ const PotContainer = ({user}: any) => {
         Promise.all([potPromise])
             .then((data) => {
                 setPots(data[0]);
-            })
-    }, [])
+            });
+    }, []);
 
 
     const findPotById = (id: any) => {
         return pots.find((pot: PotProps) => {
             return pot.id === parseInt(id);
-        })
-    }
+        });
+    };
 
     const handleDelete = (pot: any) => {
         const request = new ApiRequest();
         const url = '/api/pots/' + pot.id;
         request.delete(url).then(() => {
           window.location.href = '/pots';
-        })
-    }
+        });
+    };
 
     const handleEdit = (pot: any) => {
         const request = new ApiRequest();
@@ -50,25 +50,25 @@ const PotContainer = ({user}: any) => {
         pot["user"] = user
         request.put(url, pot).then(() => {
             window.location.href = '/pots';
-        })
-    }
+        });
+    };
 
     const handlePost = (pot: any) => {
         const request = new ApiRequest();
         pot["user"] = user
         request.post('/api/pots/', pot).then(() => {
             window.location.href = '/pots';
-        })
-    }
+        });
+    };
 
     const PotFormEditWrapper = () => {
         const { id } = useParams();
         let foundPot = findPotById(id);
         if (!foundPot) {
             return <div>Loading...</div>;
-        }
-        return (<PotFormEdit pot={foundPot} amount={0} user={user} onEdit={handleEdit} />);
-    }
+        };
+        return (<PotFormEdit pot={foundPot} amount={0} user={user} onEdit={handleEdit} /> );
+    };
 
 
 
@@ -82,8 +82,9 @@ const PotContainer = ({user}: any) => {
         </Routes>
         <Footer/>
         </>
-    )
-}
+    );
+};
+
 export default PotContainer;
 
 
