@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 
 interface PotProps {
     title: string;
@@ -75,7 +74,7 @@ const PotDetail = ({pot, handleDelete}: PotDetailProps) => {
          </div>
         <div className="buttons">
             <button onClick={onDelete}>Delete</button>
-            <button><Link id='pot-form-edit' to="/pots/edit"></Link>Edit Pot</button>
+            <button onClick={onEdit}>Edit Pot</button>
         </div>
         </>
     )

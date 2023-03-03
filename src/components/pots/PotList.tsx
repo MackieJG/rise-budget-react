@@ -11,7 +11,7 @@ interface PotProps {
 }
 interface PotListProps {
     pots: PotProps[];
-    handleDelete: (id: any) => void;
+    handleDelete: (pot: PotProps) => void;
 }
 
 

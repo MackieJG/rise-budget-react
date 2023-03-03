@@ -80,6 +80,7 @@ const PotContainer = ({user}: any) => {
             <Route path="/add" element={<PotForm onCreate={handlePost} />} />
             <Route path="/edit" element={<PotFormEditWrapper /> } />
         </Routes>
+        <Footer/>
         </>
     )
 }
