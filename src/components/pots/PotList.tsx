@@ -6,7 +6,6 @@ interface PotProps {
     id: number;
     title: string;
     amount: number;
-    goal_date: string;
     user: any;
 }
 interface PotListProps {
