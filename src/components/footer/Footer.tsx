@@ -9,8 +9,13 @@ const Footer = () => {
     return (
         <div className='footer-container'>
             <div className='footer-left-container'>
-                <h5>RISE</h5>
-                <h6>Money made simple.</h6>
+                <div>
+                    <p className='rise'>RISE</p>
+                    <p className='simple'>Money made simple.</p>
+                </div>
+                <div className='small-print'>
+                    <p>© 2023 RISE Budget App. All rights reserved.</p>
+                </div>
             </div>
             <div className='footer-right-container'>
                 <img src={twitter} width='20'/> 

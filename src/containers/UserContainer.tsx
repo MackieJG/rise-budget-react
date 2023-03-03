@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import NavBarTop from "../components/navigation/NavBarTop";
 import UserList from "../components/users/UserList";
 import ApiRequest from '../helpers/request';
+import Footer from "../components/footer/Footer"
 
 interface ExpenseProps {
     title: string;
@@ -55,6 +56,7 @@ const UserContainer = () => {
         <>
         <NavBarTop/>
         <UserList users={users} handleDelete={handleDelete}/>
+        <Footer/>
         </>
     )
 }

@@ -20,14 +20,6 @@ enum CategoryType {
     TRANSPORT = "TRANSPORT",
     HEALTH = "HEALTH",
 }
-
-
-interface PotProps {
-    title: string;
-    amount: BigInt;
-    user: any;
-
-}
 interface ExpenseProps {
     id: any
     title: string;
