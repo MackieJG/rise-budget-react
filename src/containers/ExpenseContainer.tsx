@@ -19,7 +19,7 @@ enum CategoryType {
     EATINGOUT = "EATINGOUT",
     TRANSPORT = "TRANSPORT",
     HEALTH = "HEALTH",
-}
+};
 
 interface ExpenseProps {
     id: any
@@ -27,9 +27,9 @@ interface ExpenseProps {
     amount: number;
     provider: any;
     category: CategoryType;
-    user: object | null;
+    user: object;
     date: string
-}
+};
 
 const ExpenseContainer = ({ user }: any) => {
 
@@ -49,14 +49,15 @@ const ExpenseContainer = ({ user }: any) => {
             .then((data) => {
                 setExpenses(data[0]);
                 setProviders(data[1]);
-            })
-    }, [])
+            });
+    }, []);
 
     const findExpenseById = (id: any) => {
         return expenses.find((expense: ExpenseProps) => {
             return expense.id === parseInt(id);
-        })
-    }
+        });
+    };
+
     const ExpenseFormEditWrapper = () => {
         const { id } = useParams();
         let foundExpense = findExpenseById(id);
@@ -64,17 +65,15 @@ const ExpenseContainer = ({ user }: any) => {
             return <div>Loading...</div>;
         }
         return <ExpenseFormEdit providers={providers} categories={categories} user={user} expense={foundExpense} onEdit={handleEdit} />;
-    }
-
+    };
 
     const handleDelete = (expense: any) => {
         const request = new ApiRequest();
         const url = '/api/expenses/' + expense.id;
         request.delete(url).then(() => {
             window.location.href = '/expenses';
-        })
-    }
-
+        });
+    };
 
     const handleEdit = (expense: any) => {
         const request = new ApiRequest();
@@ -82,16 +81,17 @@ const ExpenseContainer = ({ user }: any) => {
         expense["user"] = user
         request.put(url, expense).then(() => {
             window.location.href = '/expenses'
-        })
-    }
+        });
+    };
 
     const handlePost = (expense: any) => {
         const request = new ApiRequest();
         expense["user"] = user
         request.post('/api/expenses/', expense).then(() => {
             window.location.href = '/expenses'
-        })
-    }
+        });
+    };
+
     const handlePostNoProvider = (expense: any, provider: any) => {
         if (provider) {
             const request = new ApiRequest();
@@ -105,17 +105,16 @@ const ExpenseContainer = ({ user }: any) => {
             }) 
             .then(() => {
                 window.location.href = '/expenses'
-            })
+            });
             
         } else {
             const request = new ApiRequest();
             expense["user"] = user
             request.post('/api/expenses/', expense).then(() => {
                 window.location.href = '/expenses'
-            })
-
-        }
-    }
+            });
+        };
+    };
 
     return (
         <>
@@ -127,7 +126,8 @@ const ExpenseContainer = ({ user }: any) => {
             </Routes>
             <Footer/>
         </>
-    )
+    );
 
-}
+};
+
 export default ExpenseContainer;

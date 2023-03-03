@@ -1,48 +1,48 @@
 import React, {useState} from 'react';
 
 enum CategoryType {
-    GROCERIES = "GROCERIES",
-    UTILITIES = "UTILITIES",
-    RENT = "RENT",
-    MORGTAGE = "MORTGAGE",
-    SUBSCRIPTIONS = "SUBSCRIPTIONS",
-    ENTERTAINMENT = "ENTERTAINMENT",
-    EATINGOUT = "EATINGOUT",
-    TRANSPORT = "TRANSPORT",
-    HEALTH = "HEALTH",
-  }
+  GROCERIES = "GROCERIES",
+  UTILITIES = "UTILITIES",
+  RENT = "RENT",
+  MORGTAGE = "MORTGAGE",
+  SUBSCRIPTIONS = "SUBSCRIPTIONS",
+  ENTERTAINMENT = "ENTERTAINMENT",
+  EATINGOUT = "EATINGOUT",
+  TRANSPORT = "TRANSPORT",
+  HEALTH = "HEALTH",
+}
 interface ExpenseProps{
-    id: number
-    title: string;
-    amount: number;
-    provider: { id: number, name: string }
-    category: CategoryType; 
-    user: object | null;
-    date: string;
+  id: number
+  title: string;
+  amount: number;
+  provider: { id: number, name: string }
+  category: CategoryType; 
+  user: object | null;
+  date: string;
 }
 
 
 interface ExpenseFormEditProps {
-    expense: ExpenseProps
-    user: any;
-    providers: any;
-    categories: any;
-    onEdit: (expense: any) => void;
-  }
+  expense: ExpenseProps
+  user: any;
+  providers: any;
+  categories: any;
+  onEdit: (expense: any) => void;
+}
 
 const ExpenseFormEdit = ({expense, providers, categories, onEdit }: ExpenseFormEditProps) => {
 
 const [stateExpense, setStateExpense] = useState<ExpenseProps>(
-    {
-        id: expense.id,
-        title: expense.title,
-        amount: expense.amount,
-        provider: expense.provider,
-        category: expense.category,
-        user: expense.user,
-        date: expense.date
+  {
+    id: expense.id,
+    title: expense.title,
+    amount: expense.amount,
+    provider: expense.provider,
+    category: expense.category,
+    user: expense.user,
+    date: expense.date
 
-    }
+  }
 )
 
     const handleChange = function (event: any) {
