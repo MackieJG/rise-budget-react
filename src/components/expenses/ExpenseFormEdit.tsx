@@ -23,7 +23,8 @@ interface ExpenseProps{
 
 
 interface ExpenseFormEditProps {
-  expense: ExpenseProps
+  expense: ExpenseProps;
+  amount: number;
   user: any;
   providers: any;
   categories: any;
