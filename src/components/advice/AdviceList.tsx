@@ -10,9 +10,9 @@ const AdviceList = () => {
         <>
             <ul>
                 <li>
-                    <h1>Tips On Saving For Young Adults</h1>
-                    <h3>The best time to plant a tree was 20 years ago. The second best time is today.</h3>
-                    <h4>-Kendrick Lamar, Money Trees</h4>
+                    <h1 className='heading'>Tips On Saving For Young Adults</h1>
+                    <h3 className='quote'>The best time to plant a tree was 20 years ago. The second best time is today.</h3>
+                    <h4 className='quote-person'>-Kendrick Lamar, Money Trees</h4>
 
                     <h2>First and Foremost</h2>
                     <p>
@@ -22,22 +22,22 @@ const AdviceList = () => {
                         we can look at what to do with the leftovers.
                     </p>
                 </li>
-                <li>
+                <li className='category'>
                     <PensionsAdvice />
                 </li>
-                <li>
+                <li className='category'>
                     <RainyDayAdvice />
                 </li>
-                <li>
+                <li className='category'>
                     <h2>What Are Your Savings Goals?</h2>
                 </li>
-                <li>
+                <li className='category'>
                     <ShortSavingTermAdvice />
                 </li>
-                <li>
+                <li className='category'>
                     <BuyHouseSavingAdvice />
                 </li>
-                <li>
+                <li className='category'>
                     <LongTermSavingAdvice />
                 </li>
             </ul>

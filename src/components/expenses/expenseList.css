@@ -6,8 +6,7 @@
 }
 
 body {
-    background-color: var(--background_color);
-    
+    /* background-color: var(--background_color); */ 
 }
 
 
@@ -21,16 +20,18 @@ body {
 
 .expense-detail{
     /* border: 1px solid black; */
-    background-color: #255957;
-    color: white;
+    background-color: white;
+    color: black;
     padding: 20px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    border-radius: 2px;
+    justify-content: space-between;
+    gap: 5rem;
     text-align: center;
 }
 
 .expense-list-container{
+    margin: 1rem;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -54,22 +55,76 @@ body {
     gap: 0.5rem;
 }
 
-.button{
+
+button {
+    background-color: #80B180;
+    /* border:1px solid #09433D; */
     border-style: none;
-    border-radius: 2px;
-    padding: 8px;
-}
-
-.button:hover {
+    border-radius: 0.5rem;
+    color: white;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 0.4rem .8rem;
     cursor: pointer;
+    /* box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05); */
+    text-align: center;
+    transition: all 0.2s ease-out;
+  }
+  
+  .buttons {
+    gap: 1rem;
+  }
+
+p {
+    margin: 0;
+    padding: 0;
 }
 
-.delete-button {
-    background-color: #EE4266;
-}
 
-.edit-button {
-    background-color: #FFBE00;
-}
+
+/* EXPENSE FORM */
+
+.input-label {
+    font-size: var(--fs-text-sm);
+    font-weight: var(--fw-medium);
+    margin-bottom: 8px;
+  }
+  
+  input {
+    flex: 1;
+    min-width: 288px;
+    padding: 12px 14px;
+    font-family: inherit;
+    color: var(--clr-grey-500);
+    font-size: var(--fs-text-md);
+    border-radius: 2px;
+    border: 2px solid var(--background_color);
+  }
+
+  input{
+    outline-color: var(--logo_yellow);
+  }
+
+  .expense-form-container {
+    border: 1px solid black;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .dropdown {
+    flex: 1;
+    min-width: 288px;
+    padding: 12px 14px;
+    font-family: inherit;
+    color: var(--clr-grey-500);
+    font-size: var(--fs-text-md);
+    border-radius: 2px;
+    border: 2px solid var(--background_color);
+    outline-color: var(--logo_yellow);
+  }
 
 
