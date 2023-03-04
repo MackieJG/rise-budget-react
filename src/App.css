@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
   min-height: 100vh;
   margin: 0;
   font-family: 'Geneva';
@@ -108,5 +108,6 @@
 
 li {
   list-style: none;
-  padding-right: 3rem;
+  /* padding-right: 3rem; */
+  /* What is this pading here for? */
 }

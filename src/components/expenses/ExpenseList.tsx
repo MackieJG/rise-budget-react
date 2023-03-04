@@ -1,6 +1,7 @@
 import React from 'react';
 import ExpenseDetail from "./ExpenseDetail";
 import ExpensePieChart from './ExpensePieChart';
+import './expenseList.css'
 
 interface ExpenseProps {
     id: number;
@@ -36,12 +37,12 @@ const ExpenseList = ({expenses, handleDelete, handleEdit}: ExpenseListProps ) =>
     })
 
     return (
-        <>
+        <div className="expense-list-container">
         <ul className = "expense-list">
             {expenseElements}
         </ul>
         <ExpensePieChart expenses={expenses} />
-        </>
+        </div>
     )
 }
 export default ExpenseList;
