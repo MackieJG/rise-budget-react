@@ -1,0 +1,96 @@
+:root {
+    --background_color: #80b180;
+    --logo_yellow: #FFBE00;
+    --delete_red: #DB324D;
+}
+
+.pot-list-container {
+    margin: 1rem;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pot-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.pot-detail {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    display: flex;
+    border-radius: 2px;
+    justify-content: space-between;
+    gap: 5rem;
+    text-align: center;
+}
+
+.pot-page {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    display: flex;
+    border-radius: 2px;
+    justify-content: space-between;
+    gap: 5rem;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    height: 2rem;
+}
+
+button {
+    background-color: #80B180;
+    border-style: none;
+    border-radius: 0.5rem;
+    color: white;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 0.4rem .8rem;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease-out;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    text-align: center;
+}
+
+.link-3 {
+    color: #FFBE05;
+}
+  
+.link-3:hover {
+    color: black;
+}
+
+
+/* POT FORM */
+
+.pot-form-container {
+    border: 1px solid black;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }

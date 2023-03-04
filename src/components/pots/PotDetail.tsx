@@ -1,5 +1,7 @@
 import React from 'react'
 import {useNavigate} from 'react-router-dom';
+import './PotList.css';
+
 interface PotProps {
     id: number;
     title: string;
@@ -34,6 +36,7 @@ const PotDetail = ({pot, handleDelete}: PotDetailProps) => {
 
     return (
         <>
+        <div className='pot-page'>
         <div className="pot-detail">
             <p>{pot.title}</p>
             <p>{pot.amount}</p>
@@ -41,6 +44,7 @@ const PotDetail = ({pot, handleDelete}: PotDetailProps) => {
         <div className="buttons">
             <button onClick={onDelete}>Delete</button>
             <button onClick={onEdit}>Edit Pot</button>
+        </div>
         </div>
         </>
     );

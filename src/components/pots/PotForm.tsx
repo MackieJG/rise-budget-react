@@ -38,7 +38,7 @@ const PotForm = ({ user, onCreate }: PotFormProps) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className='pot-form-container' onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Pot Title"

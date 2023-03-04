@@ -31,11 +31,12 @@ const PotList = ({pots, handleDelete, handleEdit}: PotListProps) => {
 
     return (
         <>
-        <p><Link id='pot-form' to="/pots/add">Create New Pot</Link></p>
-
+        <p className="link-3" ><Link className="link-3" id='pot-form' to="/pots/add">Create New Pot</Link></p>
+        <div className="pot-list-container">
         <ul className = "pot-list">
             {potElements}
         </ul>
+        </div>
         </>
     );
 };
