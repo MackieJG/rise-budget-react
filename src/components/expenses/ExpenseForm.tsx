@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProviderForm from "./ProviderForm";
+import './expenseList.css';
 
 enum CategoryType {
     GROCERIES = "GROCERIES",
