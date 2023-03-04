@@ -21,12 +21,12 @@ enum CategoryType {
 };
 
 interface ExpenseProps {
-    id: any
+    id: number;
     title: string;
     amount: number;
     provider: any;
     category: CategoryType;
-    user: object;
+    user: any;
     date: string
 };
 
@@ -63,7 +63,7 @@ const ExpenseContainer = ({ user }: any) => {
         if (!foundExpense) {
             return <div>Loading...</div>;
         }
-        return <ExpenseFormEdit providers={providers} categories={categories} user={user} expense={foundExpense} onEdit={handleEdit} />;
+        return (<ExpenseFormEdit expense={foundExpense} amount={0} providers={providers} categories={categories} user={user} onEdit={handleEdit} /> );
     };
 
     const handleDelete = (expense: any) => {
@@ -97,13 +97,13 @@ const ExpenseContainer = ({ user }: any) => {
             expense["user"] = user
 
             const payload: any = {name: provider}
-            request.post('/api/providers', payload).then((res) => res.json())
+            request.post('/api/providers/', payload).then((res) => res.json())
             .then((data) => {
                 expense["provider"] = data;
-                return request.post('/api/expenses', expense)
+                return request.post('/api/expenses/', expense)
             }) 
             .then(() => {
-                window.location.href = '/expenses'
+                window.location.href = '/expenses';
             });
             
         } else {

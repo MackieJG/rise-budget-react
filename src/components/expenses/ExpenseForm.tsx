@@ -21,16 +21,16 @@ enum CategoryType {
     category: CategoryType | null;
     user: any;
     date: string;
-  }
+  };
   
   interface CategoryProps {
     id: number;
     name: CategoryType;
-  }
+  };
   interface ProviderProps {
     id: number;
     name: string;
-  }
+  };
   
   interface ExpenseFormProps {
     onCreate: (expense: any) => void;
@@ -38,8 +38,7 @@ enum CategoryType {
     user: any;
     providers: any;
     categories: any;
-    
-  }
+  };
   
   const ExpenseForm = ({ user, providers, categories, onCreate, onCreateProvider }: ExpenseFormProps) => {
     const [stateExpense, setStateExpense] = useState<ExpenseProps>({
@@ -78,11 +77,11 @@ enum CategoryType {
     };
   
    const handleCategory = function (event: any) {
-   const index = parseInt(event?.target.value);
-   const selectedCategory = categories[index]; 
-   let copiedExpense = { ...stateExpense };
-   copiedExpense['category'] = selectedCategory;
-   setStateExpense(copiedExpense);
+    const index = parseInt(event?.target.value);
+    const selectedCategory = categories[index]; 
+    let copiedExpense = { ...stateExpense };
+    copiedExpense['category'] = selectedCategory;
+    setStateExpense(copiedExpense);
     };
   
     const handleSubmit = function (event: any) {
@@ -150,7 +149,7 @@ enum CategoryType {
         </form>
         {isNewProvider ?  <div>
             <ProviderForm onChangeProvider={setNewProviderName} providerName={newProviderName}/>
-          </div> :null}
+          </div> : null}
        
       </div>
       
