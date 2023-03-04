@@ -1,0 +1,75 @@
+:root {
+    --background_color: #80b180;
+    --logo_yellow: #FFBE00;
+    --delete_red: #DB324D;
+    /*  #EE4266  */
+}
+
+body {
+    background-color: var(--background_color);
+    
+}
+
+
+.expense-item{
+    /* border: 1px solid black; */
+}
+
+.expenses{
+    /* border: 1px solid black; */
+}
+
+.expense-detail{
+    /* border: 1px solid black; */
+    background-color: #255957;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.expense-list-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.expense-list{
+    /* border: 1px solid black; */
+    /* background-color: white; */
+    /* max-width: 60%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.button{
+    border-style: none;
+    border-radius: 2px;
+    padding: 8px;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.delete-button {
+    background-color: #EE4266;
+}
+
+.edit-button {
+    background-color: #FFBE00;
+}
+
+
