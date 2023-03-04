@@ -1,0 +1,31 @@
+.heading {
+    color: #FFBE05;
+    text-align: center;
+  }
+  
+  .advice-section {
+    text-align: start;
+    justify-self: auto;
+  }
+  
+  .quote {
+    font-style: italic ;
+    font-size: small;
+    text-align: center;
+  }
+  
+  .quote-person {
+    font-size: x-small;
+    text-align: center;
+  }
+  
+  .paragraph {
+    background-color: #80B180;
+    color: white;
+    padding: 1rem;
+    margin: 0;
+  }
+  
+  .category {
+    background-color: white;
+  }

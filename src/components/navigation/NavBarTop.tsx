@@ -5,22 +5,28 @@ import logo from './logo.png';
 const NavBarTop = () => {
 
     return (
-        <div className='outer-container'>
             <div className='navbar-container'>
+
                 <div className='left-container'>
-                    <Link id='home' to ="/">Home</Link>
-                    <Link id='expense-form' to="/expenses/add">Add Expense</Link>
+                    <p>
+                        <Link id='home' to ="/" className='link'>Home</Link>
+                    </p>
+                    <p>
+                        <Link id='expense-form' to="/expenses/add" className='link'>Add Expense</Link>
+                    </p>
                 </div>
+
                 <div className='logo'>
-                    <Link id='home' to="/"> <img src={logo} width='200'/></Link>
+                    <Link id='home' to="/" className="home-link"> <img src={logo} width='200'/></Link>
                 </div>
+
                 <div className='right-container'>
-                    <p><Link id='user' to="/users">User Profile</Link></p>
+                    <p><Link id='user' to="/users" className='link'>User Profile</Link></p>
                     <p className='login'>Log in</p>
                     <p className='signup-btn'>Sign up</p>
                 </div>
+
             </div>
-        </div>
     )
 }
 

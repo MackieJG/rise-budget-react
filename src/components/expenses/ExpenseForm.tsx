@@ -116,8 +116,8 @@ enum CategoryType {
       
   
     return (
-      <div>
-        <form onSubmit={handleSubmit}>
+      <div >
+        <form onSubmit={handleSubmit} className='expense-form-container'>
           <input
             type="text"
             placeholder="Expense Title"
@@ -125,6 +125,7 @@ enum CategoryType {
             onChange={handleChange}
             value={stateExpense.title}
           />
+
           <input
             type="number"
             placeholder="Amount"
@@ -132,25 +133,40 @@ enum CategoryType {
             onChange={handleChange}
             value={stateExpense.amount}
           />
-          <select name="provider" onChange={handleProvider} defaultValue="select-provider">
+
+          <select name="provider" 
+            onChange={handleProvider} 
+            defaultValue="select-provider"
+            className='dropdown'
+            >
             <option disabled value="select-provider">
-              choose your provider
+              provider
             </option>
             {providerOptions}
           </select>
-          <select name="category" onChange={handleCategory} defaultValue="select-category">
-            <option disabled value="select-category">
-              what category?
+
+          {isNewProvider ?  <div>
+            <ProviderForm onChangeProvider={setNewProviderName} providerName={newProviderName}/>
+          </div> : null}
+
+          <select name="category" 
+            onChange={handleCategory} 
+            defaultValue="select-category"
+            className='dropdown'
+            >
+            
+          <option disabled value="select-category">
+              category
             </option>
             {categoryOptions}
           </select>
+
+
+
           <input type="date" name="date" placeholder="date" onChange={handleChange} value={stateExpense.date} />
           <button type="submit">Save</button>
         </form>
-        {isNewProvider ?  <div>
-            <ProviderForm onChangeProvider={setNewProviderName} providerName={newProviderName}/>
-          </div> : null}
-       
+
       </div>
       
     );

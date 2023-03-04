@@ -50,11 +50,12 @@ const ExpenseDetail = ({expense, handleDelete}: ExpenseDetailProps) => {
     return (
         <>
         <div className="expense-detail">
-            <li>{expense.title}</li>
-            <li>£{expense.amount}</li>
+            <p>{expense.title}</p>
+            <p>£{expense.amount}</p>
             {/* <li>{expense.category}</li> */}
             {/* <li>{expense.provider.name}</li> */}
-            <li>{expense.date}</li>
+            <p>{expense.date}</p>
+        
         <div className="button-container">
             <button onClick={onDelete} className={"delete-button button"}>Delete</button>
             <button onClick={onEdit} className={"edit-button button"}>Edit</button>
