@@ -32,7 +32,6 @@ interface ExpenseFormEditProps {
 }
 
 const ExpenseFormEdit = ({expense, providers, categories, onEdit }: ExpenseFormEditProps) => {
-
 const [stateExpense, setStateExpense] = useState<ExpenseProps>(
   {
     id: expense.id,
@@ -55,14 +54,17 @@ const [stateExpense, setStateExpense] = useState<ExpenseProps>(
       };
 
     const handleProvider = function (event: any) {
-        const selectedProvider= providers.find((provider: any) => provider.id === event.target.value);
+        const selectedProvider= providers.find((provider: any) => provider.id === parseInt(event.target.value));
+        console.log(selectedProvider)
         let copiedExpense = {...stateExpense };
         copiedExpense['provider'] = selectedProvider;
         setStateExpense(copiedExpense)
     }
 
     const handleCategory = function (event: any) {
+      console.log(categories)
         const selectedCategory= categories.find((category: any) => category.id === event.target.value);
+        console.log(selectedCategory);
         let copiedExpense = {...stateExpense };
         copiedExpense['category'] = selectedCategory;
         setStateExpense(copiedExpense)
@@ -70,12 +72,13 @@ const [stateExpense, setStateExpense] = useState<ExpenseProps>(
 
     const handleSubmit = function (event: any) {
         event.preventDefault();
+        
         onEdit(stateExpense);
       };
     
       const providerOptions = providers.map((provider: any, index: number) => {
         return (
-          <option key={index} value={index}>
+          <option key={index} value={provider.id}>
             {provider.name}
           </option>
         );
@@ -83,7 +86,7 @@ const [stateExpense, setStateExpense] = useState<ExpenseProps>(
     
       const categoryOptions = categories.map((category: any, index: number) => {
           return (
-          <option key={index} value={index}>
+          <option key={index} value={category}>
               {category}
           </option>
           )
