@@ -1,6 +1,6 @@
 import React from 'react';
 import Expense from './Expense';
-import './expenseList.css'
+// import './expenseList.css'
 
 interface ExpenseProps {
     id: number;

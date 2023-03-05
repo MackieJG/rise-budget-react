@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import './expense.css'
 import { useParams } from "react-router-dom";
 import { Routes, Route } from 'react-router-dom';
 import ApiRequest from "../helpers/request";
