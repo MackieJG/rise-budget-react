@@ -1,4 +1,5 @@
 import React from 'react';
+import './homepage.css'
 import NavBarBottom from '../components/navigation/NavBarBottom';
 import NavBarTop from '../components/navigation/NavBarTop';
 import Footer from '../components/footer/Footer';
@@ -34,17 +35,26 @@ const HomePage = ({ expenses, users }: ExpensesPropsHome) => {
         <NavBarTop />
         <div className="info-container">
           <div className="info-details">
-            <p className="info">You Have £{remainingBudget} left for the month</p>
-            {remainingBudget >= 0 ? (
+
+            <div className="info">
+              <p className='info-p1'>You have </p>
+              <p className='info-p2'>£{remainingBudget}</p>
+              <p className='info-p1'>left for the month</p>
+            </div>
+
+            {/* {remainingBudget >= 0 ? (
               <p className="short-message">You're on track for this month!</p>
             ) : (
               <p className="short-message">You've exceeded your budget for this month!</p>
-            )}
+            )} */}
+
           </div>
+
           <div className="chart">
-            <p>chart</p>
             <ExpensePieChart expenses={expenses} />
+            <p>Your spending breakdown this month</p>
           </div>
+
         </div>
         <NavBarBottom />
         <Footer />

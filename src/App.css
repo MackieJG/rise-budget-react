@@ -28,6 +28,11 @@
   --fw-bold: 700;
 }
 
+:root {
+  --background_color: #80b180;
+  --logo_yellow: #FFBE00;
+}
+
 
 html {
   scroll-behavior: smooth;
@@ -55,7 +60,7 @@ img {
   min-height: 100vh;
   margin: 0;
   font-family: 'Geneva';
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 
 /* TOP NAV BAR */
@@ -107,35 +112,6 @@ img {
 .link:hover {
   color: #FFBE05;
 }
-
-
-
-
-
-/* BOTTOM NAV BAR */
-
-.info-details {
-  margin-bottom: 5rem;
-}
-
-.info-container {
-  display: flex;
-  justify-content: space-around;
-}
-
-.info {
-  padding: 5rem;
-  background-color: #FFBE05;
-}
-
-.chart {
-  background-color: lightgray;
-  margin: 5rem;
-  margin-top: 1rem;
-  padding-left: 5rem;
-  padding-right: 5rem;
-}
-
 
 
 /* FOOTER */
