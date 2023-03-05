@@ -1,61 +1,67 @@
-:root {
-    --background_color: #80b180;
-    --logo_yellow: #FFBE00;
+
+/* EXPENSE LIST */
+
+.expense-list-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-body {
-    /* background-color: var(--background_color); */ 
+.expense-list__header {
+  margin: 0;
+  padding: 0;
+}
+
+.expense-list__subheader {
+  margin: 0;
+  padding: 0;
+  color: var(--logo_yellow);
+  padding-bottom: 1rem;
+}
+
+.expense-list-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.25rem;
+  /* background-color: #80B180; */
+  padding: 1rem;
 }
 
 
 .expense-item{
-    /* border: 1px solid black; */
-}
-
-.expenses{
-    /* border: 1px solid black; */
-}
-
-.expense-page {
-  background-color: white;
-  color: black;
-  padding: 20px;
   display: flex;
-  border-radius: 2px;
-  justify-content: space-between;
-  gap: 5rem;
-  text-align: center;
+  flex-direction: column;
+  gap: 1rem;
+  /* border: 1px solid black; */
 }
 
-.expense-detail{
-    /* border: 1px solid black; */
-    background-color: white;
-    color: black;
-    padding: 20px;
-    display: flex;
-    border-radius: 2px;
-    justify-content: space-between;
-    gap: 5rem;
-    text-align: center;
+.expense-item > div {
+  /* border: 1px solid black; */
+  display: flex;
+  gap: 1rem;
 }
 
-.expense-list-container{
-    margin: 1rem;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
+.expense-item > div > a {
+  color: black;
+  text-decoration: none;
 }
 
-.expense-list{
-    /* border: 1px solid black; */
-    /* background-color: white; */
-    /* max-width: 60%; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
+.expense-item > div > a:hover {
+  color: #80B180;
+}
+
+
+
+
+/* EXPENSE DETAIL */
+
+.expense-detail__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 18px;
 }
 
 .button-container {
@@ -66,7 +72,6 @@ body {
 
 button {
     background-color: #80B180;
-    /* border:1px solid #09433D; */
     border-style: none;
     border-radius: 0.5rem;
     color: white;
@@ -74,20 +79,15 @@ button {
     font-weight: 600;
     padding: 0.4rem .8rem;
     cursor: pointer;
-    /* box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05); */
     text-align: center;
     transition: all 0.2s ease-out;
   }
   
-  .buttons {
-    gap: 1rem;
-  }
 
 p {
     margin: 0;
     padding: 0;
 }
-
 
 
 /* EXPENSE FORM */

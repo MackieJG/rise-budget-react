@@ -1,6 +1,5 @@
 import React from 'react';
 import Expense from './Expense';
-// import './expenseList.css'
 
 interface ExpenseProps {
     id: number;
@@ -27,19 +26,19 @@ const ExpenseList = ({expenses, handleDelete, handleEdit}: ExpenseListProps ) =>
 
     const expenseElements = expenses.map((expense, index) => {
         return (
-            <li key={index} className="expense-item">
-                <div className="expenses">
-                    <Expense expense={expense}  />
-                </div>
-            </li>
+            <div key={index} className="expense-item">
+                <Expense expense={expense}></Expense>
+            </div>
         )
     })
 
     return (
-        <div className="expense-list-container">
-        <ul className = "expense-list">
-            {expenseElements}
-        </ul>
+        <div className='expense-list-page'>
+            <h2 className='expense-list__header'>Recent Spending</h2>
+            <h3 className='expense-list__subheader'>Click on a purchase for more details!</h3>
+            <div className="expense-list-container">
+                    {expenseElements}
+            </div>
         </div>
     )
 }

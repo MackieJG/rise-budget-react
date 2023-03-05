@@ -8,13 +8,11 @@ const Expense = ({ expense }) => {
       <div>
         {expense ? (
           <>
-            <p>
+            <p>£{expense.amount}</p>
               <Link to={url} className="invidualExpense">
                 {expense.title}
               </Link>
-            </p>
-            <p>{expense.amount}</p>
-            <p>{expense.date}</p>
+          <p>{expense.date}</p>
           </>
         ) : (
           <p>Loading...</p>
