@@ -49,22 +49,19 @@ const ExpenseDetail = ({expense, handleDelete}: ExpenseDetailProps) => {
         )
     }
     return (
-        <>
-        <div className='expenses-page'>
-        <div className="expense-detail">
-            <Expense expense={expense}/>
-            <p>{expense.title}</p>
-            <p>{expense.amount}</p>
-            <p>{expense.provider.name}</p>
-            <p>{expense.category}</p>
+        <div className='expense-detail__container'>
+            {/* <Expense expense={expense}/> */}
+            <p>Title: {expense.title}</p>
+            <p>Spend: £{expense.amount}</p>
+            <p>Provider: {expense.provider.name}</p>
+            <p>Category: {expense.category}</p>
             <p>{expense.date}</p>
+
+            <div className="button-container">
+                <button onClick={onDelete}>Delete</button>
+                <button onClick={onEdit}>Edit</button>
+            </div>
         </div>
-        <div className="buttons">
-            <button onClick={onDelete}>Delete</button>
-            <button onClick={onEdit}>Edit</button>
-        </div>
-        </div>
-        </>
     )
 }
 export default ExpenseDetail;

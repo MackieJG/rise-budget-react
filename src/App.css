@@ -56,11 +56,9 @@ img {
 }
 
 .App {
-  /* text-align: center; */
   min-height: 100vh;
   margin: 0;
   font-family: 'Geneva';
-  /* flex-wrap: wrap; */
 }
 
 /* TOP NAV BAR */
@@ -68,7 +66,6 @@ img {
 .navbar-container {
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
   background-color: white;
 }
 
@@ -76,8 +73,6 @@ img {
   display: flex;
   justify-content: space-around;
   padding-top: 2rem;
-  /* padding: 1rem; */
-  /* gap: 2rem;  */
   width: 30%;
 }
 
@@ -85,8 +80,6 @@ img {
   display: flex;
   justify-content: space-around;
   padding-top: 2rem;
-  /* padding: 1rem; */
-  /* gap: 2rem; */
   width: 30%;
 }
 
