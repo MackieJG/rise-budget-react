@@ -52,7 +52,7 @@ const HomePage = ({ expenses, users }: ExpensesPropsHome) => {
 
           <div className="chart">
             <ExpensePieChart expenses={expenses} />
-            <p>Your spending breakdown this month</p>
+            <p className='chart-text'>Your spending breakdown this month</p>
           </div>
 
         </div>
