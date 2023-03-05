@@ -21,7 +21,7 @@ const PotForm = ({ user, onCreate }: PotFormProps) => {
   });
 
    
-  const handleChange = function (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
+  const handleChange = function (event: any) {
     const { name, value } = event.target;
     setStatePot(prevPot => ({
       ...prevPot,
@@ -30,6 +30,7 @@ const PotForm = ({ user, onCreate }: PotFormProps) => {
   };
   
   
+
   const handleSubmit = function (event: any) {
       event.preventDefault();
       onCreate(statePot);
