@@ -11,7 +11,7 @@ import ApiRequest from "../helpers/request";
 
 const MainContainer = () => {
 
-    const [user, setUser] = useState(null);
+    const [users, setUsers] = useState(null);
     const [expenses, setExpenses] = useState([]);
     const [providers, setProviders] = useState([]);
 
@@ -25,7 +25,7 @@ const MainContainer = () => {
         .then((data) => {
             setExpenses(data[0]);
             setProviders(data[1]);
-            setUser(data[2]);
+            setUsers(data[2]);
         });
         
     }, [])
@@ -36,10 +36,10 @@ const MainContainer = () => {
 
         <Router>
             <Routes>
-            <Route path='/' element={ <HomePage expenses={expenses}/> } />
+            <Route path='/' element={ <HomePage expenses={expenses} users={users}/> } />
             <Route path='/users/*' element={ <UserContainer /> } />
-            <Route path='/pots/*' element={ <PotContainer user={user}/> } />
-            <Route path='/expenses/*' element={ <ExpenseContainer user={user} expenses={expenses} providers={providers}/> } />
+            <Route path='/pots/*' element={ <PotContainer user={users}/> } />
+            <Route path='/expenses/*' element={ <ExpenseContainer user={users} expenses={expenses} providers={providers}/> } />
             <Route path='/analytics' element={ <AnalyticsContainer /> } />
             <Route path='/advice' element={ <AdviceContainer /> } />
             </Routes>

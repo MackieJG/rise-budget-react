@@ -13,31 +13,44 @@ interface ExpenseProps {
     user: any;
     date: string;
 }
+interface UserProps {
+    id: number;
+    name: string;
+    budget: number;
+
+}
 interface ExpensesPropsHome {
     expenses: ExpenseProps[];
+    users: any;
 }
 
 
-const HomePage = ({expenses}: ExpensesPropsHome) => {
-
+const HomePage = ({ expenses, users }: ExpensesPropsHome) => {
+    const userBudget = users && users.length > 0 ? users[0].budget : 0;
+    const remainingBudget = parseFloat((userBudget - expenses.reduce((total, expense) => total + expense.amount, 0)).toFixed(2));
+  
     return (
-
-        <div className='home-page'>
-            <NavBarTop/>
-            <div className='info-container'>
-                <div className='info-details'>
-                    <p className='info'>You Have £700 left for the month</p>
-                    <p className='short-message'>You're on track for this month!</p>
-                </div>
-                <div className='chart'>
-                    <p>chart</p>
-                    <ExpensePieChart expenses={expenses} />
-                </div>
-            </div>
-            <NavBarBottom/>
-            <Footer/>
+      <div className="home-page">
+        <NavBarTop />
+        <div className="info-container">
+          <div className="info-details">
+            <p className="info">You Have £{remainingBudget} left for the month</p>
+            {remainingBudget >= 0 ? (
+              <p className="short-message">You're on track for this month!</p>
+            ) : (
+              <p className="short-message">You've exceeded your budget for this month!</p>
+            )}
+          </div>
+          <div className="chart">
+            <p>chart</p>
+            <ExpensePieChart expenses={expenses} />
+          </div>
         </div>
-    )
-}
+        <NavBarBottom />
+        <Footer />
+      </div>
+    );
+  };
+  
 
 export default HomePage;
