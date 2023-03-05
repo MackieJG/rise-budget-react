@@ -30,25 +30,13 @@ interface ExpenseProps {
     date: string
 };
 
-const ExpenseContainer = ({ user }: any) => {
+const ExpenseContainer = ({ user, expenses, providers }: any) => {
 
-    const [expenses, setExpenses] = useState([]);
-    const [providers, setProviders] = useState([]);
     const [categories, setCategories] = useState(Object.values(CategoryType));
-
 
     useEffect(() => {
         const request = new ApiRequest();
-        const expensePromise = request.get('/api/expenses')
-        const providerPromise = request.get('/api/providers')
         setCategories(Object.values(CategoryType));
-
-
-        Promise.all([expensePromise, providerPromise])
-            .then((data) => {
-                setExpenses(data[0]);
-                setProviders(data[1]);
-            });
     }, []);
 
     const findExpenseById = (id: any) => {
