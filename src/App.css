@@ -75,7 +75,7 @@ img {
 .left-container {
   display: flex;
   justify-content: space-around;
-  padding-top: 2rem;
+  padding-top: 1rem;
   /* padding: 1rem; */
   /* gap: 2rem;  */
   width: 30%;
@@ -127,13 +127,16 @@ img {
 .footer-left-container {
   text-align: start;
   margin: 10px;
+  /* text-align: left; */
 }
 
 .rise {
   font-size:small;
+  text-align: left;
 }
 .simple {
   font-size: smaller;
+  text-align: left;
 }
 
 .footer-right-container {
@@ -162,4 +165,40 @@ li {
 
 .link-2:hover {
   color: black;
+}
+
+
+/*  BOTTOM NAV BAR ICONS */
+
+.pots-container-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.expenses-container-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.analytics-container-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.advice-container-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  color: #80b180;
+}
+
+.navbar-container {
+  justify-content: space-around;
+  margin-top: 3rem;
 }
