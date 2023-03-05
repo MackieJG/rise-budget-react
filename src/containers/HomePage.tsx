@@ -2,9 +2,23 @@ import React from 'react';
 import NavBarBottom from '../components/navigation/NavBarBottom';
 import NavBarTop from '../components/navigation/NavBarTop';
 import Footer from '../components/footer/Footer';
+import ExpensePieChart from '../components/expenses/ExpensePieChart';
+
+interface ExpenseProps {
+    id: number;
+    title: string;
+    amount: number;
+    provider: any;
+    category: any;
+    user: any;
+    date: string;
+}
+interface ExpensesPropsHome {
+    expenses: ExpenseProps[];
+}
 
 
-const HomePage = () => {
+const HomePage = ({expenses}: ExpensesPropsHome) => {
 
     return (
 
@@ -17,6 +31,7 @@ const HomePage = () => {
                 </div>
                 <div className='chart'>
                     <p>chart</p>
+                    <ExpensePieChart expenses={expenses} />
                 </div>
             </div>
             <NavBarBottom/>

@@ -12,11 +12,21 @@ import ApiRequest from "../helpers/request";
 const MainContainer = () => {
 
     const [user, setUser] = useState(null);
+    const [expenses, setExpenses] = useState([]);
+    const [providers, setProviders] = useState([]);
 
     useEffect(() => {
         const request = new ApiRequest();
         const userPromise: any = request.get('/api/users')
-        userPromise.then((data: any) => {setUser(data[0])})
+        const expensePromise = request.get('/api/expenses')
+        const providerPromise = request.get('/api/providers')
+
+        Promise.all([expensePromise, providerPromise, userPromise])
+        .then((data) => {
+            setExpenses(data[0]);
+            setProviders(data[1]);
+            setUser(data[2]);
+        });
         
     }, [])
 
@@ -26,10 +36,10 @@ const MainContainer = () => {
 
         <Router>
             <Routes>
-            <Route path='/' element={ <HomePage /> } />
+            <Route path='/' element={ <HomePage expenses={expenses}/> } />
             <Route path='/users/*' element={ <UserContainer /> } />
             <Route path='/pots/*' element={ <PotContainer user={user}/> } />
-            <Route path='/expenses/*' element={ <ExpenseContainer user={user}/> } />
+            <Route path='/expenses/*' element={ <ExpenseContainer user={user} expenses={expenses} providers={providers}/> } />
             <Route path='/analytics' element={ <AnalyticsContainer /> } />
             <Route path='/advice' element={ <AdviceContainer /> } />
             </Routes>
