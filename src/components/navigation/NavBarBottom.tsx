@@ -8,22 +8,34 @@ import advice from './icons/good-green.png';
 const NavBarBottom = () => {
     return (
         <div className='outer-container'>
-            <div className='navbar-container'>
-                <div className='pots-container-icon'>
-                    <img src={pots} width='100'/>
-                    <Link id='pots' to="/pots" className='link-2'>Pots</Link>
+            <div className='navbar-bottom-container'>
+
+                <div className='icon-container'>
+                    <Link id='pots' to="/pots" className='link-2'>
+                        <img src={pots} width='100'/>
+                        <p>Pots</p>
+                    </Link>
                 </div>
-                <div className='expenses-container-icon'>
-                    <img src={expenses} width='100'/>
-                    <Link id='expenses' to="/expenses" className='link-2'>Expenses</Link>
+
+                <div className='icon-container'>
+                    <Link id='expenses' to="/expenses" className='link-2'>
+                        <img src={expenses} width='100'/>
+                        <p>Expenses</p>
+                    </Link>
                 </div>
-                <div className='analytics-container-icon'>
-                <img src={analytics} width='100'/>
-                <Link id='analytics' to="/analytics" className='link-2'>Analytics</Link>
+
+                <div className='icon-container'>
+                <Link id='analytics' to="/analytics" className='link-2'>
+                    <img src={analytics} width='100'/>
+                    <p>Analytics</p>
+                </Link>
                 </div>
-                <div className='advice-container-icon'>
-                    <img src={advice} width='100'/>
-                    <Link id='advice' to="/advice" className='link-2'>Advice</Link>
+
+                <div className='icon-container'>
+                    <Link id='advice' to="/advice" className='link-2'>
+                        <img src={advice} width='100'/>
+                        <p>Advice</p>
+                    </Link>
                 </div>
             </div>
         </div>

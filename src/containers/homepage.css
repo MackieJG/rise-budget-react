@@ -5,40 +5,51 @@
 .info-container {
   display: flex;
   justify-content: space-evenly;
-  gap: 1rem;
+  background-color: #80b1803c;
+  border-radius: 50px;
+  /* border: 2px solid #80b180; */
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+  margin: 0 2rem;
 }
 
 .info {
-  background-color: #FFBE05;
-  padding: 5rem;
-  border-radius: 2px;
+  background-color: white;
+  padding: 4rem;
+  border-radius: 50px;
+  /* border: 2px solid #80b180; */
   display:flex;
   flex-direction: column;
 }
   
   
 .chart {
-  /* background-color: lightgray; */
-  padding: 1rem;
-  border: 1px solid black;
-  border-radius: 2px;
+  /* border: 1px solid black; */
+  background-color: white;
+  border-radius: 50px;
+  /* border: 2px solid #80b180; */
+  padding: 2rem;
+}
+
+.chart-text {
+margin-top: 1rem;
 }
 
 .info-p1{
   margin:0;
   padding:0;
+  font-size: 20px;
 }
 
 .info-p2{
   margin:0;
   padding:0;
   color: #80b180;
-  font-size: 40px;
+  font-size: 50px;
   font-weight: 700;
 }
 
 .info-p2:hover {
-  font-size: 40px;
   color:#5a975a;
   cursor: pointer;
 }
