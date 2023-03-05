@@ -1,5 +1,5 @@
 import React from 'react';
-import ExpenseDetail from "./ExpenseDetail";
+import Expense from './Expense';
 import './expenseList.css'
 
 interface ExpenseProps {
@@ -29,7 +29,7 @@ const ExpenseList = ({expenses, handleDelete, handleEdit}: ExpenseListProps ) =>
         return (
             <li key={index} className="expense-item">
                 <div className="expenses">
-                    <ExpenseDetail expense={expense} handleDelete={handleDelete} handleEdit={handleEdit} />
+                    <Expense expense={expense}  />
                 </div>
             </li>
         )
