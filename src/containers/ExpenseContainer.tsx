@@ -6,7 +6,9 @@ import ExpenseList from "../components/expenses/ExpenseList";
 import NavBarTop from "../components/navigation/NavBarTop";
 import ExpenseForm from "../components/expenses/ExpenseForm";
 import Footer from "../components/footer/Footer";
-import ExpenseFormEdit from "../components/expenses/ExpenseFormEdit"
+import ExpenseFormEdit from "../components/expenses/ExpenseFormEdit";
+import ExpenseDetail from "../components/expenses/ExpenseDetail";
+
 
 enum CategoryType {
     GROCERIES = "GROCERIES",
@@ -44,6 +46,12 @@ const ExpenseContainer = ({ user, expenses, providers }: any) => {
             return expense.id === parseInt(id);
         });
     };
+
+    const ExpenseDetailWrapper = () => {
+        const { id } = useParams();
+        let foundPirate = findExpenseById(id)
+        return <ExpenseDetail expense={foundPirate} handleDelete={handleDelete} handleEdit={handleEdit}/>;
+      };
 
     const ExpenseFormEditWrapper = () => {
         const { id } = useParams();
@@ -110,6 +118,7 @@ const ExpenseContainer = ({ user, expenses, providers }: any) => {
                 <Route path="/" element={<ExpenseList expenses={expenses} handleDelete={handleDelete} handleEdit={handleEdit} />} />
                 <Route path="/add" element={<ExpenseForm user={user} providers={providers} categories={categories} onCreate={handlePost} onCreateProvider={handlePostNoProvider} />} />
                 <Route path="/:id/edit"element={<ExpenseFormEditWrapper  />}/>
+                <Route path="/:id" element={<ExpenseDetailWrapper />} />
             </Routes>
             <Footer/>
         </>

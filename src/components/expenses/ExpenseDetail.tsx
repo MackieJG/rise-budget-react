@@ -1,5 +1,6 @@
 import React from 'react'
 import {useNavigate} from 'react-router-dom';
+import Expense from './Expense';
  
 enum CategoryType {
     GROCERIES = "GROCERIES",
@@ -51,6 +52,7 @@ const ExpenseDetail = ({expense, handleDelete}: ExpenseDetailProps) => {
         <>
         <div className='expenses-page'>
         <div className="expense-detail">
+            <Expense expense={expense}/>
             <p>{expense.title}</p>
             <p>{expense.amount}</p>
             <p>{expense.provider.name}</p>
