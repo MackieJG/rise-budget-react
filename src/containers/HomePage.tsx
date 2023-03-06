@@ -1,5 +1,6 @@
 import React from 'react';
 import './homepage.css'
+import background from './expense-background.png'
 import NavBarBottom from '../components/navigation/NavBarBottom';
 import NavBarTop from '../components/navigation/NavBarTop';
 import Footer from '../components/footer/Footer';
@@ -34,6 +35,7 @@ const HomePage = ({ expenses, users }: ExpensesPropsHome) => {
       <div className="home-page">
         <NavBarTop />
         <div className="info-container">
+        {/* style={{ backgroundImage: `url(${background})`}} */}
           <div className="info-details">
 
             <div className="info">
@@ -41,6 +43,8 @@ const HomePage = ({ expenses, users }: ExpensesPropsHome) => {
               <p className='info-p2'>£{remainingBudget}</p>
               <p className='info-p1'>left for the month</p>
             </div>
+
+            <NavBarBottom />
 
             {/* {remainingBudget >= 0 ? (
               <p className="short-message">You're on track for this month!</p>
@@ -52,11 +56,11 @@ const HomePage = ({ expenses, users }: ExpensesPropsHome) => {
 
           <div className="chart">
             <ExpensePieChart expenses={expenses} />
-            <p className='chart-text'>Your spending breakdown this month</p>
+            <p className='chart-text'>Your spending breakdown based on category</p>
           </div>
 
+        
         </div>
-        <NavBarBottom />
         <Footer />
       </div>
     );

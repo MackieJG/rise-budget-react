@@ -12,28 +12,28 @@ const NavBarBottom = () => {
 
                 <div className='icon-container'>
                     <Link id='pots' to="/pots" className='link-2'>
-                        <img src={pots} width='100'/>
+                        <img src={pots} width='50'/>
                         <p>Pots</p>
                     </Link>
                 </div>
 
                 <div className='icon-container'>
                     <Link id='expenses' to="/expenses" className='link-2'>
-                        <img src={expenses} width='100'/>
+                        <img src={expenses} width='50'/>
                         <p>Expenses</p>
                     </Link>
                 </div>
 
                 <div className='icon-container'>
                 <Link id='analytics' to="/analytics" className='link-2'>
-                    <img src={analytics} width='100'/>
+                    <img src={analytics} width='50'/>
                     <p>Analytics</p>
                 </Link>
                 </div>
 
                 <div className='icon-container'>
                     <Link id='advice' to="/advice" className='link-2'>
-                        <img src={advice} width='100'/>
+                        <img src={advice} width='50'/>
                         <p>Advice</p>
                     </Link>
                 </div>
