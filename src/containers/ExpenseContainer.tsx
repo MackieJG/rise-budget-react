@@ -35,7 +35,6 @@ interface ExpenseProps {
 };
 
 const ExpenseContainer = ({ user, expenses, providers }: any) => {
-    
     const [categories, setCategories] = useState(Object.values(CategoryType));
 
     useEffect(() => {
@@ -93,11 +92,11 @@ const ExpenseContainer = ({ user, expenses, providers }: any) => {
         if (provider) {
             const request = new ApiRequest();
             expense["user"] = user[0];
-
             const payload: any = {name: provider}
             request.post('/api/providers/', payload).then((res) => res.json())
             .then((data) => {
                 expense["provider"] = data;
+                console.log(data);
                 return request.post('/api/expenses/', expense)
             }) 
             .then(() => {
