@@ -94,7 +94,7 @@ const [stateExpense, setStateExpense] = useState<ExpenseProps>(
 
       return (
         <div>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className='expense-form-container'>
             <input
               type="text"
               placeholder="Expense Title"
@@ -109,13 +109,22 @@ const [stateExpense, setStateExpense] = useState<ExpenseProps>(
               onChange={handleChange}
               value={stateExpense.amount}
             />
-            <select name="provider" onChange={handleProvider} defaultValue={expense.provider.id}>
-              <option disabled value="select-provider">
+            <select name="provider" 
+              onChange={handleProvider} 
+              defaultValue={expense.provider.id}
+              className='dropdown'
+              >
+              <option disabled value="select-provider"
+              >
                 choose your provider
               </option>
               {providerOptions}
             </select>
-            <select name="category" onChange={handleCategory} defaultValue={expense.category}>
+            <select name="category" 
+              onChange={handleCategory} 
+              defaultValue={expense.category}
+              className='dropdown'
+              >
               <option disabled value="select-category">
                 what category?
               </option>

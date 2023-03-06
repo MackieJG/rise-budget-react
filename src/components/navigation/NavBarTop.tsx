@@ -17,7 +17,7 @@ const NavBarTop = () => {
                 </div>
 
                 <div className='logo'>
-                    <Link id='home' to="/" className="home-link"> <img src={logo} width='200'/></Link>
+                    <Link id='home' to="/" className="home-link"> <img src={logo} width='150'/></Link>
                 </div>
 
                 <div className='right-container'>

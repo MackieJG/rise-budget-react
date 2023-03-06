@@ -1,44 +1,67 @@
+/* .home-page {
+    max-width: 60%;
+    margin: 0 auto;
+} */
+
 .info-details {
-  /* margin-bottom: 5rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .info-container {
   display: flex;
   justify-content: space-evenly;
+  border-radius: 50px;
+  border: 2px solid #80b180;
+    padding: 3rem 4rem;
+  background-image: url(./expense-background.png);
+  background-size: cover;
+  background-position: center center;
+  background-color: #5a975ac9;
   gap: 1rem;
 }
 
 .info {
-  background-color: #FFBE05;
-  padding: 5rem;
-  border-radius: 2px;
+  background-color: white;
+  padding: 2rem 2rem;
+  border-radius: 50px;
+  border: 2px solid #80b180;
   display:flex;
   flex-direction: column;
+  opacity: .9;
 }
   
-  
 .chart {
-  /* background-color: lightgray; */
-  padding: 1rem;
-  border: 1px solid black;
-  border-radius: 2px;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 50px;
+  border: 2px solid #80b180;
+  padding: 2rem;
+  opacity: .9;
+}
+
+.chart-text {
+margin-top: 1rem;
 }
 
 .info-p1{
   margin:0;
   padding:0;
+  font-size: 20px;
 }
 
 .info-p2{
   margin:0;
   padding:0;
   color: #80b180;
-  font-size: 40px;
+  font-size: 50px;
   font-weight: 700;
 }
 
 .info-p2:hover {
-  font-size: 40px;
   color:#5a975a;
   cursor: pointer;
 }

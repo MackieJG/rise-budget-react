@@ -105,7 +105,7 @@ p {
     font-family: inherit;
     color: var(--clr-grey-500);
     font-size: var(--fs-text-md);
-    border-radius: 2px;
+    border-radius: 50px;
     border: 2px solid var(--background_color);
   }
 
@@ -114,7 +114,9 @@ p {
   }
 
   .expense-form-container {
-    border: 1px solid black;
+    border-radius: 50px;
+    padding: 10rem;
+    background-color: #80b1807c;
     padding: 1rem 0;
     display: flex;
     flex-direction: column;
@@ -130,7 +132,7 @@ p {
     font-family: inherit;
     color: var(--clr-grey-500);
     font-size: var(--fs-text-md);
-    border-radius: 2px;
+    border-radius: 50px;
     border: 2px solid var(--background_color);
     outline-color: var(--logo_yellow);
   }

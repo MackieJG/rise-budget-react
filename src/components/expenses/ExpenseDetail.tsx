@@ -52,7 +52,7 @@ const ExpenseDetail = ({expense, handleDelete}: ExpenseDetailProps) => {
         <div className='expense-detail__container'>
             {/* <Expense expense={expense}/> */}
             <p>Title: {expense.title}</p>
-            <p>Spend: £{expense.amount}</p>
+            <p>Amount: £{expense.amount}</p>
             <p>Provider: {expense.provider.name}</p>
             <p>Category: {expense.category}</p>
             <p>{expense.date}</p>

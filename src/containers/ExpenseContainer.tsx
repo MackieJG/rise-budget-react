@@ -18,9 +18,10 @@ enum CategoryType {
     MORTGAGE = "MORTGAGE",
     SUBSCRIPTIONS = "SUBSCRIPTIONS",
     ENTERTAINMENT = "ENTERTAINMENT",
-    EATINGOUT = "EATINGOUT",
     TRANSPORT = "TRANSPORT",
+    EATING_OUT = "EATING_OUT",
     HEALTH = "HEALTH",
+    GENERAL = "GENERAL"
 };
 
 interface ExpenseProps {
@@ -34,7 +35,6 @@ interface ExpenseProps {
 };
 
 const ExpenseContainer = ({ user, expenses, providers }: any) => {
-console.log(user)
     const [categories, setCategories] = useState(Object.values(CategoryType));
 
     useEffect(() => {
@@ -74,7 +74,7 @@ console.log(user)
     const handleEdit = (expense: any) => {
         const request = new ApiRequest();
         const url = '/api/expenses/' + expense.id;
-        expense["user"] = user
+        expense["user"] = {... user}
         request.put(url, expense).then(() => {
             window.location.href = '/expenses'
         });
@@ -82,8 +82,7 @@ console.log(user)
 
     const handlePost = (expense: any) => {
         const request = new ApiRequest();
-        expense["user"] = user
-        console.log(expense["user"]);
+        expense["user"] = user[0]
         request.post('/api/expenses/', expense).then(() => {
             window.location.href = '/expenses'
         });
@@ -92,8 +91,7 @@ console.log(user)
     const handlePostNoProvider = (expense: any, provider: any) => {
         if (provider) {
             const request = new ApiRequest();
-            expense["user"] = user
-            
+            expense["user"] = user[0];
             const payload: any = {name: provider}
             request.post('/api/providers/', payload).then((res) => res.json())
             .then((data) => {
@@ -107,7 +105,7 @@ console.log(user)
             
         } else {
             const request = new ApiRequest();
-            expense["user"] = user
+            expense["user"] = {...user}
             request.post('/api/expenses/', expense).then(() => {
                 window.location.href = '/expenses'
             });
