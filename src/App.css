@@ -42,13 +42,18 @@ html {
   box-sizing: border-box;
 }
 
-body, #root{
+#root{
   display: flex;
   flex-flow: column wrap;
   place-items: top;
   min-width: 320px;
   min-height: 100vh;
 }
+
+body{
+
+}
+
  main {
   flex: 1;
  }
@@ -61,8 +66,16 @@ img {
 
 .App {
   font-family: 'Geneva';
-  max-width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
+  padding: 0 1.875rem;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* CONTAINER */

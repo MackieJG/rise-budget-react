@@ -8,8 +8,11 @@
     flex-direction: column;
     justify-content: space-between;
 }
-
+.wrapper-2 {
+  flex:1;
+}
 .info-container {
+  flex: 1;
   display: flex;
   justify-content: space-evenly;
   border-radius: 50px;
@@ -42,13 +45,18 @@
   
 .chart {
   /* border: 1px solid black; */
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
   background-color: white;
   border-radius: 50px;
   border: 2px solid #80b180;
   padding: 2rem;
   opacity: .9;
+}
+
+.chart > canvas {
+  max-width: 400px;
+  max-height: 400px;
 }
 
 .chart-text {

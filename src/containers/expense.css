@@ -33,10 +33,7 @@
 
 
 .expense-item{
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  /* border: 1px solid black; */
+  width: 100%;;
   border-radius: 50px;
   border: 2px solid #80b180;
   background-color: white;
@@ -44,9 +41,9 @@
 }
 
 .expense-item > div {
-  /* border: 1px solid black; */
   display: flex;
   gap: 3rem;
+  justify-content: space-between;
 }
 
 .expense-item > div > a {

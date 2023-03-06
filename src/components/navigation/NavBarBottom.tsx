@@ -23,7 +23,7 @@ const NavBarBottom = () => {
                 <div className='icon-container'>
                     <Link id='pots' to="/pots" className='link-2'>
                         <img src={pots1} width='50'/>
-                        <p>Pots</p>
+                        <p> Pots </p>
                     </Link>
                 </div>
 

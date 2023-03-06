@@ -32,34 +32,30 @@ const HomePage = ({ expenses, users }: ExpensesPropsHome) => {
     const remainingBudget = parseFloat((userBudget - expenses.reduce((total, expense) => total + expense.amount, 0)).toFixed(2));
   
     return (
-      <div className="home-page">
+      <div className='wrapper'>
         <NavBarTop />
-        <div className="info-container">
-        {/* style={{ backgroundImage: `url(${background})`}} */}
-          <div className="info-details">
-
-            <div className="info">
-              <p className='info-p1'>You have </p>
-              <p className='info-p2'>£{remainingBudget}</p>
-              <p className='info-p1'>left for the month</p>
+        <div className='wrapper-2'>
+          <div className="info-container">
+          {/* style={{ backgroundImage: `url(${background})`}} */}
+            <div className="info-details">
+              <div className="info">
+                <p className='info-p1'>You have </p>
+                <p className='info-p2'>£{remainingBudget}</p>
+                <p className='info-p1'>left for the month</p>
+              </div>
+              <NavBarBottom />
+              {/* {remainingBudget >= 0 ? (
+                <p className="short-message">You're on track for this month!</p>
+              ) : (
+                <p className="short-message">You've exceeded your budget for this month!</p>
+              )} */}
             </div>
-
-            <NavBarBottom />
-
-            {/* {remainingBudget >= 0 ? (
-              <p className="short-message">You're on track for this month!</p>
-            ) : (
-              <p className="short-message">You've exceeded your budget for this month!</p>
-            )} */}
-
+            <div className="chart">
+              <ExpensePieChart expenses={expenses} />
+              <p className='chart-text'>Your spending breakdown based on category</p>
+            </div>
+          
           </div>
-
-          <div className="chart">
-            <ExpensePieChart expenses={expenses} />
-            <p className='chart-text'>Your spending breakdown based on category</p>
-          </div>
-
-        
         </div>
         <Footer />
       </div>
