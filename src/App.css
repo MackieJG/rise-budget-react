@@ -49,6 +49,10 @@ body, #root{
   min-width: 320px;
   min-height: 100vh;
 }
+ main {
+  flex: 1;
+ }
+
 
 img {
   max-width: 100%;
@@ -56,30 +60,37 @@ img {
 }
 
 .App {
-  min-height: 100vh;
-  margin: 0;
   font-family: 'Geneva';
+  max-width: 90%;
+  margin: 0 auto;
 }
 
+/* CONTAINER */
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+}
 
 /* TOP NAV BAR */
 
 .navbar-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .left-container {
   display: flex;
-  justify-content: space-around;
-  padding-top: 2rem;
+  justify-content: space-between;
+  /* padding-top: 2rem; */
   width: 30%;
 }
 
 .right-container {
   display: flex;
-  justify-content: space-around;
-  padding-top: 2rem;
+  justify-content: space-between;
+  /* padding-top: 2rem; */
   width: 30%;
 }
 
@@ -93,7 +104,7 @@ img {
   color: black ;
   font-weight: 900;
   text-decoration: none;
-  padding: 1rem;
+  /* padding: 1rem; */
   /* background-color: #80b1803c; */
   border-radius: 10px;
   /* background-image: url(./expense-background.png);
