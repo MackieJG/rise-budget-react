@@ -3,7 +3,7 @@ import { Bar } from 'react-chartjs-2';
 
 const FilteredExpenseBarChart = ({ barChartExpense }) => {
   const data = {
-    labels: barChartExpense.map(expense => expense.date),
+    labels: barChartExpense.map(expense => expense.title),
     datasets: [
       {
         label: `Expense Amount`,
@@ -19,14 +19,23 @@ const FilteredExpenseBarChart = ({ barChartExpense }) => {
     scales: {
       yAxes: [
         {
+          type: 'linear',
           ticks: {
             beginAtZero: true,
           },
         },
       ],
+      xAxes: [
+        {
+          type: 'time',
+          time: {
+            unit: 'day',
+          },
+        },
+      ],
     },
   };
-
+  
   return <Bar data={data} options={options} />;
 };
 
