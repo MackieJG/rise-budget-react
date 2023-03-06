@@ -6,7 +6,7 @@ Chart.register(...registerables);
 
 
 const ExpensePieChart = ({ expenses }) => {
-  
+  console.log(expenses);
   const expenseByCategory = expenses.reduce((acc, expense) => {
     const category = expense.category;
     if (acc[category]) {

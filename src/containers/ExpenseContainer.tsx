@@ -34,7 +34,7 @@ interface ExpenseProps {
 };
 
 const ExpenseContainer = ({ user, expenses, providers }: any) => {
-
+    
     const [categories, setCategories] = useState(Object.values(CategoryType));
 
     useEffect(() => {
@@ -74,7 +74,7 @@ const ExpenseContainer = ({ user, expenses, providers }: any) => {
     const handleEdit = (expense: any) => {
         const request = new ApiRequest();
         const url = '/api/expenses/' + expense.id;
-        expense["user"] = user
+        expense["user"] = {... user}
         request.put(url, expense).then(() => {
             window.location.href = '/expenses'
         });
@@ -82,7 +82,7 @@ const ExpenseContainer = ({ user, expenses, providers }: any) => {
 
     const handlePost = (expense: any) => {
         const request = new ApiRequest();
-        expense["user"] = user
+        expense["user"] = user[0]
         request.post('/api/expenses/', expense).then(() => {
             window.location.href = '/expenses'
         });
@@ -91,7 +91,7 @@ const ExpenseContainer = ({ user, expenses, providers }: any) => {
     const handlePostNoProvider = (expense: any, provider: any) => {
         if (provider) {
             const request = new ApiRequest();
-            expense["user"] = user
+            expense["user"] = user[0];
 
             const payload: any = {name: provider}
             request.post('/api/providers/', payload).then((res) => res.json())
@@ -105,7 +105,7 @@ const ExpenseContainer = ({ user, expenses, providers }: any) => {
             
         } else {
             const request = new ApiRequest();
-            expense["user"] = user
+            expense["user"] = {...user}
             request.post('/api/expenses/', expense).then(() => {
                 window.location.href = '/expenses'
             });
