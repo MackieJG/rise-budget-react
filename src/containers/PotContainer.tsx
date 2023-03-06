@@ -45,9 +45,14 @@ const PotContainer = ({user}: any) => {
     };
 
     const handleEdit = (pot: any) => {
+        console.log('pot', pot);
+
+        
+        
         const request = new ApiRequest();
         const url = '/api/pots/' + pot.id;
-        pot["user"] = user
+        pot["user"] = {... user}
+        console.log('pot.user', pot.user);
         request.put(url, pot).then(() => {
             window.location.href = '/pots';
         });
@@ -55,7 +60,7 @@ const PotContainer = ({user}: any) => {
 
     const handlePost = (pot: any) => {
         const request = new ApiRequest();
-        pot["user"] = user
+        pot["user"] = user[0]
         request.post('/api/pots/', pot).then(() => {
             window.location.href = '/pots';
         });
