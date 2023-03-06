@@ -34,7 +34,7 @@ interface ExpenseProps {
 };
 
 const ExpenseContainer = ({ user, expenses, providers }: any) => {
-
+console.log(user)
     const [categories, setCategories] = useState(Object.values(CategoryType));
 
     useEffect(() => {
@@ -83,6 +83,7 @@ const ExpenseContainer = ({ user, expenses, providers }: any) => {
     const handlePost = (expense: any) => {
         const request = new ApiRequest();
         expense["user"] = user
+        console.log(expense["user"]);
         request.post('/api/expenses/', expense).then(() => {
             window.location.href = '/expenses'
         });
@@ -92,11 +93,12 @@ const ExpenseContainer = ({ user, expenses, providers }: any) => {
         if (provider) {
             const request = new ApiRequest();
             expense["user"] = user
-
+            
             const payload: any = {name: provider}
             request.post('/api/providers/', payload).then((res) => res.json())
             .then((data) => {
                 expense["provider"] = data;
+                console.log(data);
                 return request.post('/api/expenses/', expense)
             }) 
             .then(() => {
