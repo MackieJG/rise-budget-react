@@ -163,11 +163,16 @@ li {
 .navbar-bottom-container {
   display: flex;
   justify-content: space-around;
-  margin-top: 6rem;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 50px;
+  opacity: .9;
 }
 
 .icon-container{
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-content: space-between;
 }
