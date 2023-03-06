@@ -1,0 +1,39 @@
+
+
+.user-page {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+}
+/* 
+.user-container {
+    border-color: #FFBE05;
+} */
+
+button {
+    background-color: #80B180;
+    border-style: none;
+    border-radius: 0.5rem;
+    color: white;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 0.4rem .8rem;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease-out;
+    width: fit-content;
+}
+
+.buttons {
+    justify-content: center;
+}
+
+.name {
+    padding-top: 0.5rem;
+    color: #80B180;
+}
+
+
+p {
+    margin: 1rem;
+}
