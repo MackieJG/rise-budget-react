@@ -1,3 +1,8 @@
+/* .home-page {
+    max-width: 60%;
+    margin: 0 auto;
+} */
+
 .info-details {
     display: flex;
     flex-direction: column;
@@ -9,8 +14,7 @@
   justify-content: space-evenly;
   border-radius: 50px;
   border: 2px solid #80b180;
-    padding: 2rem 2rem;
-  margin: 0 2rem;
+    padding: 3rem 4rem;
   background-image: url(./expense-background.png);
   background-size: cover;
   background-position: center center;
