@@ -22,6 +22,14 @@
   gap: 1rem;
 }
 
+@media only screen and (max-width: 950px) {
+    .info-container {
+        flex-wrap: wrap;
+    }
+  }
+
+
+
 .info {
   background-color: white;
   padding: 2rem 2rem;
