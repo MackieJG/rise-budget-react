@@ -40,7 +40,7 @@ const MainContainer = () => {
             <Route path='/pots/*' element={ <PotContainer user={users}/> } />
             <Route path='/expenses/*' element={ <ExpenseContainer user={users} expenses={expenses} providers={providers} /> } />
             <Route path='/analytics' element={ <AnalyticsContainer /> } />
-            <Route path='/advice' element={ <AdviceContainer /> } />
+            <Route path='/advice/*' element={ <AdviceContainer /> } />
             </Routes>
         </Router>
     )

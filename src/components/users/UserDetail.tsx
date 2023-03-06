@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import '../users/user.css';
 interface ExpenseProps {
     title: string;
     amount: number;
@@ -49,12 +50,18 @@ const UserDetail = ({user, handleDelete}: UserDetailProps) => {
 
     return (
         <>
-        <div className="user-detail">
-            <p>{user.name}</p>           
-            <p>{user.budget}</p>
-        </div>
-        <div className="buttons">
-            <button onClick={onEdit}>Edit User & Budget</button>
+        <div className='user-page'>
+            <div className='user-container'>
+                <div className="name">
+                    <p>{user.name}</p>  
+                </div>    
+                <div className="budget">    
+                    <p>Budget: £{user.budget}</p>
+                </div>
+                <div className="buttons">
+                    <button onClick={onEdit}>Edit User & Budget</button>
+                </div>
+            </div>
         </div>
         </>
     );

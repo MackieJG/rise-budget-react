@@ -1,0 +1,15 @@
+
+.advice-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem;
+    margin-top: 2rem;
+    background-color: white;
+    border-radius: 50px;
+}
+
+.icon-container{
+    display: flex;
+    flex-direction: column;
+  }
