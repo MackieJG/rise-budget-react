@@ -7,6 +7,7 @@ import NavBarTop from "../components/navigation/NavBarTop";
 import PotForm from "../components/pots/PotForm";
 import PotFormEdit from "../components/pots/PotFormEdit";
 import Footer from "../components/footer/Footer";
+import Swal from 'sweetalert2'
 
 interface PotProps {
     id: number;
@@ -57,7 +58,14 @@ const PotContainer = ({user}: any) => {
     const handlePost = (pot: any) => {
         const request = new ApiRequest();
         pot["user"] = user[0]
-        request.post('/api/pots/', pot).then(() => {
+        request.post('/api/pots/', pot)
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'New pot added!',
+            showConfirmButton: true,
+            confirmButtonText: 'OK!'
+          }).then(() => {
             window.location.href = '/pots';
         });
     };
