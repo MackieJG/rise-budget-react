@@ -8,8 +8,9 @@ const FilteredExpenseBarChart = ({ barChartExpense }) => {
       {
         label: `Expense Amount`,
         data: barChartExpense.map(expense => expense.amount),
-        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-        borderColor: 'rgba(255, 99, 132, 1)',
+        backgroundColor: '#5a975a7c',
+        borderColor: '#80b180',
+
         borderWidth: 1,
       },
     ],

@@ -9,6 +9,7 @@ import ExpenseForm from "../components/expenses/ExpenseForm";
 import Footer from "../components/footer/Footer";
 import ExpenseFormEdit from "../components/expenses/ExpenseFormEdit";
 import ExpenseDetail from "../components/expenses/ExpenseDetail";
+import Swal from 'sweetalert2'
 
 
 enum CategoryType {
@@ -66,7 +67,22 @@ const ExpenseContainer = ({ user, expenses, providers }: any) => {
     const handleDelete = (expense: any) => {
         const request = new ApiRequest();
         const url = '/api/expenses/' + expense.id;
-        request.delete(url).then(() => {
+        request.delete(url)
+        
+        Swal.fire({
+            title: 'Do you want to save the changes?',
+            showDenyButton: true,
+            showCancelButton: false,
+            confirmButtonText: 'Delete!',
+            denyButtonText: `Don't save`,
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire('Deleted!', '', 'success')
+            } else if (result.isDenied) {
+              Swal.fire('Still got the expense!', '', 'info')
+            }
+          })
+        .then(() => {
             window.location.href = '/expenses';
         });
     };
@@ -83,9 +99,18 @@ const ExpenseContainer = ({ user, expenses, providers }: any) => {
     const handlePost = (expense: any) => {
         const request = new ApiRequest();
         expense["user"] = user[0]
-        request.post('/api/expenses/', expense).then(() => {
+        request.post('/api/expenses/', expense)
+
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'new Expense added!',
+            showConfirmButton: true,
+            confirmButtonText: 'OK!'
+          }).then(() => {
             window.location.href = '/expenses'
         });
+        
     };
 
     const handlePostNoProvider = (expense: any, provider: any) => {
