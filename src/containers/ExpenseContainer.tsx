@@ -70,7 +70,7 @@ const ExpenseContainer = ({ user, expenses, providers }: any) => {
         request.delete(url)
         
         Swal.fire({
-            title: 'Do you want to save the changes?',
+            title: 'Do you want to remove this expense?',
             showDenyButton: true,
             showCancelButton: false,
             confirmButtonText: 'Delete!',
@@ -104,7 +104,7 @@ const ExpenseContainer = ({ user, expenses, providers }: any) => {
         Swal.fire({
             position: 'top-end',
             icon: 'success',
-            title: 'new Expense added!',
+            title: 'New expense added!',
             showConfirmButton: true,
             confirmButtonText: 'OK!'
           }).then(() => {
