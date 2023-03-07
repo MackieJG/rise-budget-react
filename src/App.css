@@ -113,13 +113,7 @@ img {
   color: black ;
   font-weight: 900;
   text-decoration: none;
-  /* padding: 1rem; */
-  /* background-color: #80b1803c; */
   border-radius: 10px;
-  /* background-image: url(./expense-background.png);
-  background-size: cover;
-  background-position: center center; */
-  /* background-color: #5a975ac9; */
 }
 
 .link:hover {
@@ -127,8 +121,6 @@ img {
 }
 
 
-
-/*  */
 /*  BOTTOM NAV BAR ICONS */
 
 .navbar-bottom-container {
@@ -147,7 +139,6 @@ img {
 
 
 
-/*  */
 /* FOOTER */
 
 .footer-container {
@@ -160,8 +151,6 @@ img {
 
 .footer-left-container {
   text-align: start;
-  /* margin: 10px; */
-  /* text-align: left; */
 }
 
 .rise {
@@ -189,7 +178,6 @@ img {
 
 li {
   list-style: none;
-  padding-right: 3rem;
 }
 
 .link-2 {

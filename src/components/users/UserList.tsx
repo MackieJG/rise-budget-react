@@ -37,19 +37,15 @@ const UserList = ({users, handleDelete, handleEdit}: UserListProps) => {
 
     const userElements = users.map((user, index) => {
         return (
-            <li key={index} className="user-item">
-                <div className="user">
+            <li key={index}>
                     <UserDetail user={user} handleDelete={handleDelete} handleEdit={handleEdit}/>
-                </div>
             </li>
         );
     });
     
     return (
         <>
-        <ul className="component-list">
             {userElements}
-        </ul>
         </>
     );
 

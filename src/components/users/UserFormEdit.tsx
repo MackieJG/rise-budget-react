@@ -57,26 +57,28 @@ const UserFormEdit = ({ user, onEdit }: UserFormEditProps) => {
   };
 
   return (
+      <div className="user-edit-form-container">
+        <form onSubmit={handleSubmit} className="user-edit-form">
+          <p className="user-p">Edit User Name:</p>
+          <input
+            type="text"
+            placeholder="User Name"
+            name="name"
+            onChange={handleChange}
+            value={stateUser.name}
+          />
+          <p className="user-p">Edit Budget:</p>
+          <input
+            type="number"
+            placeholder="budget"
+            name="budget"
+            onChange={handleChange}
+            value={stateUser.budget}
+          />
+          <button type="submit">Save</button>
+        </form>
+      </div>
 
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="User Name"
-          name="name"
-          onChange={handleChange}
-          value={stateUser.name}
-        />
-        <input
-          type="number"
-          placeholder="budget"
-          name="budget"
-          onChange={handleChange}
-          value={stateUser.budget}
-        />
-        <button type="submit">Save</button>
-      </form>
-    </div>
   );
 
 };

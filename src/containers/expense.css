@@ -1,6 +1,10 @@
 
 /* EXPENSE LIST */
 
+.container{
+  width: 80%;
+}
+
 .expense-list-page {
   display: flex;
   flex-direction: column;

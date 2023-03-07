@@ -52,23 +52,16 @@ const UserDetail = ({user, handleDelete}: UserDetailProps) => {
 
     return (
         <>
-        {/* <div className='user-page'> */}
-            <div className='user-container'>
-                <div className='user-img'>
-                    <img src={user_img} width='200'/>
-                </div>
-            
-                <div className="name">
-                    <p>{user.name}</p>  
-                </div>    
-                <div className="budget">    
-                    <p>Budget: £{user.budget}</p>
-                </div>
-                <div className="buttons">
-                    <button onClick={onEdit}>Edit User & Budget</button>
+            <div className='wrapper'>
+                <div className="user-page">
+                    <div className='user-container'>
+                        <img src={user_img} width='200'className='user-img'/>
+                        <p className='user-p2'>{user.name}</p>
+                        <p className='user-p2'>Budget: £{user.budget}</p>
+                        <button onClick={onEdit}>Edit User & Budget</button>
+                    </div>
                 </div>
             </div>
-        {/* </div> */}
         </>
     );
 

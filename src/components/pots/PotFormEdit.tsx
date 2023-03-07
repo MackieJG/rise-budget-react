@@ -41,8 +41,8 @@ const PotFormEdit = ({pot, onEdit }: PotFormEditProps) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="user-edit-form-container">
+      <form onSubmit={handleSubmit} className="user-edit-form">
         <input
           type="text"
           placeholder="Pot Title"
