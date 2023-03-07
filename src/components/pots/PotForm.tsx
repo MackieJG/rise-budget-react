@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
 interface PotProps {
-    id: number;
-    title: string;
-    amount: number;
-    user: any;
+  id: number;
+  title: string;
+  targetAmount: number;
+  currentAmount: number;
+  user: any;
 }
 interface PotFormProps {
     onCreate: (pot: any) => void;
@@ -16,7 +17,8 @@ const PotForm = ({ user, onCreate }: PotFormProps) => {
   const [statePot, setStatePot] = useState<PotProps>({
     id: 0,
     title: '',
-    amount: 0,
+    targetAmount: 0,
+    currentAmount: 0,
     user: user,
   });
 
@@ -32,8 +34,8 @@ const PotForm = ({ user, onCreate }: PotFormProps) => {
   
 
   const handleSubmit = function (event: any) {
-      event.preventDefault();
-      onCreate(statePot);
+    event.preventDefault();
+    onCreate(statePot);
   };
 
 
@@ -49,10 +51,17 @@ const PotForm = ({ user, onCreate }: PotFormProps) => {
         />
         <input
           type="number"
-          placeholder="Amount"
-          name="amount"
+          placeholder="Target Amount"
+          name="target_amount"
           onChange={handleChange}
-          value={statePot.amount}
+          value={statePot.targetAmount}
+        />
+        <input
+          type="number"
+          placeholder="Current Amount"
+          name="current_amount"
+          onChange={handleChange}
+          value={statePot.currentAmount}
         />
         <button type="submit">Save</button>
       </form>    

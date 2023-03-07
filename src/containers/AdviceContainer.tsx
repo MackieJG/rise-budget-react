@@ -17,6 +17,7 @@ const AdviceContainer = () => {
         <>
 
         <NavBarTop/>
+        <AdviceList />
         <Routes>
             <Route path="/pensions" element={<PensionsAdvice/>} />
             <Route path="/rainy_day" element={<RainyDayAdvice />} />
@@ -24,7 +25,6 @@ const AdviceContainer = () => {
             <Route path="/house" element={<BuyHouseSavingAdvice />} />
             <Route path="/long_term" element={<LongTermSavingAdvice />} />
         </Routes>
-            <AdviceList />
         <Footer/>
         
         </>
