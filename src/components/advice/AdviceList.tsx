@@ -20,7 +20,7 @@ const AdviceList = () => {
                     <h4 className='quote-person'>-Kendrick Lamar, Money Trees</h4>
                     <div className='first'>
                         <h2>First and Foremost</h2>
-                        <p>
+                        <p className='first-paragraph'>
                             First of all, create a budget and keep a spending diary for tracking your spending over time. 
                             Thank goodness you have found this app!
                             Once you have figured out your monthly budget with your money being greater than your money out, 

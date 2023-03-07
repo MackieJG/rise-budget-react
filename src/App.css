@@ -160,12 +160,12 @@ img {
 
 .footer-left-container {
   text-align: start;
-  margin: 10px;
+  /* margin: 10px; */
   /* text-align: left; */
 }
 
 .rise {
-  font-size:small;
+  font-size: small;
   text-align: left;
   color: #FFBE05;
 }
@@ -179,14 +179,12 @@ img {
   justify-content: space-between;
   align-content: end;
   gap: 1rem;
-  margin-right: 15px;
+  margin-right: 20px;
 }
 
 .small-print {
-  padding-top: 1rem;
+  padding-top: 0.5rem;
   font-size: xx-small;
-  margin-left: 5px;;
-  text-align: center;
 }
 
 li {
