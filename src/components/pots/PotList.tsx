@@ -16,7 +16,9 @@ interface PotListProps {
 const PotList = ({pots, handleDelete, handleEdit}: PotListProps) => {
 
     if(pots.length === 0 ) {
-        return(<p>You have no pots! Lets get you started!</p>)
+        return(<><p>You have no pots! Lets get you started!</p>
+        <p className="link-3"><Link className="link-3" id='pot-form' to="/pots/add">Create New Pot</Link></p>
+        </>)
     };
 
     const potElements = pots.map((pot, index) => {
@@ -31,7 +33,7 @@ const PotList = ({pots, handleDelete, handleEdit}: PotListProps) => {
 
     return (
         <>
-        <p className="link-3" ><Link className="link-3" id='pot-form' to="/pots/add">Create New Pot</Link></p>
+        <p className="link-3"><Link className="link-3" id='pot-form' to="/pots/add">Create New Pot</Link></p>
         <div className="pot-list-container">
         <ul className = "pot-list">
             {potElements}

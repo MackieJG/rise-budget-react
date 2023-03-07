@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 import PotList from "../components/pots/PotList";
 import ApiRequest from "../helpers/request";
@@ -45,10 +45,6 @@ const PotContainer = ({user}: any) => {
     };
 
     const handleEdit = (pot: any) => {
-        console.log('pot', pot);
-
-        
-        
         const request = new ApiRequest();
         const url = '/api/pots/' + pot.id;
         pot["user"] = {... user}
@@ -70,7 +66,7 @@ const PotContainer = ({user}: any) => {
         const { id } = useParams();
         let foundPot = findPotById(id);
         if (!foundPot) {
-            return <div>Loading...</div>;
+            return <p>Loading...</p>;
         };
         return (<PotFormEdit pot={foundPot} amount={0} user={user} onEdit={handleEdit} /> );
     };
