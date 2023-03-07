@@ -90,9 +90,9 @@ const UserContainer = ({user}: any) => {
         <>
         <NavBarTop/>
         <Routes>
-            <Route path="/" element={<UserList users={users} handleDelete={handleDelete} handleEdit={handleEdit} /> }/>
-            <Route path="/add" element={<UserForm user={user} onCreate={handlePost} /> } />
-            <Route path="/:id/edit" element={<UserFormEditWrapper /> } />
+                <Route path="/" element={<UserList users={users} handleDelete={handleDelete} handleEdit={handleEdit} /> }/>
+                <Route path="/add" element={<UserForm user={user} onCreate={handlePost} /> } />
+                <Route path="/:id/edit" element={<UserFormEditWrapper /> } />
         </Routes>
         <Footer/>
         </>

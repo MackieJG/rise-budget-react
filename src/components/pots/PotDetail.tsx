@@ -38,15 +38,16 @@ const PotDetail = ({pot, handleDelete}: PotDetailProps) => {
     return (
         <>
         <div className='pot-page'>
-        <div className="pot-detail">
-            <p>{pot.title}</p>
-            <p>{pot.targetAmount}</p>
-            <p>{pot.currentAmount}</p>
-         </div>
-        <div className="buttons">
-            <button onClick={onDelete}>Delete</button>
+            <div className="pot-detail">
+                <p className='pot-p'>{pot.title}</p>
+                <p className='pot-p'>Goal: £{pot.targetAmount}</p>
+                <p className='pot-p'>Saved: £{pot.currentAmount}</p>
+            </div>
+
+            <div className="buttons">
+                <button onClick={onDelete}>Delete</button>
             <button onClick={onEdit}>Edit Pot</button>
-        </div>
+            </div>
         </div>
         </>
     );

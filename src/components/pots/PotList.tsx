@@ -24,21 +24,21 @@ const PotList = ({pots, handleDelete, handleEdit}: PotListProps) => {
 
     const potElements = pots.map((pot, index) => {
         return (
-            <li key={index} className="pot-item">
-                <div className ="pot">
+            <li key={index}>
                     <PotDetail pot={pot} handleDelete={handleDelete} handleEdit={handleEdit}/>
-                </div>
             </li>
         );
     });
 
     return (
         <>
-        <p className="link-3"><Link className="link-3" id='pot-form' to="/pots/add">Create New Pot</Link></p>
-        <div className="pot-list-container">
-        <ul className = "pot-list">
-            {potElements}
-        </ul>
+        <div className="pot-list-wrapper">
+            <div className="pot-list-container">
+                <div className = "pot-list">
+                <p className="link-3"><Link className="link-3" id='pot-form' to="/pots/add">Click To Create New Pot!</Link></p>
+                    {potElements}
+                </div>
+            </div>
         </div>
         </>
     );

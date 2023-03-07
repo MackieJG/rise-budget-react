@@ -1,0 +1,17 @@
+.chart-dropdown{
+    width: 150px;
+    padding: 5px 5px;
+    font-family: inherit;
+    color: var(--clr-grey-500);
+    font-size: var(--fs-text-md);
+    border-radius: 50px;
+    border: 2px solid var(--background_color);
+    outline-color: var(--logo_yellow);
+}
+
+.chart-container{
+    border: 1px solid var(--background_color);
+    border-radius: 50px;
+    padding: 2rem;
+    background-color: rgba(128, 128, 128, 0.059);
+}
