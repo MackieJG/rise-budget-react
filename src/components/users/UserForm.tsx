@@ -55,6 +55,7 @@ const UserForm = ({ onCreate }: UserFormProps) => {
 
     return (
         <div>
+            <div className="edit-user-page">
             <form onSubmit={handleSubmit}>
                 <input
                 type="text"
@@ -71,7 +72,8 @@ const UserForm = ({ onCreate }: UserFormProps) => {
                 value={stateUser.budget}
                 />
                 <button type="submit">Save</button>
-            </form>    
+            </form>  
+            </div>  
         </div>
     );
 

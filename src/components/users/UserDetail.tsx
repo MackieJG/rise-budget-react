@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import user_img from '../users/user.jpeg';
 import '../users/user.css';
 interface ExpenseProps {
     title: string;
@@ -50,8 +51,12 @@ const UserDetail = ({user, handleDelete}: UserDetailProps) => {
 
     return (
         <>
-        <div className='user-page'>
+        {/* <div className='user-page'> */}
             <div className='user-container'>
+                <div className='user-img'>
+                    <img src={user_img} width='200'/>
+                </div>
+            
                 <div className="name">
                     <p>{user.name}</p>  
                 </div>    
@@ -62,7 +67,7 @@ const UserDetail = ({user, handleDelete}: UserDetailProps) => {
                     <button onClick={onEdit}>Edit User & Budget</button>
                 </div>
             </div>
-        </div>
+        {/* </div> */}
         </>
     );
 
