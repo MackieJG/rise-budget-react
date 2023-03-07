@@ -2,13 +2,15 @@ import React, { useState } from "react";
 interface PotProps {
   id: number;
   title: string;
-  amount: number;
+  targetAmount: number;
+  currentAmount: number;
   user: object | null;
 }
 
 interface PotFormEditProps {
   pot: PotProps;
-  amount: number;
+  targetAmount: number;
+  currentAmount: number;
   user: any;
   onEdit: (pot: any) => void;
 }
@@ -17,10 +19,11 @@ const PotFormEdit = ({pot, onEdit }: PotFormEditProps) => {
 
   const [statePot, setStatePot] = useState<PotProps>(
     {
-        id: pot.id,
-        title: pot.title,
-        amount: pot.amount,
-        user: pot.user
+      id: pot.id,
+      title: pot.title,
+      targetAmount: pot.targetAmount,
+      currentAmount: pot.currentAmount,
+      user: pot.user
     }
   );
 
@@ -49,10 +52,17 @@ const PotFormEdit = ({pot, onEdit }: PotFormEditProps) => {
         />
         <input
           type="number"
-          placeholder="Amount"
-          name="amount"
+          placeholder="Target Amount"
+          name="target_amount"
           onChange={handleChange}
-          value={statePot.amount}
+          value={statePot.targetAmount}
+        />
+                <input
+          type="number"
+          placeholder="Current Amount"
+          name="current_amount"
+          onChange={handleChange}
+          value={statePot.currentAmount}
         />
         <button type="submit">Save</button>
       </form>

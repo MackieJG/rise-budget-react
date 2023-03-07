@@ -13,18 +13,21 @@ const MainContainer = () => {
     const [users, setUsers] = useState(null);
     const [expenses, setExpenses] = useState([]);
     const [providers, setProviders] = useState([]);
+    const [pots, setPots] = useState([]);
 
     useEffect(() => {
         const request = new ApiRequest();
         const userPromise: any = request.get('/api/users')
         const expensePromise = request.get('/api/expenses')
         const providerPromise = request.get('/api/providers')
+        const potPromise = request.get('/api/pots')
 
-        Promise.all([expensePromise, providerPromise, userPromise])
+        Promise.all([expensePromise, providerPromise, userPromise, potPromise])
         .then((data) => {
             setExpenses(data[0]);
             setProviders(data[1]);
             setUsers(data[2]);
+            setPots(data[3]);
         });
         
     }, [])
@@ -35,7 +38,7 @@ const MainContainer = () => {
 
         <Router>
             <Routes>
-            <Route path='/' element={ <HomePage expenses={expenses} users={users}/> } />
+            <Route path='/' element={ <HomePage expenses={expenses} pots={pots} users={users}/> } />
             <Route path='/users/*' element={ <UserContainer /> } />
             <Route path='/pots/*' element={ <PotContainer user={users}/> } />
             <Route path='/expenses/*' element={ <ExpenseContainer user={users} expenses={expenses} providers={providers} /> } />

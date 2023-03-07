@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 import PotList from "../components/pots/PotList";
 import ApiRequest from "../helpers/request";
@@ -12,7 +12,8 @@ import Swal from 'sweetalert2'
 interface PotProps {
     id: number;
     title: string;
-    amount: number;
+    target_amount: number;
+    current_amount: number;
     user: any;
 };
 
@@ -49,7 +50,6 @@ const PotContainer = ({user}: any) => {
         const request = new ApiRequest();
         const url = '/api/pots/' + pot.id;
         pot["user"] = {... user}
-        console.log('pot.user', pot.user);
         request.put(url, pot).then(() => {
             window.location.href = '/pots';
         });
@@ -76,11 +76,10 @@ const PotContainer = ({user}: any) => {
         if (!foundPot) {
             return <p>Loading...</p>;
         };
-        return (<PotFormEdit pot={foundPot} amount={0} user={user} onEdit={handleEdit} /> );
+        return (<PotFormEdit pot={foundPot} targetAmount={0} currentAmount={0} user={user} onEdit={handleEdit} /> );
     };
 
-
-
+    
     return (
         <>
         <NavBarTop/>

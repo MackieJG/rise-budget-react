@@ -5,7 +5,8 @@ import './PotList.css';
 interface PotProps {
     id: number;
     title: string;
-    amount: number;
+    targetAmount: number;
+    currentAmount: number;
     user: any;
 };
 interface PotDetailProps {
@@ -39,7 +40,8 @@ const PotDetail = ({pot, handleDelete}: PotDetailProps) => {
         <div className='pot-page'>
         <div className="pot-detail">
             <p>{pot.title}</p>
-            <p>{pot.amount}</p>
+            <p>{pot.targetAmount}</p>
+            <p>{pot.currentAmount}</p>
          </div>
         <div className="buttons">
             <button onClick={onDelete}>Delete</button>
