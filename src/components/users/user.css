@@ -4,11 +4,25 @@
     display: flex;
     flex-direction: column;
     padding-bottom: 2rem;
+    margin: 1rem;
+    
 }
-/* 
+
+.user-img {
+    justify-content: center;
+    border-radius: 50%;
+}
+
+
 .user-container {
-    border-color: #FFBE05;
-} */
+    background-color: white;
+    border-radius: 50px;
+    border: 2px solid #ffbe05;
+    padding: 2rem;
+    opacity: .9;
+    width:auto;
+    align-items: center;
+}
 
 button {
     background-color: #80B180;
@@ -36,4 +50,11 @@ button {
 
 p {
     margin: 1rem;
+}
+
+.user-img {
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 1rem;
 }
