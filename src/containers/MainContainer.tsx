@@ -7,6 +7,7 @@ import HomePage from './HomePage';
 import AnalyticsContainer from './AnalyticsContainer';
 import AdviceContainer from './AdviceContainer';
 import ApiRequest from "../helpers/request";
+import LoginPage from "./LoginPage";
 
 const MainContainer = () => {
 
@@ -38,12 +39,13 @@ const MainContainer = () => {
 
         <Router>
             <Routes>
-            <Route path='/' element={ <HomePage expenses={expenses} pots={pots} users={users}/> } />
-            <Route path='/users/*' element={ <UserContainer /> } />
-            <Route path='/pots/*' element={ <PotContainer user={users}/> } />
-            <Route path='/expenses/*' element={ <ExpenseContainer user={users} expenses={expenses} providers={providers} /> } />
-            <Route path='/analytics' element={ <AnalyticsContainer /> } />
-            <Route path='/advice/*' element={ <AdviceContainer /> } />
+                <Route path='/' element={ <LoginPage />} />
+                <Route path='/home' element={ <HomePage expenses={expenses} pots={pots} users={users}/> } />
+                <Route path='/users/*' element={ <UserContainer /> } />
+                <Route path='/pots/*' element={ <PotContainer user={users}/> } />
+                <Route path='/expenses/*' element={ <ExpenseContainer user={users} expenses={expenses} providers={providers} /> } />
+                <Route path='/analytics' element={ <AnalyticsContainer /> } />
+                <Route path='/advice/*' element={ <AdviceContainer /> } />
             </Routes>
         </Router>
     )

@@ -9,7 +9,7 @@ const NavBarTop = () => {
 
                 <div className='left-container'>
                     <p>
-                        <Link id='home' to ="/" className='link'>Home</Link>
+                        <Link id='home' to ="/home" className='link'>Home</Link>
                     </p>
                     <p>
                         <Link id='expense-form' to="/expenses/add" className='link'>Add Expense</Link>
@@ -17,12 +17,12 @@ const NavBarTop = () => {
                 </div>
 
                 <div className='logo'>
-                    <Link id='home' to="/" className="home-link"> <img src={logo} width='150'/></Link>
+                    <Link id='home' to="/home" className="home-link"> <img src={logo} width='150'/></Link>
                 </div>
 
                 <div className='right-container'>
                     <p><Link id='user' to="/users" className='link'>User Profile</Link></p>
-                    <p className='login'>Log in</p>
+                    <p><Link id='login' to="/" className='link'>Log in</Link></p>
                     <p className='signup-btn'>Sign up</p>
                 </div>
 
