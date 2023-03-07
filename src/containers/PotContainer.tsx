@@ -12,8 +12,8 @@ import Swal from 'sweetalert2'
 interface PotProps {
     id: number;
     title: string;
-    target_amount: number;
-    current_amount: number;
+    targetAmount: number;
+    currentAmount: number;
     user: any;
 };
 
