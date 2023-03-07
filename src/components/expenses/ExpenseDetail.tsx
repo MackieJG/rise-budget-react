@@ -1,7 +1,8 @@
 import React from 'react'
 import {useNavigate} from 'react-router-dom';
 import Expense from './Expense';
- 
+import Swal from 'sweetalert2'
+
 enum CategoryType {
     GROCERIES = "GROCERIES",
     UTILITIES = "UTILITIES",
