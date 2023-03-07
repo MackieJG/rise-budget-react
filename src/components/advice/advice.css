@@ -12,4 +12,35 @@
 .icon-container{
     display: flex;
     flex-direction: column;
-  }
+}
+
+.first-paragraph {
+    margin-left: 0;
+    text-align: left;
+}
+
+.advice-title {
+    text-align: center;
+    color: #80b180;
+}
+
+.advice-paragraph {
+    text-align: left;
+}
+
+.advice-details-container {
+    text-align: left;
+    background-color: #ffbe0580;
+    padding: 1rem;
+    border-radius: 50px;
+}
+
+.advice-more {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.link-advice {
+    text-decoration: dotted;
+    color: #80b180;
+}

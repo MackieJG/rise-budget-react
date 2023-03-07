@@ -13,8 +13,8 @@ const Footer = () => {
                     <p className='rise'>RISE</p>
                     <p className='simple'>Money made simple.</p>
                 </div>
-                <div className='small-print'>
-                    <p>© 2023 RISE Budget App. All rights reserved.</p>
+                <div>
+                    <p className='small-print'>© 2023 RISE Budget App. All rights reserved.</p>
                 </div>
             </div>
             <div className='footer-right-container'>
