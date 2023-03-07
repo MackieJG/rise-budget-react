@@ -12,7 +12,8 @@ interface ExpenseProps {
 interface PotProps {
     id: number;
     title: string;
-    amount: number;
+    targetAmount: number;
+    currentAmount: number;
     user: any;
 };
 

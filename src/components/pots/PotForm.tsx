@@ -52,14 +52,14 @@ const PotForm = ({ user, onCreate }: PotFormProps) => {
         <input
           type="number"
           placeholder="Target Amount"
-          name="target_amount"
+          name="targetAmount"
           onChange={handleChange}
           value={statePot.targetAmount}
         />
         <input
           type="number"
           placeholder="Current Amount"
-          name="current_amount"
+          name="currentAmount"
           onChange={handleChange}
           value={statePot.currentAmount}
         />
