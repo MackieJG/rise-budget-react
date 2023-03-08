@@ -4,11 +4,11 @@ const BuyHouseSavingAdvice = () => {
         <div className='advice-details-container'>
             <h1 className='advice-title'>Buy A House</h1>
             <p className='advice-paragraph'>
-                You can open a LISA, a lifetime savings ISA. If you are saving for your first time purchase 
-                of a home, this is a government supported scheme where the government will contribute +25% to your 
+                You can open a LISA, a lifetime savings ISA. If you are saving for your first time purchase
+                of a home, this is a government supported scheme where the government will contribute +25% to your
                 savings each year, up to £4000 per year.
-                So, if you max out your LISA contributions of £4000 in a tax year, the government will give you an 
-                additional £1000 on top of this. If saving up for your first home is the main goal this is a fantastic route 
+                So, if you max out your LISA contributions of £4000 in a tax year, the government will give you an
+                additional £1000 on top of this. If saving up for your first home is the main goal this is a fantastic route
                 to go down.
             </p>
             <p className='advice-more'>
@@ -24,7 +24,7 @@ const BuyHouseSavingAdvice = () => {
                 </li>
             </p>
         </div>
-    )
-}
+    );
+};
 
 export default BuyHouseSavingAdvice;

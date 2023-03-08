@@ -1,20 +1,17 @@
-import React from 'react'
-import {useNavigate} from 'react-router-dom';
-import Expense from './Expense';
-import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router-dom';
 
 enum CategoryType {
     GROCERIES = "GROCERIES",
     UTILITIES = "UTILITIES",
     RENT = "RENT",
-    MORTAGE = "MORTAGE",
+    MORTGAGE = "MORTGAGE",
     SUBSCRIPTIONS = "SUBSCRIPTIONS",
     ENTERTAINMENT = "ENTERTAINMENT",
-    EATINGOUT = "EATINGOUT",
     TRANSPORT = "TRANSPORT",
+    EATING_OUT = "EATING_OUT",
     HEALTH = "HEALTH",
-  }
-  
+    GENERAL = "GENERAL"
+};
 interface ExpenseProps {
     id: number;
     title: string;
@@ -23,35 +20,34 @@ interface ExpenseProps {
     category: CategoryType;
     user: any;
     date: string;
-}
+};
 interface ExpenseDetailProps {
     expense: ExpenseProps;
     handleDelete: (expense: ExpenseProps) => void;
     handleEdit: (expense: ExpenseProps) => void;
-}
+};
 
-const ExpenseDetail = ({expense, handleDelete}: ExpenseDetailProps) => {
-    
-    const navigate = useNavigate()
+const ExpenseDetail = ({ expense, handleDelete }: ExpenseDetailProps) => {
+
+    const navigate = useNavigate();
 
     const onDelete = () => {
         handleDelete(expense)
-    }
-    
+    };
+
     const onEdit = () => {
         navigate(`/expenses/${expense.id}/edit`)
-    }
-    
-    if(!expense) {
+    };
+
+    if (!expense) {
         return (
             <p>
                 loading...
             </p>
-        )
+        );
     }
     return (
         <div className='expense-detail__container'>
-            {/* <Expense expense={expense}/> */}
             <p>Title: {expense.title}</p>
             <p>Amount: £{expense.amount}</p>
             <p>Provider: {expense.provider.name}</p>
@@ -63,6 +59,7 @@ const ExpenseDetail = ({expense, handleDelete}: ExpenseDetailProps) => {
                 <button onClick={onEdit}>Edit</button>
             </div>
         </div>
-    )
-}
+    );
+};
+
 export default ExpenseDetail;

@@ -4,7 +4,7 @@ const LongTermSavingAdvice = () => {
         <div className='advice-details-container'>
             <h1 className='advice-title'>Long Term</h1>
             <p className='advice-paragraph'>
-                If you have additional cash available beyond your emergency fund 
+                If you have additional cash available beyond your emergency fund
                 then we could look at long term savings goals and have your money work for you.
             </p>
             <p className='advice-more'>
@@ -35,7 +35,7 @@ const LongTermSavingAdvice = () => {
                 </li>
             </p>
         </div>
-    )
-}
+    );
+};
 
 export default LongTermSavingAdvice;
