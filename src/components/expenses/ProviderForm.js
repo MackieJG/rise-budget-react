@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
-
-
-
 const ProviderForm = ({ onChangeProvider, providerName }) => {
+
   const handleChange = function (event) {
     onChangeProvider(event.target.value);
   };
 
- 
+
   return (
     <div>
       <form>

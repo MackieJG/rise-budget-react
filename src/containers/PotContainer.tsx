@@ -17,7 +17,7 @@ interface PotProps {
     user: any;
 };
 
-const PotContainer = ({user}: any) => {
+const PotContainer = ({ user }: any) => {
 
     const [pots, setPots] = useState([]);
 
@@ -42,14 +42,14 @@ const PotContainer = ({user}: any) => {
         const request = new ApiRequest();
         const url = '/api/pots/' + pot.id;
         request.delete(url).then(() => {
-          window.location.href = '/pots';
+            window.location.href = '/pots';
         });
     };
 
     const handleEdit = (pot: any) => {
         const request = new ApiRequest();
         const url = '/api/pots/' + pot.id;
-        pot["user"] = {... user}
+        pot["user"] = { ...user }
         request.put(url, pot).then(() => {
             window.location.href = '/pots';
         });
@@ -65,7 +65,7 @@ const PotContainer = ({user}: any) => {
             title: 'New pot added!',
             showConfirmButton: true,
             confirmButtonText: 'OK!'
-          }).then(() => {
+        }).then(() => {
             window.location.href = '/pots';
         });
     };
@@ -76,19 +76,19 @@ const PotContainer = ({user}: any) => {
         if (!foundPot) {
             return <p>Loading...</p>;
         };
-        return (<PotFormEdit pot={foundPot} targetAmount={0} currentAmount={0} user={user} onEdit={handleEdit} /> );
+        return (<PotFormEdit pot={foundPot} targetAmount={0} currentAmount={0} user={user} onEdit={handleEdit} />);
     };
 
-    
+
     return (
         <>
-        <NavBarTop/>
-        <Routes>
-            <Route path="/" element={<PotList pots={pots} handleDelete={handleDelete} handleEdit={handleEdit} />} />
-            <Route path="/add" element={<PotForm user={user} onCreate={handlePost} />} />
-            <Route path="/:id/edit" element={<PotFormEditWrapper /> } />
-        </Routes>
-        <Footer/>
+            <NavBarTop />
+            <Routes>
+                <Route path="/" element={<PotList pots={pots} handleDelete={handleDelete} handleEdit={handleEdit} />} />
+                <Route path="/add" element={<PotForm user={user} onCreate={handlePost} />} />
+                <Route path="/:id/edit" element={<PotFormEditWrapper />} />
+            </Routes>
+            <Footer />
         </>
     );
 };

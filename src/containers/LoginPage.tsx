@@ -1,28 +1,27 @@
-import React from 'react';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import NavBarTop from '../components/navigation/NavBarTop';
 import Footer from '../components/footer/Footer';
 import '../App.css';
 
 const LoginPage = () => {
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const onClick = () => {
         navigate(`/home`)
-    }
+    };
 
     return (
-         <div>
-            <NavBarTop/>
+        <div>
+            <NavBarTop />
             <div className='login-container'>
-                <input type="email" placeholder="Email" required/>
-                <input type="password" placeholder="Password" required/>
+                <input type="email" placeholder="Email" required />
+                <input type="password" placeholder="Password" required />
                 <button onClick={onClick}>Log In</button>
             </div>
-            <Footer/>
-         </div>
+            <Footer />
+        </div>
     );
-}
+};
 
 export default LoginPage;

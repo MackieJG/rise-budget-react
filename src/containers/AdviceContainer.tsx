@@ -1,5 +1,4 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Routes, Route } from 'react-router-dom';
 import './advice.css'
 import NavBarTop from '../components/navigation/NavBarTop';
 import Footer from '../components/footer/Footer';
@@ -15,20 +14,18 @@ const AdviceContainer = () => {
 
     return (
         <>
-
-        <NavBarTop/>
-        <AdviceList />
-        <Routes>
-            <Route path="/pensions" element={<PensionsAdvice/>} />
-            <Route path="/rainy_day" element={<RainyDayAdvice />} />
-            <Route path="/short_term"element={<ShortTermSavingAdvice  />}/>
-            <Route path="/house" element={<BuyHouseSavingAdvice />} />
-            <Route path="/long_term" element={<LongTermSavingAdvice />} />
-        </Routes>
-        <Footer/>
-        
+            <NavBarTop />
+            <AdviceList />
+            <Routes>
+                <Route path="/pensions" element={<PensionsAdvice />} />
+                <Route path="/rainy_day" element={<RainyDayAdvice />} />
+                <Route path="/short_term" element={<ShortTermSavingAdvice />} />
+                <Route path="/house" element={<BuyHouseSavingAdvice />} />
+                <Route path="/long_term" element={<LongTermSavingAdvice />} />
+            </Routes>
+            <Footer />
         </>
-    )
-}
+    );
+};
 
 export default AdviceContainer;

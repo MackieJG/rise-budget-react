@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 import NavBarTop from "../components/navigation/NavBarTop";
@@ -32,7 +32,7 @@ interface PotProps {
     user: any;
 }
 
-const UserContainer = ({user}: any) => {
+const UserContainer = ({ user }: any) => {
 
     const [users, setUsers] = useState([]);
 
@@ -56,7 +56,7 @@ const UserContainer = ({user}: any) => {
         const request = new ApiRequest();
         const url = '/api/users/' + user.id;
         request.delete(url).then(() => {
-           window.location.href = '/users';
+            window.location.href = '/users';
         })
     };
 
@@ -83,19 +83,20 @@ const UserContainer = ({user}: any) => {
         if (!foundUser) {
             return <div>Loading...</div>;
         }
-        return (<UserFormEdit user={foundUser} budget={0} onEdit={handleEdit} /> );
+        return (<UserFormEdit user={foundUser} budget={0} onEdit={handleEdit} />);
     }
 
     return (
         <>
-        <NavBarTop/>
-        <Routes>
-                <Route path="/" element={<UserList users={users} handleDelete={handleDelete} handleEdit={handleEdit} /> }/>
-                <Route path="/add" element={<UserForm user={user} onCreate={handlePost} /> } />
-                <Route path="/:id/edit" element={<UserFormEditWrapper /> } />
-        </Routes>
-        <Footer/>
+            <NavBarTop />
+            <Routes>
+                <Route path="/" element={<UserList users={users} handleDelete={handleDelete} handleEdit={handleEdit} />} />
+                <Route path="/add" element={<UserForm user={user} onCreate={handlePost} />} />
+                <Route path="/:id/edit" element={<UserFormEditWrapper />} />
+            </Routes>
+            <Footer />
         </>
-    )
-}
+    );
+};
+
 export default UserContainer;

@@ -1,7 +1,6 @@
-import React from 'react';
-
 const PensionsAdvice = () => {
-    return(
+
+    return (
         <div className='advice-details-container'>
             <h1 className='advice-title'>Pensions</h1>
             <p className='advice-paragraph'>
@@ -12,11 +11,11 @@ const PensionsAdvice = () => {
             <p className='advice-paragraph'>
                 Did you know?
                 The maximum state pension in 2022/23 is £185.15 per week or £9,628 per year!
-                This is a lot less than than most people hope to retire on.
+                This is a lot less than most people hope to retire on.
             </p>
             <p className='advice-more'>
                 <li>
-                    You can read more about pensions here: 
+                    You can read more about pensions here:
                 </li>
                 <li>
                     <a className='link-advice' href="https://www.gov.uk/government/news/pension-tips-for-teenagers">
@@ -35,7 +34,7 @@ const PensionsAdvice = () => {
                 </li>
             </p>
         </div>
-    )
-}
+    );
+};
 
 export default PensionsAdvice;

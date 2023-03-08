@@ -1,9 +1,6 @@
 import { Pie } from 'react-chartjs-2';
 import { Chart, registerables } from 'chart.js';
-import React from 'react';
 Chart.register(...registerables);
-
-
 
 const ExpensePieChart = ({ expenses }) => {
   console.log(expenses);
@@ -44,6 +41,7 @@ const ExpensePieChart = ({ expenses }) => {
   };
 
   return <Pie data={expenseData} />;
+
 };
 
 export default ExpensePieChart;
