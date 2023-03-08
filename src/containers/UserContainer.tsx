@@ -87,15 +87,17 @@ const UserContainer = ({ user }: any) => {
     }
 
     return (
-        <>
+        <div className='wrapper'>
             <NavBarTop />
-            <Routes>
-                <Route path="/" element={<UserList users={users} handleDelete={handleDelete} handleEdit={handleEdit} />} />
-                <Route path="/add" element={<UserForm user={user} onCreate={handlePost} />} />
-                <Route path="/:id/edit" element={<UserFormEditWrapper />} />
-            </Routes>
+            <div className="wrapper-2">
+                <Routes>
+                    <Route path="/" element={<UserList users={users} handleDelete={handleDelete} handleEdit={handleEdit} />} />
+                    <Route path="/add" element={<UserForm user={user} onCreate={handlePost} />} />
+                    <Route path="/:id/edit" element={<UserFormEditWrapper />} />
+                </Routes>
+            </div>
             <Footer />
-        </>
+        </div>
     );
 };
 
