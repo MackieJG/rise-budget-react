@@ -18,7 +18,7 @@ const LoginPage = () => {
                 <div className='login-container'>
                     <input type="email" placeholder="Email" required />
                     <input type="password" placeholder="Password" required />
-                    <button onClick={onClick}>Log In</button>
+                    <button onClick={onClick} className="login-button">Log In</button>
                 </div>
             </div>
             <Footer />

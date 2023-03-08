@@ -208,3 +208,22 @@ li {
   background-color: #5a975ac9;
   padding: 12rem 0;
 }
+
+.login-button {
+  background-color: white;
+  border-style: none;
+  border-radius: 0.5rem;
+  color: black;
+  border: 2px solid #FFBE00;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0.4rem .8rem;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease-out;
+}
+
+.login-button:hover {
+  /* background-color: rgb(235, 234, 234); */
+  background-color: #FFBE00;
+}
