@@ -91,7 +91,7 @@ const ExpenseFormEdit = ({ expense, providers, categories, onEdit }: ExpenseForm
   });
 
   return (
-    <div>
+    <div className='container'>
       <form onSubmit={handleSubmit} className='expense-form-container'>
         <input
           type="text"
