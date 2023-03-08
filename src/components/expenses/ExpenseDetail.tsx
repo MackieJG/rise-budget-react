@@ -50,17 +50,18 @@ const ExpenseDetail = ({expense, handleDelete}: ExpenseDetailProps) => {
         )
     }
     return (
-        <div className='expense-detail__container'>
-            {/* <Expense expense={expense}/> */}
-            <p>Title: {expense.title}</p>
-            <p>Amount: £{expense.amount}</p>
-            <p>Provider: {expense.provider.name}</p>
-            <p>Category: {expense.category}</p>
-            <p>{expense.date}</p>
-
-            <div className="button-container">
-                <button onClick={onDelete}>Delete</button>
-                <button onClick={onEdit}>Edit</button>
+        <div className='expense-wrapper'>
+            <div className='expense-detail__container'>
+                {/* <Expense expense={expense}/> */}
+                <p>Title: {expense.title}</p>
+                <p>Amount: £{expense.amount}</p>
+                <p>Provider: {expense.provider.name}</p>
+                <p>Category: {expense.category}</p>
+                <p>{expense.date}</p>
+                <div className="button-container">
+                    <button onClick={onDelete}>Delete</button>
+                    <button onClick={onEdit}>Edit</button>
+                </div>
             </div>
         </div>
     )

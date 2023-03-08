@@ -65,14 +65,21 @@
 
 /* EXPENSE DETAIL */
 
+.expense-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
 .expense-detail__container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
   font-size: 18px;
   border-radius: 50px;
   padding: 2rem;
   border: 2px solid #80b180;
+  width: 80%;
 }
 
 .button-container {
