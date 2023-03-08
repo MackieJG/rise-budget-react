@@ -199,15 +199,12 @@ li {
   gap: 1rem;
   font-size: 18px;
   border-radius: 50px;
-  padding: 2rem;
   border: 2px solid #FFBE00;
-  size: fit-content;
   justify-content: center;
   align-items: center;
   background-image: url(./expense-background.png);
   background-size: cover;
   background-position: center center;
   background-color: #5a975ac9;
-  padding-top: 5rem;
-  padding-bottom: 13rem;
+  padding: 12rem 0;
 }

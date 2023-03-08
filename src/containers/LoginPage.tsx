@@ -12,12 +12,14 @@ const LoginPage = () => {
     };
 
     return (
-        <div>
+        <div className='wrapper'>
             <NavBarTop />
-            <div className='login-container'>
-                <input type="email" placeholder="Email" required />
-                <input type="password" placeholder="Password" required />
-                <button onClick={onClick}>Log In</button>
+            <div className='wrapper-2'>
+                <div className='login-container'>
+                    <input type="email" placeholder="Email" required />
+                    <input type="password" placeholder="Password" required />
+                    <button onClick={onClick}>Log In</button>
+                </div>
             </div>
             <Footer />
         </div>
