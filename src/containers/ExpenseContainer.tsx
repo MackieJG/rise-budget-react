@@ -138,16 +138,18 @@ const ExpenseContainer = ({ user, expenses, providers }: any) => {
     };
 
     return (
-        <>
+        <div className='wrapper'>
             <NavBarTop />
-            <Routes>
-                <Route path="/" element={<ExpenseList expenses={expenses} handleDelete={handleDelete} handleEdit={handleEdit} />} />
-                <Route path="/add" element={<ExpenseForm user={user} providers={providers} categories={categories} onCreate={handlePost} onCreateProvider={handlePostNoProvider} />} />
-                <Route path="/:id/edit"element={<ExpenseFormEditWrapper  />}/>
-                <Route path="/:id" element={<ExpenseDetailWrapper />} />
-            </Routes>
+            <div className="wrapper-2">
+                <Routes>
+                    <Route path="/" element={<ExpenseList expenses={expenses} handleDelete={handleDelete} handleEdit={handleEdit} />} />
+                    <Route path="/add" element={<ExpenseForm user={user} providers={providers} categories={categories} onCreate={handlePost} onCreateProvider={handlePostNoProvider} />} />
+                    <Route path="/:id/edit"element={<ExpenseFormEditWrapper  />}/>
+                    <Route path="/:id" element={<ExpenseDetailWrapper />} />
+                </Routes>
+            </div>
             <Footer/>
-        </>
+        </div>
     );
 
 };

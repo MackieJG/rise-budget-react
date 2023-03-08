@@ -81,15 +81,17 @@ const PotContainer = ({ user }: any) => {
 
 
     return (
-        <>
+        <div className='wrapper'>
             <NavBarTop />
-            <Routes>
-                <Route path="/" element={<PotList pots={pots} handleDelete={handleDelete} handleEdit={handleEdit} />} />
-                <Route path="/add" element={<PotForm user={user} onCreate={handlePost} />} />
-                <Route path="/:id/edit" element={<PotFormEditWrapper />} />
-            </Routes>
+            <div className="wrapper-2">
+                <Routes>
+                    <Route path="/" element={<PotList pots={pots} handleDelete={handleDelete} handleEdit={handleEdit} />} />
+                    <Route path="/add" element={<PotForm user={user} onCreate={handlePost} />} />
+                    <Route path="/:id/edit" element={<PotFormEditWrapper />} />
+                </Routes>
+            </div>
             <Footer />
-        </>
+        </div>
     );
 };
 
