@@ -1,3 +1,8 @@
+.advice-list {
+    margin: 0;
+    padding: 0;
+}
+
 .advice-container {
     display: flex;
     justify-content: space-between;

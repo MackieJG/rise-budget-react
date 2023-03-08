@@ -10,7 +10,7 @@ const AdviceList = () => {
 
     return (
         <>
-            <ul>
+            <ul className='advice-list'>
                 <li>
                     <h1 className='heading'>Tips On Saving For Young Adults</h1>
                     <h3 className='quote'>The best time to plant a tree was 20 years ago. The second best time is today.</h3>
