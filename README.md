@@ -25,23 +25,23 @@ The use will be able to create and edit entries for amounts saved.
 Get advice based on your spending (pop-ups/ notifications)
 The user will receive advice based on their spending. (Encouragement when they’re doing well and staying within their budget. Advice on what to do better when they’re spending too much and run out of money.
 
-We used a Trello to keep on track with had been achieved and what was still to be implemented. 
+We used Trello to keep on track with had been achieved and what was still to be implemented. 
 We used Figma for designing out the useability and look of the app. 
 
 Built With:
 
 Frontend: React - TypeScript, JavaScript and CSS
-Backend: can find the details here - https://github.com/MackieJG/RiseBudgetApp
+Backend: can find the details here -[GitHub](https://github.com/MackieJG/RiseBudgetApp)
 
 To test this App:
 
 ### Client
 To run the app, you need to set up the client and server sides of the app:
 
-**Install the dependencies in the client directory** -
+*Install the dependencies in the client directory* -
   - npm install
 
-**Run the client web application in development** -
+*Run the client web application in development* -
   - npm run dev
 
 # Contact
