@@ -4,7 +4,7 @@
 
 Develop a user friendly app that helps keeps track of spending. Develop new spending habits for young adults
 
-MVP
+### MVP
 
 User Profile / Budgeting Side
 The profile page will display to the user all their transactions in order from newest to older. All transactions will display the amount, merchant and category tag. Will also display the total spent and what’s left to spend for the month based on budget.
