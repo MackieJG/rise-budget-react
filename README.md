@@ -45,9 +45,9 @@ To run the app, you need to set up the client and server sides of the app:
   - npm run dev
 
 # Contact
-Joshua Mackie - [GitHub](https://github.com/MackieJG/RiseBudgetReact)
-Andromeda Akoulli - [GitHub](https://github.com/AndromedaMedi)
-James Blaney - [GitHub](https://github.com/JBlaney93)
+- Joshua Mackie - [GitHub](https://github.com/MackieJG/RiseBudgetReact)
+- Andromeda Akoulli - [GitHub](https://github.com/AndromedaMedi)
+- James Blaney - [GitHub](https://github.com/JBlaney93)
 
 
 
