@@ -39,10 +39,10 @@ To test this App:
 To run the app, you need to set up the client and server sides of the app:
 
 **Install the dependencies in the client directory** -
-  npm install
+  - npm install
 
 **Run the client web application in development** -
-  npm run dev
+  - npm run dev
 
 # Contact
 Joshua Mackie - [GitHub](https://github.com/MackieJG/RiseBudgetReact)
