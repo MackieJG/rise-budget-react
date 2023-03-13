@@ -2,7 +2,7 @@
 
 ## Project Brief
 
-Develop a user friendly app that helps keeps track of spending. Develop new spending habits for young adults
+Develop a user friendly app that helps keeps track of spending. Develop new spending habits for young adults.
 
 ### MVP
 
