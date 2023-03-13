@@ -1,46 +1,56 @@
-# Getting Started with Create React App
+# CodeClan Capstone Project - RISE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Brief
 
-## Available Scripts
+Develop a user friendly app that helps keeps track of spending. Develop new spending habits for young adults
 
-In the project directory, you can run:
+MVP
 
-### `npm start`
+User Profile / Budgeting Side
+The profile page will display to the user all their transactions in order from newest to older. All transactions will display the amount, merchant and category tag. Will also display the total spent and what’s left to spend for the month based on budget.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Track Expenses (rent/mortgage, bills, groceries, shopping)
+The user will be able to create and edit transactions.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The user will be able to create and edit merchants. These will be assigned when creating transaction entries. (Allow to display transactions by merchant, display total per merchant.)
 
-### `npm test`
+Categorise expenses (allow to filter)
+The user will be able to create and edit category tags. These will be assigned when creating transaction entries. (Allow to display transactions by category, display total per category.)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Set budget and savings goals
+The user will be able to set a target budget. User will be able to see available total to spend.
 
-### `npm run build`
+The use will be able to create and edit entries for amounts saved.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Get advice based on your spending (pop-ups/ notifications)
+The user will receive advice based on their spending. (Encouragement when they’re doing well and staying within their budget. Advice on what to do better when they’re spending too much and run out of money.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+We used a Trello to keep on track with had been achieved and what was still to be implemented. 
+We used Figma for designing out the useability and look of the app. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Built With:
 
-### `npm run eject`
+Frontend: React - TypeScript, JavaScript and CSS
+Backend: can find the details here - https://github.com/MackieJG/RiseBudgetApp
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To test this App:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Client
+To run the app, you need to set up the client and server sides of the app:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Install the dependencies in the client directory** -
+  npm install
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**Run the client web application in development** -
+  npm run dev
 
-## Learn More
+# Contact
+Joshua Mackie - [GitHub](https://github.com/MackieJG/RiseBudgetReact)
+Andromeda Akoulli - [GitHub](https://github.com/AndromedaMedi)
+James Blaney - [GitHub](https://github.com/JBlaney93)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+
+
