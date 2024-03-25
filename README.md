@@ -3,51 +3,84 @@
 ## Project Brief
 
 Develop a user friendly app that helps keeps track of spending. Develop new spending habits for young adults.
+<details>
+  <ol>
+    <li>
+      <a href="#about">About</a>
+     <ul>
+      <li><a href="#design">Design</a></li>
+      <li><a href="#built-with">Built With</a></li>
+      <li><a href="#reflections">Reflections</a></li>
+     </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
+<!-- ABOUT -->
+### RISE
+
+Rise is a web application built with React and Java (Spring) for the capstone project of the CodeClan  professional software development 16 week course. It allows users to organise their finances with features such as expenses and pots while providing graphical analytics for a visually appealing way of keeping track of their money. It also has a resource section aimed at helping users take the next step in financial education. It was created in February/March 2023 by Joshua Mackie, Andromeda Akoulli and James Blaney. 
+
+<!-- BRIEF -->
 ### MVP
 
-User Profile / Budgeting Side
-The profile page will display to the user all their transactions in order from newest to older. All transactions will display the amount, merchant and category tag. Will also display the total spent and what’s left to spend for the month based on budget.
+#### Main Web Application
+* It show allow users to sign up, create savings pots, add expenses and access educational resources
+* It should allow users to sort expenses and track expenses against their overall budget for the month
+* Users will be able to see a percentage breakdown of expenses in piechart format
+* Be able to create new categories and asign new expenses to the category
+* Users will be able to set target budget and see what is left to spend
 
-Track Expenses (rent/mortgage, bills, groceries, shopping)
-The user will be able to create and edit transactions.
+### Possible Extensions
+* Authentication
+* Provide interactive financial E-Learning games and tutorials
+* Provide a wider scope of educational material through the application
 
-The user will be able to create and edit merchants. These will be assigned when creating transaction entries. (Allow to display transactions by merchant, display total per merchant.)
-
-Categorise expenses (allow to filter)
-The user will be able to create and edit category tags. These will be assigned when creating transaction entries. (Allow to display transactions by category, display total per category.)
-
-Set budget and savings goals
-The user will be able to set a target budget. User will be able to see available total to spend.
-
-The use will be able to create and edit entries for amounts saved.
-
-Get advice based on your spending (pop-ups/ notifications)
-The user will receive advice based on their spending. (Encouragement when they’re doing well and staying within their budget. Advice on what to do better when they’re spending too much and run out of money.
-
+<!-- DESIGN -->
+## Design
 We used Trello to keep on track with had been achieved and what was still to be implemented. 
 We used Figma for designing out the useability and look of the app. 
 
-Built With:
-
-Frontend: React - TypeScript, JavaScript and CSS
+<!-- BUILT WITH -->
+## Built With
+* React
+* TypeScript/JavaScript
+* Java 8.0
+* Spring
+  
 Backend: can find the details here -[GitHub](https://github.com/MackieJG/RiseBudgetApp)
 
-To test this App:
+<!--GETTING STARTED -->
+## Getting Started
+### Prerequisites
 
-### Client
+#### Client
+
 To run the app, you need to set up the client and server sides of the app:
 
 *Install the dependencies in the client directory* -
+```sh
   - npm install
-
+```
 *Run the client web application in development* -
+```sh
   - npm run dev
-
-# Contact
-- Joshua Mackie - [GitHub](https://github.com/MackieJG/RiseBudgetReact)
+```
+<!-- CONTACT -->
+## Contact
+- Joshua Mackie - [GitHub](https://github.com/MackieJG)
 - Andromeda Akoulli - [GitHub](https://github.com/AndromedaMedi)
 - James Blaney - [GitHub](https://github.com/JBlaney93)
+
+
 
 
 
